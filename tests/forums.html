@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forum Thread</title>
+  <style>
+    body {
+      font-family: Verdana, Arial, sans-serif;
+      background: #e0e0e0;
+      color: #000;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #main {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border: 2px solid #aaa;
+    }
+
+    h2 {
+      font-size: 18px;
+      background: #d9d9d9;
+      padding: 10px;
+      border-bottom: 2px solid #aaa;
+    }
+
+    .cursed-icon {
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .forum-post .thread {
+      padding: 10px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .thread-title a {
+      font-weight: bold;
+      color: #003366;
+      text-decoration: underline;
+    }
+
+    .thread-meta {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .post h2 {
+      margin-top: 30px;
+    }
+
+    .text {
+      font-size: 14px;
+      line-height: 1.5;
+      background: #f8f8f8;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .reactions {
+      font-size: 12px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    /* Comments Section */
+    .comments {
+      margin-top: 30px;
+    }
+
+    .comment {
+      display: flex;
+      border-top: 1px solid #ccc;
+      padding: 10px;
+      background: #f4f4f4;
+    }
+
+    .comment:nth-child(even) {
+      background: #eaeaea;
+    }
+
+    .comment .profile {
+      width: 150px;
+      padding-right: 15px;
+      font-size: 12px;
+      border-right: 1px solid #ccc;
+    }
+
+    .comment .profile img {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+
+    .comment .reply {
+      flex: 1;
+      padding-left: 15px;
+      font-size: 14px;
+    }
+
+    .username {
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .timestamp {
+      font-size: 11px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<div id="main">
+  <div id="content">
+    <h2><img src="https://i.imgur.com/fd83V3R.png" class="cursed-icon"> !Trending! Forum Threads</h2>
+
+    <!-- Threads list -->
+    <div class="post forum-post">
+      <div class="thread">
+        <div class="thread-title">
+          <a href="#">[REPORT] Missing! Has anyone seen Mike Scott?<br></a>
+        </div>
+        <div class="thread-meta">
+          Started by <strong>mikehike128</strong><br>
+          Replies: 14 | Last Post: Today 14:32
+        </div>
+      </div>
+
+      <div class="thread">
+        <div class="thread-title">
+          <a href="#">Please stop throwing trash in the forest</a>
+        </div>
+        <div class="thread-meta">
+          Started by <strong>✔OakheavenParkOfficial</strong><br>
+          Replies: 8 | Last Post: Today 13:04
+        </div>
+      </div>
+
+      <div class="thread">
+        <div class="thread-title">
+          <a href="#">Unusual campfire smells near Pine Hollow?</a>
+        </div>
+        <div class="thread-meta">
+          Started by <strong>ForestFreak</strong><br>
+          Replies: 8 | Last Post: Today 13:04
+        </div>
+      </div>
+    </div>
+
+    <!-- Main post -->
+    <div class="post">
+      <h2>[REPORT] Missing! Has anyone seen Mike Scott?</h2>
+      <div class="text">
+        I'm posting this using my son Mike's account. He went camping in Oakheaven Park three days ago...
+        <hr>
+        <div class="reactions" style="text-align: right;">
+          <b>Comments (3) | 34 Views | 2 Likes</b>
+        </div>
+
+        <!-- Comments -->
+        <div class="comments">
+          <div class="comment">
+            <div class="profile">
+              <img src="https://i.imgur.com/2WZtOD6.png" alt="user avatar">
+              <div class="username">DarkWatcher92</div>
+              <div class="timestamp">Posted Today 15:02</div>
+            </div>
+            <div class="reply">
+              I think I saw someone matching that description near the old fire tower trail. It was getting dark, though.
+            </div>
+          </div>
+
+          <div class="comment">
+            <div class="profile">
+              <img src="https://i.imgur.com/0y0X7T7.png" alt="user avatar">
+              <div class="username">SpookyGal_13</div>
+              <div class="timestamp">Posted Today 15:10</div>
+            </div>
+            <div class="reply">
+              That’s so scary… hope he turns up soon. Has anyone checked the creek caves?
+            </div>
+          </div>
+
+          <div class="comment">
+            <div class="profile">
+              <img src="https://i.imgur.com/vvVhPmn.png" alt="user avatar">
+              <div class="username">GhostCamper</div>
+              <div class="timestamp">Posted Today 15:21</div>
+            </div>
+            <div class="reply">
+              Those woods have weird energy, man. Wouldn't go in there without a guide. Sending strength.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
