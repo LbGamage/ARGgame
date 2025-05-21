@@ -1,205 +1,40 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>☽ The Thistle Hollow ☾</title>
-  <style>
-    body {
-      background-color: #0e0a0b;
-      background-image: url('https://i.imgur.com/RvY4iIL.gif'); /* subtle star background */
-      color: #e9dce2;
-      font-family: "Courier New", monospace;
-      font-size: 16px;
-      margin: 0;
-      padding: 0;
-    }
-
-    a {
-      color: #d199c2;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-shadow: 0 0 8px #ff77cc;
-    }
-
-    .container {
-      display: flex;
-      max-width: 900px;
-      margin: 50px auto;
-      background-color: rgba(20, 12, 20, 0.85);
-      border: 2px solid #6e4f6f;
-      box-shadow: 0 0 15px #6e4f6f;
-    }
-
-    .sidebar {
-      width: 200px;
-      padding: 20px;
-      border-right: 1px solid #6e4f6f;
-      background-color: rgba(20, 12, 20, 0.9);
-    }
-
-    .sidebar img {
-      width: 100%;
-      margin-bottom: 15px;
-    }
-
-    .sidebar nav a {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .main {
-      flex: 1;
-      padding: 20px;
-    }
-
-    h1 {
-      font-family: "Lucida Handwriting", cursive;
-      font-size: 28px;
-      text-shadow: 0 0 8px #c973bd;
-    }
-
-    .entry {
-      margin-bottom: 30px;
-    }
-
-    .entry h2 {
-      font-size: 22px;
-      color: #dab6d4;
-    }
-
-    .entry p {
-      line-height: 1.6;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      color: #8e6b8f;
-    }
-
-    .glow {
-      animation: flicker 2s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% { text-shadow: 0 0 5px #ffccff; }
-      50% { text-shadow: 0 0 15px #ff99cc; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <img src="https://i.imgur.com/wSgbPJD.gif" alt="witch pixel art">
-      <nav>
-        <a href="#">✧ Home</a>
-        <a href="#">☽ Journal</a>
-        <a href="#">✦ Spells</a>
-        <a href="#">✧ About</a>
-        <a href="#">☠ Shrine</a>
-      </nav>
-    </div>
-    <div class="main">
-      <h1 class="glow">☽ The Thistle Hollow ☾</h1>
-
-      <div class="entry">
-        <h2>❦ 21 May 2025 — Moon in Scorpio ❦</h2>
-        <p>Today the woods whispered a new name to me. The wind tangled itself in ivy and left an offering of feathers on the windowsill. I think something is watching from the hollow...</p>
-      </div>
-
-      <div class="entry">
-        <h2>☠ Cursed Objects Log ☠</h2>
-        <p>I found a brooch in the attic that hums when the candle is lit. It smells faintly of lavender and rust. Placing it near the Ouija board made the planchette tremble...</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    🌙 Handmade with bones & HTML | <a href="https://neocities.org">Neocities</a> 🌙
-  </div>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Random Text & Image Changer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackout Redirect</title>
   <style>
-    body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 50px;
-  background-color: #f4f4f4;
-}
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: white;
+      transition: background-color 2s ease;
+    }
 
-.container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  display: inline-block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  background: #007BFF;
-  color: white;
-  border-radius: 5px;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
+    .blackout {
+      background-color: black;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img id="displayImage" src="../images/bunpfp.jpg" alt="Display Image">
-    <p id="displayText">Click the button to see a new message.</p>
-    <button onclick="randomChange()">Change</button>
-  </div>
 
-  <script>const messages = [
-  "Rosemary can substitute for nearly any herb in spellwork.",
-  "Yarrow often grows on forest edges or near disturbed ground.It’s used for protection, divination, and stopping both blood and bad dreams.",
-  "Mugwort grows in sunny clearings, especially near ruins or roads. Burned, it enhances dreams. Carried, it protects from the 'unseen walkers' in the woods.",
-  "If you find a plant growing where three animal paths meet, leave it.",
-  "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains."
-];
+<script>
+  // Time until blackout (in milliseconds)
+  const blackoutDelay = 3000; // 3 seconds
+  // Time after blackout to redirect (in milliseconds)
+  const redirectDelay = 2000; // 2 seconds after blackout
 
-let currentIndex = 0;
+  setTimeout(() => {
+    document.body.classList.add("blackout");
 
-function randomChange() {
-  const text = document.getElementById('displayText');
-  const image = document.getElementById('displayImage');
+    setTimeout(() => {
+      window.location.href = "skeleton.html"; // replace with your destination
+    }, redirectDelay);
 
-  const chosenMessage = messages[currentIndex];
-  text.textContent = chosenMessage;
-
-  if (chosenMessage === "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains.") {
-    image.src = "../images/ghost.jpg"; // special image
-  } else {
-    image.src = "../images/bunpfp.jpg"; // regular image
-  }
-
-  // Move to the next index, looping back to 0
-  currentIndex = (currentIndex + 1) % messages.length;
-}
+  }, blackoutDelay);
 </script>
+
 </body>
 </html>
