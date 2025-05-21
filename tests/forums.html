@@ -2,207 +2,223 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Forum Thread</title>
+  <title>User Profile — EvergreenExplorer42</title>
   <style>
     body {
-      font-family: Verdana, Arial, sans-serif;
-      background: #e0e0e0;
-      color: #000;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      background: url('https://i.imgur.com/yG9FqEI.gif') repeat;
+      font-family: Verdana, sans-serif;
+      font-size: 12px;
+      color: #000;
     }
 
-    #main {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border: 2px solid #aaa;
+    #container {
+      width: 900px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      border: 3px double #666;
+      box-shadow: 0 0 15px #333;
+      padding-right: 200px;
+      position: relative;
     }
 
-    h2 {
-      font-size: 18px;
-      background: #d9d9d9;
-      padding: 10px;
-      border-bottom: 2px solid #aaa;
+    #header {
+      background: url('https://i.imgur.com/sQ9fZ6T.gif') no-repeat center;
+      height: 90px;
+      border-bottom: 2px solid #333;
     }
 
-    .cursed-icon {
-      height: 18px;
-      vertical-align: middle;
-      margin-right: 6px;
-    }
-
-    .forum-post .thread {
-      padding: 10px;
-      border-bottom: 1px dotted #ccc;
-    }
-
-    .thread-title a {
+    #navbar {
+      background: #004400;
+      color: white;
+      padding: 6px;
+      border-bottom: 3px ridge #222;
       font-weight: bold;
-      color: #003366;
+    }
+
+    #navbar a {
+      color: white;
+      margin-right: 12px;
+      text-decoration: none;
+    }
+
+    #navbar a:hover {
       text-decoration: underline;
     }
 
-    .thread-meta {
-      font-size: 12px;
-      color: #555;
-    }
-
-    .post h2 {
-      margin-top: 30px;
-    }
-
-    .text {
-      font-size: 14px;
-      line-height: 1.5;
-      background: #f8f8f8;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-
-    .reactions {
-      font-size: 12px;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    /* Comments Section */
-    .comments {
-      margin-top: 30px;
-    }
-
-    .comment {
+    #profile-content {
+      padding: 20px;
       display: flex;
-      border-top: 1px solid #ccc;
+      gap: 30px;
+    }
+
+    #avatar-box {
+      width: 180px;
+      background: #fff;
       padding: 10px;
-      background: #f4f4f4;
+      border: 1px solid #999;
+      box-shadow: inset 0 0 4px #aaa;
+      text-align: center;
     }
 
-    .comment:nth-child(even) {
-      background: #eaeaea;
-    }
-
-    .comment .profile {
+    #avatar-box img {
       width: 150px;
-      padding-right: 15px;
-      font-size: 12px;
-      border-right: 1px solid #ccc;
+      height: 150px;
+      border: 2px solid #333;
+      margin-bottom: 10px;
     }
 
-    .comment .profile img {
-      width: 100%;
-      max-width: 100px;
-      height: auto;
-      margin-bottom: 5px;
-    }
-
-    .comment .reply {
-      flex: 1;
-      padding-left: 15px;
-      font-size: 14px;
-    }
-
-    .username {
+    #user-name {
+      font-size: 16px;
       font-weight: bold;
-      color: #003366;
+      color: #003300;
     }
 
-    .timestamp {
+    #profile-details {
+      flex-grow: 1;
+    }
+
+    .profile-section {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #999;
+      box-shadow: inset 0 0 4px #ccc;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #999;
+      color: #004400;
+    }
+
+    #footer {
+      padding: 10px;
+      text-align: center;
       font-size: 11px;
-      color: #888;
+      background: #ccc;
+      border-top: 2px solid #666;
+    }
+
+    /* Sidebar from forum */
+    #sidebar {
+      position: absolute;
+      top: 90px;
+      right: 0;
+      width: 180px;
+      background: #111;
+      color: #ccc;
+      border-left: 2px solid #333;
+      height: calc(100% - 90px);
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    #online-users h3 {
+      font-size: 13px;
+      border-bottom: 1px solid #666;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      color: #eee;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: #ccc;
+    }
+
+    .avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 0 6px;
+      border: 1px solid #666;
+      box-shadow: 0 0 2px #aaa;
+    }
+
+    .online-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 5px;
+      background-color: lime;
+      border-radius: 50%;
+      box-shadow: 0 0 4px lime, 0 0 6px lime;
+      animation: pulse 1s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <div id="container">
+    <div id="header"></div>
 
-<div id="main">
-  <div id="content">
-    <h2><img src="https://i.imgur.com/fd83V3R.png" class="cursed-icon"> !Trending! Forum Threads</h2>
+    <div id="navbar">
+      <a href="#">Home</a>
+      <a href="#">Forum</a>
+      <a href="#">Threads</a>
+      <a href="#">Messages</a>
+      <a href="#">Log Out</a>
+    </div>
 
-    <!-- Threads list -->
-    <div class="post forum-post">
-      <div class="thread">
-        <div class="thread-title">
-          <a href="#">[REPORT] Missing! Has anyone seen Mike Scott?<br></a>
-        </div>
-        <div class="thread-meta">
-          Started by <strong>mikehike128</strong><br>
-          Replies: 14 | Last Post: Today 14:32
-        </div>
+    <div id="profile-content">
+      <div id="avatar-box">
+        <img src="https://i.imgur.com/Jt0nYdp.png" alt="User Avatar">
+        <div id="user-name">EvergreenExplorer42</div>
+        <p><em>“Leave no trace.”</em></p>
       </div>
 
-      <div class="thread">
-        <div class="thread-title">
-          <a href="#">Please stop throwing trash in the forest</a>
+      <div id="profile-details">
+        <div class="profile-section">
+          <div class="section-title">User Info</div>
+          <p><strong>Joined:</strong> March 2003</p>
+          <p><strong>Location:</strong> Bitterroot Forest, MT</p>
+          <p><strong>Email:</strong> [hidden]</p>
         </div>
-        <div class="thread-meta">
-          Started by <strong>✔OakheavenParkOfficial</strong><br>
-          Replies: 8 | Last Post: Today 13:04
-        </div>
-      </div>
 
-      <div class="thread">
-        <div class="thread-title">
-          <a href="#">Unusual campfire smells near Pine Hollow?</a>
+        <div class="profile-section">
+          <div class="section-title">Forum Activity</div>
+          <p><strong>Posts:</strong> 583</p>
+          <p><strong>Threads Started:</strong> 48</p>
+          <p><strong>Last Active:</strong> Today at 13:48</p>
+          <p><strong>Current Status:</strong> <span style="color: lime;">Online</span></p>
         </div>
-        <div class="thread-meta">
-          Started by <strong>ForestFreak</strong><br>
-          Replies: 8 | Last Post: Today 13:04
+
+        <div class="profile-section">
+          <div class="section-title">Recent Threads</div>
+          <ul>
+            <li><a href="#">[REPORT] Large animal near Devil’s Ridge</a></li>
+            <li><a href="#">Do mosses grow in glyphs?</a></li>
+            <li><a href="#">Best night hiking gear for low-light</a></li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- Main post -->
-    <div class="post">
-      <h2>[REPORT] Missing! Has anyone seen Mike Scott?</h2>
-      <div class="text">
-        I'm posting this using my son Mike's account. He went camping in Oakheaven Park three days ago...
-        <hr>
-        <div class="reactions" style="text-align: right;">
-          <b>Comments (3) | 34 Views | 2 Likes</b>
-        </div>
+    <div id="footer">
+      Forum software v1.2.9 | Page generated in 0.034s | NationalParkGhosts™ 2003
+    </div>
 
-        <!-- Comments -->
-        <div class="comments">
-          <div class="comment">
-            <div class="profile">
-              <img src="https://i.imgur.com/2WZtOD6.png" alt="user avatar">
-              <div class="username">DarkWatcher92</div>
-              <div class="timestamp">Posted Today 15:02</div>
-            </div>
-            <div class="reply">
-              I think I saw someone matching that description near the old fire tower trail. It was getting dark, though.
-            </div>
-          </div>
-
-          <div class="comment">
-            <div class="profile">
-              <img src="https://i.imgur.com/0y0X7T7.png" alt="user avatar">
-              <div class="username">SpookyGal_13</div>
-              <div class="timestamp">Posted Today 15:10</div>
-            </div>
-            <div class="reply">
-              That’s so scary… hope he turns up soon. Has anyone checked the creek caves?
-            </div>
-          </div>
-
-          <div class="comment">
-            <div class="profile">
-              <img src="https://i.imgur.com/vvVhPmn.png" alt="user avatar">
-              <div class="username">GhostCamper</div>
-              <div class="timestamp">Posted Today 15:21</div>
-            </div>
-            <div class="reply">
-              Those woods have weird energy, man. Wouldn't go in there without a guide. Sending strength.
-            </div>
-          </div>
-        </div>
-
+    <div id="sidebar">
+      <div id="online-users">
+        <h3>Users Online</h3>
+        <div class="user"><span class="online-indicator"></span><img src="https://i.imgur.com/Jt0nYdp.png" class="avatar"> EvergreenExplorer42</div>
+        <div class="user"><span class="online-indicator"></span><img src="https://i.imgur.com/uFQbD4U.png" class="avatar"> MountainHiker99</div>
+        <div class="user"><span class="online-indicator"></span><img src="https://i.imgur.com/kF1IadF.png" class="avatar"> NatureLover88</div>
+        <div class="user"><span class="online-indicator"></span><img src="https://i.imgur.com/w1XCHRc.png" class="avatar"> WildlifeWatcher</div>
       </div>
     </div>
   </div>
-</div>
-
 </body>
 </html>
