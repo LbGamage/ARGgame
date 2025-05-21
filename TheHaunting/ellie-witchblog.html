@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('../images/trainstationgoodbye3.png') no-repeat center center fixed;
+            background-size: cover;
+            color: aliceblue;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        #container {
+            max-width: 1100px;
+            min-height: 600px;
+            margin: 40px auto;
+            background: rgba(36, 20, 69, 0.95);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        #header {
+            width: 100%;
+            background-color: #2b5094;
+            height: 150px;
+            background-image: url('../images/pplstar.gif');
+            background-size: contain;
+        }
+
+        /* navigation section!! */
+        #navbar {
+            height: 40px;
+            background-color: #13092D;
+            width: 100%;
+        }
+
+        #navbar ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            justify-content: space-evenly;
+        }
+
+        #navbar li {
+            padding-top: 10px;
+        }
+
+        /* navigation links*/
+        #navbar li a {
+            color: #ED64F5;
+            /* navbar text color */
+            font-weight: 800;
+            text-decoration: none;
+            /* this removes the underline */
+        }
+
+        /* navigation link when a link is hovered over */
+        #navbar li a:hover {
+            color: #a49cba;
+            text-decoration: underline;
+        }
+
+        #flex {
+            display: flex;
+        }
+
+        /* this colors BOTH sidebars
+    if you want to style them separately,
+    create styles for #leftSidebar and #rightSidebar */
+        aside {
+            background-color: #453114;
+            width: 200px;
+            padding: 20px;
+            font-size: smaller;
+        }
+
+        main {
+            background-color: #7b7881;
+            flex: 1;
+            padding: 20px;
+            order: 2;
+        }
+
+    
+
+       #leftSidebar {
+            order: 1;
+        }
+
+        #rightSidebar {
+            order: 3;
+        }
+
+        footer {
+            background-color: #13092D;
+            /* background color for footer */
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            /* this centers the footer text */
+        }
+
+        h1, h2, h3 {
+            color: #ED64F5;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        strong {
+            color: #e2660d;
+        }
+
+        /* this is just a cool box, it's the darker colored one */
+        .box {
+            background-color: #13092D;
+            border: 1px solid #33ea6d;
+            padding: 10px;
+        }
+
+        /* CSS for extras */
+
+        #topBar {
+            width: 100%;
+            height: 30px;
+            padding: 10px;
+            font-size: smaller;
+            background-color: #cec408;
+        }
+
+        /* Fact Box */
+
+        .facts{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .factbox {
+            background-color: #13092D;
+            text-align: center;
+        }
+
+        /* MEDIA QUERY */
+
+        @media only screen and (max-width: 800px) {
+            #flex {
+                flex-wrap: wrap;
+            }
+
+            aside {
+                width: 100%;
+            }
+
+   
+            main {
+                order: 1;
+            }
+
+            #leftSidebar {
+                order: 2;
+            }
+
+            #rightSidebar {
+                order: 3;
+            }
+
+            #navbar ul {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="topBar"><marquee>its was this easy?? ar eyou kidding me</marquee></div>
+        <div id="headerArea">
+            <div id="header" style="height: 87px;"></div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="flex">
+            <aside id="leftSidebar">
+                <h2>About ME</h2>
+                <div class="box">
+                    <p>Welcome to my blog guys, starnders welcome and sisters of the coven blessed be</p>
+                    <!-- <ul style="padding-left:10px;">
+                        <li>Rewrote the JS to generate cleaner code</li>
+                        <li>Rewrote the CSS in a way that hopefully makes much more sense to edit</li>
+                        <li>Added a couple of new features!</li>
+                        <li>Old version is still available <a href="old.html" target="_blank">here</a></li>
+                    </ul> -->
+                </div>
+                <h2>Hi there!</h2>
+                <h3>Other Tools</h3>
+                <ul>
+                    <li><a href="https://sadgrlonline.github.io/html-cheatsheet/" target="_blank">HTML Cheatsheet</a>
+                    </li>
+                    <li><a href="/sadgrl/webmastery/webmaster-links.html" target="_blank">Webmaster Links</a></li>
+                    <li><a href="/sadgrl/webmastery/downloads/tiledbgs.html" target="_blank">Tiled BGs</a></li>
+                    <li><a href="/sadgrl/webmastery/downloads/fonts.html" target="_blank">Fonts</a></li>
+                    <li><a href="/sadgrl/projects/ideas/" target="_blank">Site Ideas</a></li>
+                </ul>
+            </aside>
+            <main>
+                <h1>Welcome to my witchyblog!</h1>
+            
+            </main>
+
+            <aside id="rightSidebar">
+                <div class="factbox">
+                <h2>Random Foraging Facts</h2>
+                <div class="box facts">
+                        <img id="displayImage" src="../images/bunpfp.jpg" alt="Display Image" style="width: 100%;">
+                        <p id="displayText">Click the button to see a new message.</p>
+                        <button onclick="randomChange()">Change</button>
+                </div>
+                </div>
+                <h2>Hi there!</h2>
+                <h3>Other Tools</h3>
+                <ul>
+                    <li><a href="https://sadgrlonline.github.io/html-cheatsheet/" target="_blank">HTML Cheatsheet</a>
+                    </li>
+                    <li><a href="/sadgrl/webmastery/webmaster-links.html" target="_blank">Webmaster Links</a></li>
+                    <li><a href="/sadgrl/webmastery/downloads/tiledbgs.html" target="_blank">Tiled BGs</a></li>
+                    <li><a href="/sadgrl/webmastery/downloads/fonts.html" target="_blank">Fonts</a></li>
+                    <li><a href="/sadgrl/projects/ideas/" target="_blank">Site Ideas</a></li>
+                </ul>
+            </aside>
+        </div>
+        <footer id="footer">CC0 Public Domain, 2022</footer>
+    </div>
+
+    <script>
+        const messages = [
+  "Rosemary can substitute for nearly any herb in spellwork.",
+  "Yarrow often grows on forest edges or near disturbed ground.It’s used for protection, divination, and stopping both blood and bad dreams.",
+  "Mugwort grows in sunny clearings, especially near ruins or roads. Burned, it enhances dreams. Carried, it protects from the 'unseen walkers' in the woods.",
+  "If you find a plant growing where three animal paths meet, leave it.",
+  "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains."
+];
+
+let currentIndex = 0;
+
+function randomChange() {
+  const text = document.getElementById('displayText');
+  const image = document.getElementById('displayImage');
+
+  const chosenMessage = messages[currentIndex];
+  text.textContent = chosenMessage;
+
+  if (chosenMessage === "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains.") {
+    image.src = "../images/ghost.jpg"; // special image
+  } else {
+    image.src = "../images/bunpfp.jpg"; // regular image
+  }
+
+  // Move to the next index, looping back to 0
+  currentIndex = (currentIndex + 1) % messages.length;
+}
+    </script>
+
+</body>
+
+</html>
