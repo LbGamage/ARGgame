@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('../images/starbub2.gif');
+            /* background-size: cover; */
+            color: aliceblue;
+            color: #310c2c;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            min-height: 600px;
+            margin: 40px auto;
+            background: rgba(36, 20, 69, 0);
+            /* border-radius: 18px; */
+             background: url('../images/paper2.jpg');
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            display: flex;
+            flex-direction: column;
+
+        }
+
+         .flex-body {
+            display: flex;
+            flex: 1;
+        }
+
+        .main-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        /* Navigation bar */
+        .navbar {
+            /* background-color: #4A5B63; */
+            /* height: 40px; */
+            /* background-color: #493B4A; */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 5%;
+        }
+
+        .navbar a {
+            color: rgb(34, 2, 31);
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+
+        .navbar ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            /* width: 100%; */
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        /* Main content and right sidebar */
+        .content-area {
+            display: flex;
+            flex: 1;
+        }
+
+
+        .left {
+            width: 220px;
+            height: 100%;
+            padding: 1%;
+            /* background-color: #451c1c; */
+
+        }
+
+        .main-info{
+            /* background-color: #451c1c; */
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .spell-menu{
+            background-color: #ad8da8;
+            padding: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+    <div class="flex-body">
+        <aside class="sidebar left">
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img style="width: 45px;" src="../images/potion.gif">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li><a href="#"> <img style="width: 45px;" src="../images/potion.gif"> <span>Spells</span></a>
+                    </li>
+                    <li><a href="#"> <img style="width: 45px;" src="../images/potion.gif"> <span>Web
+                                Shrine</span></a></li>
+                    <li><a href="#"> <img style="width: 45px;" src="../images/potion.gif"> <span>Herb
+                                Routes</span></a></li>
+                </ul>
+
+            </nav>
+
+            <div class="spell-menu">
+               <span>Spells I have attempeted, basically my online book of shadows</span>
+               <ul>
+                <li>
+                    Recent Spells
+                </li>
+                <li>Rituals</li>
+                <li>Cleansings</li>
+                <li>Astral Projection diary</li>
+               </ul>
+            </div>
+
+        </aside>
+        <div class="main-area">
+            <main class="content">
+                <div class="main-topborder" style="display: flex; justify-content: space-between">
+                    <span> I will awaken him</span>
+                    <img src="../images/Image_Book.gif">
+                </div>
+                
+                <div class="box main-info">
+                   I was finally able to finish the blabla ritual to summon the great god, The last ingriedt was hard to get my hands on but I was able to grow it myself! For tips on how to grow it join the coven!
+                </div>
+               
+                
+            </main>
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
