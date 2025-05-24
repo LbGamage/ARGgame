@@ -105,6 +105,27 @@
             width: 50%;
         }
 
+        /* nav bar */
+        .navbar {
+            height: 40px;
+            background-color: #60547e;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+    
         /* Fact Box */
 
         .facts {
@@ -115,6 +136,30 @@
         .factbox {
             background-color: #13092D;
             text-align: center;
+        }
+
+        /* endless scroll option */
+
+        .scroll-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .spacer {
+            height: 100vh;
+            /* Creates vertical space between messages */
+        }
+
+
+         footer {
+            background-color: #13092D;
+            /* background color for footer */
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            /* this centers the footer text */
         }
     </style>
 </head>
@@ -127,97 +172,110 @@
         </div>
         <div id="headerArea">
             <div id="header" style="height: 87px;"></div>
+        </div>
+        <div class="flex-body">
+            <aside class="sidebar left">Left Sidebar
+                <div class="box profile-box">
+                    <h2>Profile</h2>
+                    <p>Username: Ellie</p>
+                    <p>Role: Witch</p>
+                    <p>Bio: A witch with a passion for coding and magic.</p>
 
-            <div class="flex-body">
-                <aside class="sidebar left">Left Sidebar
-                    <div class="box profile-box">
-                        <h2>Profile</h2>
-                        <p>Username: Ellie</p>
-                        <p>Role: Witch</p>
-                        <p>Bio: A witch with a passion for coding and magic.</p>
+                </div>
+                <div class="box chat-box">
+                    <h2>Chat</h2>
+                    <p>Join the conversation!</p>
+                    <p>Chat with other witches and wizards.</p>
+                </div>
+                <div class="box mushroomgaurd">
+                    <iframe src="https://shroom.ink/guard.html/?site=http://127.0.0.1:5501/index.html&shroom=9"
+                        height="250px" width="100%"></iframe>
+                </div>
+            </aside>
+            <div class="main-area">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Spells</a></li>
+                        <li><a href="#">Web Shrine</a></li>
+                        <li><a href="#">Herb Routes</a></li>
+                    </ul>
 
-                    </div>
-                    <div class="box chat-box">
-                        <h2>Chat</h2>
-                        <p>Join the conversation!</p>
-                        <p>Chat with other witches and wizards.</p>
-                    </div>
-                    <div class="box mushroomgaurd">
-                        <iframe src="https://shroom.ink/guard.html/?site=http://127.0.0.1:5501/index.html&shroom=9"
-                            height="250px" width="100%"></iframe>
-                    </div>
-                </aside>
-                <div class="main-area">
-                    <nav class="navbar">Navigation Bar</nav>
-                    <div class="content-area">
-                        <main class="content">Main Content
-                            <div class="box main-info">
-                                hi hi welcome this is what my blog is about
+                </nav>
+                <div class="content-area">
+                    <main class="content">Main Content
+                        <div class="box main-info">
+                            hi hi welcome this is what my blog is about
+                        </div>
+                        <div class="box status-flex">
+                            <div class="box blogposts">
+                                blogposts
                             </div>
-                            <div class="box status-flex">
-                                <div class="box blogposts">
-                                    blogposts
-                                </div>
-                                <div class="status-updates box">
-                                    status updates
-                                </div>
+                            <div class="status-updates box">
+                                status updates
                             </div>
-                            <div class="collection box">
-                                <img src="../images/tulip01.gif">
-                                <img src="../images/dandy02.gif">
-                            </div>
-                        </main>
-                        <aside class="sidebar right">Right Sidebar
-                            <div class="box radio">
-                                radio
-                            </div>
-                            <div class="box facts">
-                                <img id="displayImage" src="../images/bunpfp.jpg" alt="Display Image"
-                                    style="width: 100%;">
-                                <button onclick="randomChange()">Change</button>
-                                <p id="displayText">Click the button to see a new message.</p>
-                            </div>
-                            <div class="box moonphase">
-                                <h2>Moon Phase</h2>
-                                <p>Current Moon Phase: Waxing Crescent</p>
-                                <p>Next Full Moon: 2023-11-27</p>
-                            </div>
-                        </aside>
-                    </div>
+                        </div>
+                        <div class="collection box">
+                            <img src="../images/tulip01.gif">
+                            <img src="../images/dandy02.gif">
+                        </div>
+                    </main>
+                    <aside class="sidebar right">Right Sidebar
+                        <div class="box radio">
+                            radio
+                        </div>
+                        <div class="box facts">
+                            <img id="displayImage" src="../images/bunpfp.jpg" alt="Display Image" style="width: 100%;">
+                            <button onclick="randomChange()">Change</button>
+                            <p id="displayText">Click the button to see a new message.</p>
+                        </div>
+                        <div class="box moonphase">
+                            <h2>Moon Phase</h2>
+                            <p>Current Moon Phase: Waxing Crescent</p>
+                            <p>Next Full Moon: 2023-11-27</p>
+                        </div>
+                    </aside>
                 </div>
             </div>
+        </div>
+        <footer id="footer">666 Tartarus domain, 2025</footer>
 
+    </div>
+    <div class="scroll-container">
+        <div class="spacer"></div>
+        <div class="message">Message 1: It begins...</div>
+        <div class="spacer"></div>
+        <div class="message">Message 2: Still going...</div>
+    </div>
 
-            <
+    <script>
+        const messages = [
+            "Rosemary can substitute for nearly any herb in spellwork.",
+            "Yarrow often grows on forest edges or near disturbed ground.It’s used for protection, divination, and stopping both blood and bad dreams.",
+            "Mugwort grows in sunny clearings, especially near ruins or roads. Burned, it enhances dreams. Carried, it protects from the 'unseen walkers' in the woods.",
+            "If you find a plant growing where three animal paths meet, leave it.",
+            "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains."
+        ];
 
-            <script>
-                const messages = [
-                    "Rosemary can substitute for nearly any herb in spellwork.",
-                    "Yarrow often grows on forest edges or near disturbed ground.It’s used for protection, divination, and stopping both blood and bad dreams.",
-                    "Mugwort grows in sunny clearings, especially near ruins or roads. Burned, it enhances dreams. Carried, it protects from the 'unseen walkers' in the woods.",
-                    "If you find a plant growing where three animal paths meet, leave it.",
-                    "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains."
-                ];
+        let currentIndex = 0;
 
-                let currentIndex = 0;
+        function randomChange() {
+            const text = document.getElementById('displayText');
+            const image = document.getElementById('displayImage');
 
-                function randomChange() {
-                    const text = document.getElementById('displayText');
-                    const image = document.getElementById('displayImage');
+            const chosenMessage = messages[currentIndex];
+            text.textContent = chosenMessage;
 
-                    const chosenMessage = messages[currentIndex];
-                    text.textContent = chosenMessage;
+            if (chosenMessage === "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains.") {
+                image.src = "../images/ghost.jpg"; // special image
+            } else {
+                image.src = "../images/bunpfp.jpg"; // regular image
+            }
 
-                    if (chosenMessage === "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains.") {
-                        image.src = "../images/ghost.jpg"; // special image
-                    } else {
-                        image.src = "../images/bunpfp.jpg"; // regular image
-                    }
-
-                    // Move to the next index, looping back to 0
-                    currentIndex = (currentIndex + 1) % messages.length;
-                }
-            </script>
+            // Move to the next index, looping back to 0
+            currentIndex = (currentIndex + 1) % messages.length;
+        }
+    </script>
 </body>
 
 </html>
