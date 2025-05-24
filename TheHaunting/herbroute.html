@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-        body {
+         body {
             margin: 0;
             padding: 0;
-            background: url('../images/starbub2.gif');
+        background: url('../images/thegrove.png') no-repeat center center fixed;
+
             /* background-size: cover; */
             color: aliceblue;
             color: #310c2c;
@@ -26,7 +25,8 @@
             margin: 40px auto;
             background: rgba(36, 20, 69, 0);
             /* border-radius: 18px; */
-             background: url('../images/paper2.jpg');
+             /* background: url('../images/paper2.jpg'); */
+             
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             display: flex;
             flex-direction: column;
@@ -102,17 +102,30 @@
         }
 
         .spell-menu{
-            background-color: #ad8da8;
+            /* background-color: #ad8da8; */
+             width: 100%;
+            border: 10px solid;
+            background-color: #503e33;
+            border-image: url(../images/frame3full.png) 10 round;
             padding: 2%;
+            color: wheat;
+        }
+
+        .covermap{
+            width: 900px;
+            height: 90vh;
+            /* the bg need to be trasparent dont forget */
+            background-color: #ae53a24c; 
         }
     </style>
 </head>
-
 <body>
-    <div class="main-container">
+      <div class="main-container">
     <div class="flex-body">
         <aside class="sidebar left">
-            <nav class="navbar">
+            <div class="spell-menu">
+               <span>Sitemap of my blog :)</span>
+                <nav class="navbar">
                 <ul>
                     <li>
                         <a href="blogrestructure.html">
@@ -129,29 +142,28 @@
                 </ul>
 
             </nav>
+                        </div>
 
-            <div class="spell-menu">
-               <span>Spells I have attempeted, basically my online book of shadows</span>
-               <ul>
-                <li>
-                    Recent Spells
-                </li>
-                <li>Rituals</li>
-                <li>Cleansings</li>
-                <li>Astral Projection diary</li>
-               </ul>
-            </div>
 
+            
+                        <div class="hidden-button" onvl>
+                            <img src="../images/tulip01.gif">
+                        </div>
         </aside>
         <div class="main-area">
             <main class="content">
                 <div class="main-topborder" style="display: flex; justify-content: space-between">
-                    <span> I will awaken him</span>
-                    <img src="../images/Image_Book.gif">
+                    <span>A map of the best spots to forrage and find ingristes. shh, look closely and you might able to find those hard to get ones</span>
+                   
                 </div>
-                
+             
                 <div class="box main-info">
-                   I was finally able to finish the blabla ritual to summon the great god, The last ingriedt was hard to get my hands on but I was able to grow it myself! For tips on how to grow it join the coven!
+                    <div class="covermap"></div>
+                </div>
+               
+
+                    </div>
+                    <!-- iframe map, draw over -->
                 </div>
                
                 
@@ -161,9 +173,9 @@
         </div>
     </div>
     </div>
-
-
-
-</body>
-
+ <script>
+                    document.querySelector('.hidden-button').addEventListener('click', function() {
+                        document.querySelector('.covermap').style.display = 'none';
+                    });
+                </script></body>
 </html>
