@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+<script src="https://unpkg.com/webamp@1.4.0/built/webamp.bundle.min.js"></script>
     <style>
         .scroll-container {
   display: flex;
@@ -30,6 +30,49 @@
     </style>
 </head>
 <body>
+
+    <div style="width:40px; height:40px; position:absolute; bottom:0px; left:0px;">
+	<div id="winamp-container"></div>
+    <script>
+const Winamp = window.Webamp;
+// All configuration options are optional.
+const webamp = new Webamp({
+    // Optional.
+    initialTracks: [
+        {
+            metaData: {
+                artist: "Artist",
+                title: "Title",
+            },
+            url: "URL TO SONG .mp3",
+        }, {
+            metaData: {
+                artist: "Artist",
+                title: "Title",
+            },
+            url: "URL TO SONG .mp3",
+        },
+        {
+            metaData: {
+                artist: "Artist",
+                title: "Title",
+            },
+            url: "URL TO SONG .mp3",
+        },
+      ],
+    initialSkin: {
+        url: "../images/s_totem.wsz"
+    },
+});
+webamp.renderWhenReady(document.getElementById('winamp-container'));
+</script>
+</div>
+
+    <iframe src="https://jspaint.app/" height="400px" width="700px"></iframe>
+
+
+    <iframe width="350" height="250" frameborder="2" src="https://cdn.abowman.com/widgets/fish/fish.html?up\_backgroundColor=8ae7ea&up\_numFish=5&up\_fishColor1=f45540&up\_fishColor2=e1549f&up\_fishColor3=625ce1&up\_fishColor4=e0c31e&up\_fishColor5=f45540&up\_fishColor6=f45540&up\_fishColor7=f45540&up\_fishColor8=f45540&up\_fishColor9=f45540&up\_fishColor10=f45540"></iframe>
+
     <div class="scroll-container">
   <div class="spacer"></div>
   <div class="message">Message 1: It begins...</div>
@@ -43,5 +86,9 @@
   <div class="message">Message 5: The end...?</div>
 </div>
 
+
+<!-- // Begin Current Moon Phase HTML (c) [MoonConnection.com](http://MoonConnection.com) // -->
+
+<center> <table cellpadding="0" cellspacing="0" border="0" width="138"> <tr> <td align="center"> <a href="https://www.moonconnection.com" target="mc\_moon\_ph"> <img src="https://www.moonmodule.com/cs/dm/vn.gif" width="138" height="210" border="0" alt="" /></a> <div style="position:relative;width:128px;"> <div style="position:absolute;top:-30px;left:6px;background:#000000;width:116px;text-align:center;"> <a href="https://www.moonconnection.com/moon\_phases.phtml" target="mc\_moon\_ph"> <font color="#7F7F7F" size="1" face="arial,helvetica,sans-serif"> <span style="color:#7F7F7F;font-family:arial,helvetica,sans-serif;font-size:10px;">lunar phase</span> </font> </a> </div> </div> </td> </tr> </table> </center><!-- // end moon phase HTML // -->
 </body>
 </html>
