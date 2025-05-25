@@ -1,26 +1,43 @@
- const paragraph = document.getElementById('changingParagraph');
-    const originalText = paragraph.textContent;
-    const words = originalText.split(' ');
-    const alternateWords = [
-      "blood", "whispers", "void", "mirror", "ashes", "decay", "shiver", 
-      "crawl", "echo", "fog", "shadow", "ritual", "crypt", "sigil", "lament"
-    ];
+let wordChangeCount = 1; // initial number of words to change
+const wordChangeMax = 10; // maximum number of words that can be swapped
+const wordChangeStep = 1;
 
-    function randomIndex(length) {
-      return Math.floor(Math.random() * length);
+const paragraphs = document.querySelectorAll('span'); // get all <p> elements
+const originals = []; // store original text for each paragraph
+const wordsArray = []; // store words array for each paragraph
+
+const alternateWords = [
+  "heRe", "here", "her", "he's coming", "mike", "  ", "Look here!", "HeLp", "Bsnefwe", "efioefjoewif", "efieff", "hidden", "look", "LOOK", "I", "I AM", "I", "I"
+];
+
+// Initialize original texts and split words
+paragraphs.forEach((p, idx) => {
+  originals[idx] = p.textContent;
+  wordsArray[idx] = originals[idx].split(' ');
+});
+
+function randomIndex(length) {
+  return Math.floor(Math.random() * length);
+}
+
+function swapWords() {
+  paragraphs.forEach((p, idx) => {
+    const words = [...wordsArray[idx]];
+    for (let i = 0; i < wordChangeCount; i++) {
+      const indexToChange = randomIndex(words.length);
+      const replacement = alternateWords[randomIndex(alternateWords.length)];
+      words[indexToChange] = `<span class="changing-word">${replacement}</span>`;
     }
+    p.innerHTML = words.join(' ');
+  });
 
-    function swapWords() {
-      const newWords = [...words];
-      const numToChange = Math.floor(Math.random() * 3) + 1;
+  if (wordChangeCount > 0 && wordChangeCount < wordChangeMax) {
+    wordChangeCount += wordChangeStep;
+  } else {
+    wordChangeCount = 0;
+  }
+}
 
-      for (let i = 0; i < numToChange; i++) {
-        const indexToChange = randomIndex(newWords.length);
-        const replacement = alternateWords[randomIndex(alternateWords.length)];
-        newWords[indexToChange] = `<span class="changing-word">${replacement}</span>`;
-      }
-
-      paragraph.innerHTML = newWords.join(' ');
-    }
-
-    setInterval(swapWords, 2000); // change every 3 seconds
+setTimeout(() => {
+  setInterval(swapWords, 800);
+}, 5000);

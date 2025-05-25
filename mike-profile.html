@@ -281,6 +281,40 @@
       .comments{
         color: #666666;
       }
+
+
+      /* experiemnts */
+
+       .glitch {
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% {
+        text-shadow: 2px 0 red, -2px 0 cyan;
+        transform: translate(0);
+      }
+      20% {
+        text-shadow: -2px 0 red, 2px 0 cyan;
+        transform: translate(1px, -1px);
+      }
+      40% {
+        text-shadow: 2px 2px red, -2px -2px cyan;
+        transform: translate(-1px, 1px);
+      }
+      60% {
+        text-shadow: -1px -1px red, 1px 1px cyan;
+        transform: translate(1px, 1px);
+      }
+      80% {
+        text-shadow: 1px 1px red, -1px -1px cyan;
+        transform: translate(-1px, -1px);
+      }
+      100% {
+        text-shadow: 0 0 red, 0 0 cyan;
+        transform: translate(0);
+      }
+    }
     </style>
   </head>
 
@@ -507,6 +541,45 @@
         localStorage.removeItem("forumUsername");
         updateNavbar();
       }
+
+
+       
+       let glitchDuration = 100; // starting glitch duration in ms
+    const durationIncrement = 200; // how much longer it gets each time
+     const maxGlitchDuration = 1000;
+
+  const applyGlitch = () => {
+      const elements = document.body.querySelectorAll("*");
+      elements.forEach(el => el.classList.add("glitch"));
+
+      setTimeout(() => {
+        elements.forEach(el => el.classList.remove("glitch"));
+      }, glitchDuration); // Glitch duration
+       glitchDuration = Math.min(glitchDuration + durationIncrement, maxGlitchDuration);
+    };
+
+    // First glitch happens 3–4 seconds after load
+    window.addEventListener("load", () => {
+      const firstDelay = 5000;
+      setTimeout(() => {
+        applyGlitch();
+        startRandomGlitchLoop(); // comment this out if you want it to happen only once
+      }, firstDelay);
+    });
+
+
+     function startRandomGlitchLoop() {
+      const randomInterval = () => Math.random() * 1000 + 8000;
+
+      const loop = () => {
+        setTimeout(() => {
+          applyGlitch();
+          loop();
+        }, randomInterval());
+      };
+
+      loop();
+    }
     </script>
   </body>
 </html>
