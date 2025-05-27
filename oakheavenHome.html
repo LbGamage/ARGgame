@@ -273,15 +273,15 @@ body {
  <div id="navbar" style="position: sticky; top: 90px; z-index: 1002;">
   <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
 <div style="display: inline;">
-        <a href="index.html">Home</a>
-        <a href="forum-home.html">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);" >Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" >Forum</a>
         <a href="#">User List</a>
         <a href="#">Park Map</a>
 </div>
 <div style="display: inline; float: right;">
         <a href="#" id="profileLink">Profile</a>
-        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
-        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
+        <a href="#" id="loginLink"onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { showLogin(); }, 200);">Sign In</a>
+        <a href="#" id="logoutLink" style="display:none;" onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { logoutUser(); }, 200);">Log Out</a>
 </div>
 </div>
 <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
@@ -293,7 +293,7 @@ body {
         <div class="post forum-post">
               <div class="thread">
         <div class="thread-title">
-          <a href="forum-home.html">[REPORT]Missing! Has anyone seen Mike Scott?<br></a>
+          <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);">[REPORT]Missing! Has anyone seen Mike Scott?<br></a>
         </div>
         <div class="thread-meta">
           Started by <strong>mikehike128</strong><br>
@@ -481,7 +481,7 @@ body {
       <div id="online-users">
   <h3>Users [View all]</h3>
   <div class="user-status">
-    <div class="user" onclick="window.location.href='mike-profile.html'" style="cursor:pointer;">
+    <div class="user" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);"  style="cursor:pointer;">
       <span class="online-indicator"></span>
       <img src="https://i.imgur.com/Jt0nYdp.png" alt="Avatar" class="avatar">
       MikeHike128
@@ -491,7 +491,7 @@ body {
       <img src="https://i.imgur.com/uFQbD4U.png" alt="Avatar" class="avatar">
       mtJames0180
     </div>
-    <div class="user" onclick="window.location.href='Ellie-profile.html'" style="cursor:pointer;">
+    <div class="user" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='Ellie-profile.html'; }, 200);" style="cursor:pointer;">
       <span class="online-indicator" ></span>
       <img src="https://i.imgur.com/kF1IadF.png" alt="Avatar" class="avatar">
       theGreenWitch08
@@ -531,7 +531,7 @@ body {
     <button onclick="loginUser()">Sign In</button>
   </div>
 </div>
-
+<audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
     <script>
   // Open login modal
   function showLogin() {
