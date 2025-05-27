@@ -1,169 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jacquard+12&family=Jacquard+12+Charted&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Princess+Sofia&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&family=Yomogi&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('../images/starbub2.gif');
-            /* background-size: cover; */
-            color: aliceblue;
-            color: #310c2c;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("../images/stars3.gif");
+        /* background-size: cover; */
+        color: aliceblue;
+        color: #310c2c;
+      font-family: "UnifrakturMaguntia", cursive;
+        font-size: 14px;
+      }
 
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        .main-container {
-            max-width: 1200px;
-            min-height: 600px;
-            margin: 40px auto;
-            background: rgba(36, 20, 69, 0);
-            /* border-radius: 18px; */
-             background: url('../images/paper2.jpg');
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            display: flex;
-            flex-direction: column;
+      .main-container {
+        max-width: 1200px;
+        min-height: 600px;
+        margin: 40px auto;
+        background: rgba(36, 20, 69, 0);
+        /* border-radius: 18px; */
+        background: url("../images/paper2.jpg");
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        display: flex;
+        flex-direction: column;
+      }
 
-        }
+      .flex-body {
+        display: flex;
+        flex: 1;
+      }
 
-         .flex-body {
-            display: flex;
-            flex: 1;
-        }
+      h1, h2, h3{
+              font-family: "UnifrakturMaguntia", cursive;
+      }
 
-        .main-area {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+      .main-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
 
-        }
+      /* Navigation bar */
+      .navbar {
+        /* background-color: #4A5B63; */
+        /* height: 40px; */
+        /* background-color: #493B4A; */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5%;
 
-        /* Navigation bar */
-        .navbar {
-            /* background-color: #4A5B63; */
-            /* height: 40px; */
-            /* background-color: #493B4A; */
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 5%;
-        }
+        border: 3px double #310c2c;
+      }
 
-        .navbar a {
-            color: rgb(34, 2, 31);
-            text-decoration: none;
-            font-size: 1.2em;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
+      .navbar a {
+        color: rgb(34, 2, 31);
+        text-decoration: none;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .navbar ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        /* width: 100%; */
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+
+      /* Main content and right sidebar */
+      .content-area {
+        display: flex;
+        flex: 1;
+      }
+
+      .left {
+        width: 220px;
+        height: 100%;
+        padding: 1%;
+        /* background-color: #451c1c; */
+      }
+
+      .main-info {
+        /* background-color: #451c1c; */
+        width: 100%;
+        height: 500px;
+        margin-left: 10px;
+        margin-right: auto;
+        overflow-y: scroll;
+        font-family: "DotGothic16", sans-serif;
+      }
+
+      .spell-menu {
+        /* background-color: #ad8da8; */
+        padding: 2%;
+        border: 3px double #310c2c;
+        margin-top: 30px;
+      }
+
+      .spellbookpages {
+        list-style: none;
+        text-align: center;
+        /* background-color: #975a8f; */
+      }
+
+      .moth-divider {
+        width: 100%;
+        height: 22px; /* adjust to the height of the gif */
+        background-image: url("../images/mothdivider.gif");
+        background-repeat: repeat-x;
+        background-size: auto; /* or you can use `contain` or a specific size */
+      }
 
 
-        .navbar ul {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            /* width: 100%; */
-            justify-content: space-evenly;
-            align-items: flex-start;
-        }
-
-        /* Main content and right sidebar */
-        .content-area {
-            display: flex;
-            flex: 1;
-        }
-
-
-        .left {
-            width: 220px;
-            height: 100%;
-            padding: 1%;
-            /* background-color: #451c1c; */
-
-        }
-
-        .main-info{
-            /* background-color: #451c1c; */
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .spell-menu{
-            background-color: #ad8da8;
-            padding: 2%;
-        }
+    
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-container">
-    <div class="flex-body">
+      <div class="flex-body">
         <aside class="sidebar left">
-            <nav class="navbar">
-                <ul>
-                    <li>
-                        <a href="blogrestructure.html">
-                            <img style="width: 45px;" src="../images/potion.gif">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li><a href="spells.html"> <img style="width: 45px;" src="../images/potion.gif"> <span>Book of Shadows</span></a>
-                    </li>
-                    <li><a href="#"> <img style="width: 45px;" src="../images/potion.gif"> <span>Web
-                                Shrine</span></a></li>
-                    <li><a href="herbroute.html"> <img style="width: 45px;" src="../images/potion.gif"> <span>Herb
-                                Routes</span></a></li>
-                </ul>
+          <nav class="navbar">
+            <ul>
+              <li>
+                <a href="bitterroot.html">
+                  <span>⋆.･Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="spells.html">
+                  <span>☆Book of Shadows</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>࿔*:･Web Shrine</span>
+                </a>
+              </li>
+              <li>
+                <a href="herbroute.html">
+                  <span> ☘︎ ݁˖Herb Routes</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-            </nav>
-
-            <div class="spell-menu">
-               <span>Spells I have attempeted, basically my online book of shadows</span>
-               <ul>
-                <li>
-                    Recent Spells
-                </li>
-                <li>Rituals</li>
-                <li>Cleansings</li>
-                <li>Astral Projection diary</li>
-               </ul>
+          <div class="spell-menu">
+            <span
+              >Spells I have attempeted, basically my online book of
+              shadows</span
+            >
+            <div class="spellbookpages">
+              ⋆˖⁺‧₊☽◯☾₊‧⁺˖⋆<br />
+              Recent Spells<br />
+              ⋆˖⁺‧₊☽◯☾₊‧⁺˖⋆<br />
+              Rituals<br />
+              .˳·˖✶𓆩𓁺𓆪✶˖·˳.<br />
+              Cleansings<br />
+              .˳·˖✶𓆩𓁺𓆪✶˖·˳.<br />
+              Astral Projection diary<br />
             </div>
-
+          </div>
+          <img src="../images/Image_Book.gif" />
         </aside>
         <div class="main-area">
-            <main class="content">
-                <div class="main-topborder" style="display: flex; justify-content: space-between">
-                    <span> I will awaken him</span>
-                    <img src="../images/Image_Book.gif">
-                </div>
-                
-                <div class="box main-info">
-                   I was finally able to finish the blabla ritual to summon the great god, The last ingriedt was hard to get my hands on but I was able to grow it myself! For tips on how to grow it join the coven!
-                </div>
-               
-                
-            </main>
+          <main class="content">
+            <div
+              class="main-topborder"
+              style="display: flex; justify-content: space-between"
+            >
+              <span> I will awaken him</span>
+              <img src="../images/wizard.gif" alt="Old God" />
+            </div>
+            <p class="breadcrumbs" style="font-family: 'DotGothic16', sans-serif; font-size: 10px;">Book of Shadows > Recent Spells</p>
+            <div class="moth-divider"></div>
+            <div class="box main-info">
+              <h1>Summoning the Old God</h1>
 
+              <h2>Ingredients</h2>
+              <ul>
+                <li>Water drawn under the light of thirteen moons</li>
+                <li>Ghoul-fungus grown from the corpse of a willing host</li>
+                <li>
+                  Blood of seven untouched souls, taken willingly (or not)
+                </li>
+                <li>Dried fingers of the freshly dead</li>
+                <li>Ground malachite from a sacred burial site</li>
+                <li>Bone fragments of forest-dwelling beasts (unblessed)</li>
+                <li>Hair from a drowned witch, retrieved before dawn</li>
+                <li>Candle wax made with graveyard tallow</li>
+                <li>A mirror darkened by eclipse shadow</li>
+                <li>
+                  The breath of a sleeping infant, captured in a black vial
+                </li>
+              </ul>
 
+              <h2>Instructions / Reflection</h2>
+              <p>
+                I can't go into the details of what we did. But, essentially,
+                the coven attempted to summon the Old God of the forest.
+              </p>
+              <p>
+                We found traces—whispers, really—of its presence during an
+                outing. Well, not *we* exactly. Some members of the coven
+                stumbled upon them almost twenty-four years ago. They've been
+                preparing ever since.
+              </p>
+              <p>
+                On the night of the ritual, we bathed in the river beneath a
+                waning crescent, lit sage, and carved protective sigils into the
+                soil. The air was thick with anticipation.
+              </p>
+              <p>
+                I was entrusted with the growth of the ghoul fungus. It took
+                time. But with the aid of a few passing fae, I was able to lure
+                in someone suitable. Their sacrifice fed the spores well.
+              </p>
+              <p>We spoke the words. The earth answered.</p>
+              I was finally able to finish the blabla ritual to summon the great
+              god, The last ingriedt was hard to get my hands on but I was able
+              to grow it myself! For tips on how to grow it join the coven!
+            </div>
+          </main>
         </div>
+      </div>
     </div>
-    </div>
-
-
-
-</body>
-
+  </body>
 </html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakheaven Scouts Blog</title>
+
+    <style>
+        /* Reset & Body */
+body {
+  margin: 0;
+  padding: 0;
+  background: #bcb9b3; /* Windows 98 beige */
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  color: #000000;
+}
+
+/* Wrapper */
+#container {
+  width: 900px;
+  margin: 0 auto;
+  background: #eeeeee;
+  border: 1px solid #666666;
+  box-shadow: 0px 0px 10px #999999;
+}
+
+/* Banner ad at top */
+#banner {
+  width: 100%;
+  height: 90px;
+  background: url('/images/banner-ad.gif') no-repeat center;
+  background-color: #cccccc;
+  border-bottom: 2px solid #333;
+}
+
+/* Navigation bar */
+#navbar {
+  background: #2c592c;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  border-bottom: 3px double #003300;
+}
+
+#navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+#navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+#main {
+  display: flex;
+  padding: 10px;
+}
+
+/* Left-side discussion/posts */
+#content {
+  flex: 3;
+  padding-right: 10px;
+}
+
+
+.post {
+  background: #f8f8f8;
+  border: 1px solid #999999;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.post .username {
+  font-weight: bold;
+  color: #003366;
+  font-size: 13px;
+}
+
+.post .date {
+  font-size: 10px;
+  color: #666666;
+}
+
+.post .text {
+  margin-top: 5px;
+}
+
+/* Posts/content edits and all that stuff */
+
+/* Sidebar */
+#sidebar {
+  flex: 1;
+  background: #eeeeee;
+  padding: 10px;
+  border-left: 1px solid #999;
+}
+
+#online-users, #ads {
+  margin-bottom: 20px;
+}
+
+#online-users h3, #ads h3 {
+  font-size: 11px;
+  color: #333333;
+  border-bottom: 1px solid #666666;
+  margin-bottom: 5px;
+}
+
+/* Simulated banner ads */
+#ad-banner {
+  width: 120px;
+  height: 240px;
+  background: url('/images/fake-ad-1.gif') no-repeat;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+
+#ad-banner2 {
+  width: 120px;
+  height: 240px;
+  background: url('/images/fake-ad-2.gif') no-repeat;
+  background-size: cover;
+}
+
+/* Footer */
+#footer {
+  text-align: center;
+  font-size: 10px;
+  color: #666666;
+  padding: 10px;
+  background: #cccccc;
+  border-top: 2px solid #999;
+  margin-top: 20px;
+}
+
+
+/* Login Modal */
+#loginModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  font-family: Verdana, sans-serif;
+}
+
+#loginBox {
+  background-color: #fff;
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 2px solid #333;
+  box-shadow: 5px 5px 10px #000;
+}
+
+#loginBox h2 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #003300;
+}
+
+#loginBox input[type="text"] {
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+#loginBox button {
+  padding: 5px 10px;
+  background-color: #006600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#loginBox button:hover {
+  background-color: #004400;
+}
+
+
+.user-status .user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: #333333;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 6px;
+  border: 1px solid #666;
+  box-shadow: 0 0 2px #aaa;
+}
+
+.online-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  background-color: rgb(215, 0, 0);
+  border-radius: 50%;
+  /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
+  animation: pulse 1s infinite ease-in-out;
+}
+
+/* Optional: online glow pulse
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+} */
+
+#thread-list {
+      padding: 15px;
+    }
+
+    .thread {
+      border: 1px solid #888;
+      padding: 10px;
+      background: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .thread:hover {
+      background: #f0fff0;
+      border-color: #004400;
+      box-shadow: 0 0 5px lime;
+    }
+
+    .thread-title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .thread-meta {
+      text-align: right;
+      font-size: 11px;
+      color: #555;
+    }
+
+    .thread-title a {
+      text-decoration: none;
+      color: #003366;
+    }
+
+    .thread-title a:hover {
+      text-decoration: underline;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="banner" style="position: sticky; top: 0; z-index: 1001;" onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
+        <img src="images/cultsoncampusbanneranimated.gif" alt="Banner Ad" style="width: 100%; height: 90px; cursor:pointer;">
+    </div>
+
+ <div id="navbar" style="position: sticky; top: 90px; z-index: 1002;">
+  <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
+<div style="display: inline;">
+        <a href="index.html">Home</a>
+        <a href="forum-home.html">Forum</a>
+        <a href="#">User List</a>
+        <a href="#">Park Map</a>
+</div>
+<div style="display: inline; float: right;">
+        <a href="#" id="profileLink">Profile</a>
+        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
+        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
+</div>
+</div>
+<marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
+
+
+  <div id="main">
+    <div id="content">
+         <h2> !Trending! Forum Threads</h2>
+        <div class="post forum-post">
+              <div class="thread">
+        <div class="thread-title">
+          <a href="forum-home.html">[REPORT]Missing! Has anyone seen Mike Scott?<br></a>
+        </div>
+        <div class="thread-meta">
+          Started by <strong>mikehike128</strong><br>
+          Replies: 14 | Last Post: 238 weeks ago
+        </div>
+      </div>
+
+      <div class="thread">
+        <div class="thread-title">
+          <a href="#">Please stop throwing trash in the forest</a>
+        </div>
+        <div class="thread-meta">
+          Started by <strong>✔OakheavenParkOfficial</strong><br>
+          Replies: 8 | Last Post: 170 weeks ago
+        </div>
+      </div>
+      
+      <div class="thread">
+        <div class="thread-title">
+          <a href="#">Unusual campfire smells near Pine Hollow?</a>
+        </div>
+        <div class="thread-meta">
+          Started by <strong>ForestyFreak</strong><br>
+          Replies: 3 | Last Post: 198 weeks ago
+        </div>
+      </div>
+      </div>
+
+      <h2><img src="https://i.imgur.com/fd83V3R.png" class="cursed-icon"> Posts</h2>
+      
+      <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on November 3, 2005</div>
+         <div class="text">Finally managed to get my hands on some Hebeloma aminophilum! It only grows in very specific conditions and took ages to get. For more info go check out my blog :D </div>
+        <img style="width: 100%; padding-top: 2%;" src="images/Sparrige_Schüppling_(Pholiota_squarrosa).jpg">
+       
+        <div class="reactions"><b>Commets (2) | 8 Views | 2 Likes</b> <img scr></div>
+         <div class="text">[@KateyE!999]: I can't wait to use it. Thanks El! <br> [@Charles]: A man is missing and you're posting about mushrooms?
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="username">MtJames0180</div>
+        <div class="date">Posted on October 28, 2005</div>
+        <div class="text">!! Cancelling the weekly morning trek. Sorry guys. It's weird to go in after what happened. I know Mike would want us to keep doing it but I just can't</div>
+        <div class="reactions"><b>Commets (7) | 34 Views | 6 Likes</b> <img scr></div>
+      </div>
+
+      <div class="post">
+        <div class="username">NatureLover88</div>
+        <div class="date">Posted on October 25, 2005</div>
+        <div class="text">Switching to the Barobay ranges, the forest feels so off right now. Joining the S&R efforts though dw</div>
+        <div class="reactions"><b>Commets (1) | 34 Views | 6 Likes</b> <img scr></div>
+      </div>
+
+       <div class="post">
+        <div class="username">MountainHiker99</div>
+        <div class="date">Posted on October 20, 2005</div>
+          <div class="text">Saw this guy near trail 7. Any idea what it might be? Man I wish I brought my camera</div>
+                <img style="width: 100%; padding-top: 2%;" src="images/fox.jpg">
+     <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+                <div class="text">[@Shoutbox]: Yea. your mum (jk thats obvisouly just a cat)</div>
+
+      </div>
+
+
+       <div class="post">
+        <div class="username">MtJames0180</div>
+        <div class="date">Posted on October 19, 2005</div>
+        <div class="text">Has anyone seen Mike Scott around? (@mikehike128) I haven't seen him in a while. I know he was planning to check out the new trail. Juts putting this out there in case someone does know him/seen him around</div>
+                <div class="reactions"><b>Commets (2) | 34 Views | 6 Likes</b> <img scr></div>
+                <div class="text">[@Shoutbox]: His mum probably checked him into St.Vincents Psych finally after all his weird crashouts. <br>
+                 >>[mtJames0180]: Not cool man. Seriously though, has anyone actually seen him?</div>
+
+      </div>
+      
+      <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on October 17, 2005</div>
+         <div class="text">Oh My God, I can't believe I found Chanterelles in October! I thought they'd be out of season by now. The Samhain Potluck is gonna be so good!</div>
+        <img style="width: 100%; padding-top: 2%;" src="images/cantharel_mushroom.jpg">
+        <div class="reactions"><b>Commets (0) | 34 Views | 9 Likes</b> <img scr></div>
+      </div>
+       <div class="post">
+        <div class="username">MountainHiker99</div>
+        <div class="date">Posted on October 16, 2005</div>
+        <div class="text">GUYS how many signs do the Park ranger have to put up for ya'll to stop pooping near the trail!! Go into the forest to do you business. It fucking <b>STINKS</b><br> This is on route 4, near the lake</div>
+                <div class="reactions"><b>Commets (1) | 34 Views | 22 Likes</b> <img scr></div>
+                <div class="text">[@Shoutbox]: When you gotta go, you gotta go Ig lololol</div>
+
+      </div>
+
+         <div class="post">
+        <div class="username">Moonstone83</div>
+        <div class="date">Posted on October 4, 2005</div>
+        <div class="text">So glad there are so many herbs in the forest. The apothecary would've drilled holes in my wallet. Found a patch of Stinging Nettles and wild garlic on my walk!</div>
+                <div class="reactions"><b>Commets (2) | 34 Views | 2 Likes</b> <img scr></div>
+                <div class="text">[@theGreenWitch08]: So true, it's so easy to grow what you need in here too!</div>
+      </div>
+
+      <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on September 20, 2005</div>
+         <div class="text">Yellow wood-sorrel also has health and medicinal benefits, many of which are outlined on Harrison Murray's blog "Bushcraft."  it should be eaten in moderation, though, because it's high in potassium oxalate and oxalic acid...</div>
+        <img style="width: 100%; padding-top: 2%;" src="images/sorrell.JPG">
+       
+        <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
+      </div>
+       <div class="post">
+        <div class="username">Clancy39@1</div>
+        <div class="date">Posted on August 28, 2005</div>
+        <div class="text">Sad that I won't be able to be as active on Oakheaven once I leave for Uni. Gonna miss the treks and the rabbits.</div>
+        <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+
+      </div>
+         <div class="post">
+        <div class="username">mikehike128</div>
+        <div class="date">Posted on August 20, 2005</div>
+        <div class="text">Can people stop yelling in the park! It's supposed to be peaceful ffs</div>
+        <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+
+      </div>
+           <div class="post">
+        <div class="username">Moonstone83</div>
+        <div class="date">Posted on August 20, 2005</div>
+        <div class="text">Full Moon fest tonight! If you weren't invited please stay clear of the Great oak tonight guys <3</div>
+                <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+      </div>
+      <div class="post">
+        <div class="username">mikehike128</div>
+        <div class="date">Posted on June 4, 2005</div>
+        <div class="text">The park rangers are useless, I swear this place needs more staff or something. The vandalism is getting out of hand.</div>
+        <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+
+      </div>
+       <div class="post">
+        <div class="username">mikehike128</div>
+        <div class="date">Posted on June 2, 2005</div>
+        <div class="text">Is this site just people from Oakheaven high?</div>
+        <div class="reactions"><b>Commets (1) | 34 Views | 2 Likes</b> <img scr></div>
+        <div class="text">[@Shoutbox]: Yea. It's mainly the nature club and a buncha randos most of the time....got some of those <i>weirdos "witches"</i> too. <br>
+        >>[@Moonstone83] Rude! Good luck getting Algebra notes from someone else Theo.</div>
+
+      </div>
+
+      <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on May 20, 2005</div>
+         <div class="text">Gonna try making acorn bread! Acorns have long been a food source in indigenous populations, yet many people tend to avoid using them because preparing acorns.... </div>
+        <img style="width: 100%; padding-top: 2%;" src="images/Acorns on sheet.jpg">
+
+        <div class="reactions"><b>Commets (1) | 34 Views | 2 Likes</b> <img scr></div>
+        <div class="text">[@Moonstone83]: Can't wait to try it!</div>
+      </div>
+       <div class="post">
+        <div class="username">mikehike128</div>
+        <div class="date">Posted on May 17, 2005</div>
+         <div class="text">Found this cool block with Moss on the Moose rocks near the Carry Trail (6). I've never seen it before, I swear it's new.</div>
+                <img style="width: 100%; padding-top: 2%;" src="images/mossy-forest-relic-stockcake.jpg">
+        <div class="reactions"><b>Commets (1) | 34 Views | 2 Likes</b> <img scr></div>
+                <div class="text">[@Shoutbox]: That's one of the old graves dude, its been there for ages. Don't touch it though</div>
+
+
+      </div>
+    
+        <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on April 20, 2005</div>
+        <div class="text">Foraging for ginkgoes is a stinky business. To forage for ginkgoes, you should first put on latex gloves. The nuts are encased in the pulpy fruits, which can give you an allergic reaction... </div>
+        <img style="width: 100%; padding-top: 2%;" src="images/ginko.JPG">
+        <div class="reactions"><b>Commets (0) | 34 Views | 2 Likes</b> <img scr></div>
+      </div>
+      
+
+       <div class="post">
+        <div class="username">mikehike128</div>
+        <div class="date">Posted on March 28, 2005</div>
+        <div class="text">Anyone joinin the morning trek on sunday?</div>
+        <div class="reactions"><b>Commets (7) | 34 Views | 6 Likes</b> <img scr></div>
+      </div>
+      <!-- more posts -->
+    </div>
+
+    <div id="sidebar">
+      <div id="online-users">
+  <h3>Users [View all]</h3>
+  <div class="user-status">
+    <div class="user" onclick="window.location.href='mike-profile.html'" style="cursor:pointer;">
+      <span class="online-indicator"></span>
+      <img src="https://i.imgur.com/Jt0nYdp.png" alt="Avatar" class="avatar">
+      MikeHike128
+    </div>
+    <div class="user">
+      <span class="online-indicator"></span>
+      <img src="https://i.imgur.com/uFQbD4U.png" alt="Avatar" class="avatar">
+      mtJames0180
+    </div>
+    <div class="user" onclick="window.location.href='Ellie-profile.html'" style="cursor:pointer;">
+      <span class="online-indicator" ></span>
+      <img src="https://i.imgur.com/kF1IadF.png" alt="Avatar" class="avatar">
+      theGreenWitch08
+    </div>
+    <div class="user">
+      <span class="online-indicator"></span>
+      <img src="https://i.imgur.com/w1XCHRc.png" alt="Avatar" class="avatar">
+      Moonstone83
+    </div>
+    <div class="user">
+      <span class="online-indicator"></span>
+      <img src="https://i.imgur.com/fd83V3R.png" alt="Avatar" class="avatar">
+      Shoutbox  
+    </div>
+  </div>
+</div>
+
+      <div id="ads">
+        <h3>Sponsored</h3>
+        <div style="width: 100%;" id="ad-banner" onclick="window.open('https://shattereddisk.github.io/rickroll/rickroll.mp4', '_blank')" style="cursor:pointer;">
+            <img src="images/image (1).gif" style="width: 100%; cursor:pointer;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    National Park Watch Forum © 2005 | All rights reserved.
+  </div>
+</div>
+<!-- Login Modal -->
+<div id="loginModal">
+  <div id="loginBox">
+    <h2>Sign In to the Forum</h2>
+    <input type="text" id="usernameInput" placeholder="Enter your username">
+    <br>
+    <button onclick="loginUser()">Sign In</button>
+  </div>
+</div>
+
+    <script>
+  // Open login modal
+  function showLogin() {
+    document.getElementById("loginModal").style.display = "block";
+  }
+
+  // Handle login
+  function loginUser() {
+    const username = document.getElementById("usernameInput").value;
+    if (username.trim() !== "") {
+      localStorage.setItem("forumUsername", username);
+      updateNavbar();
+      document.getElementById("loginModal").style.display = "none";
+    }
+  }
+
+  // Update navbar with username
+  function updateNavbar() {
+    const username = localStorage.getItem("forumUsername");
+    const profileLink = document.getElementById("profileLink");
+    const loginLink = document.getElementById("loginLink");
+
+   if (username) {
+  profileLink.innerText = `Profile (${username})`;
+  loginLink.style.display = "none";
+  document.getElementById("logoutLink").style.display = "inline";
+} else {
+  profileLink.innerText = "Profile";
+  loginLink.style.display = "inline";
+  document.getElementById("logoutLink").style.display = "none";
+}
+
+
+
+  }
+
+  // Check login on load
+  window.onload = updateNavbar;
+
+  function logoutUser() {
+  localStorage.removeItem("forumUsername");
+  updateNavbar();
+}
+
+</script>
+
+</body>
+</html>
