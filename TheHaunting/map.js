@@ -14,7 +14,7 @@ function setup() {
 }
 
 function mouseDragged() {
-    copy(topImg, mouseX, mouseY, 80, 80, mouseX, mouseY, 80, 80);
+    copy(topImg, mouseX, mouseY, 50, 50, mouseX, mouseY, 50, 50);
 }
 
 

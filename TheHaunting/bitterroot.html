@@ -1,571 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap"
+        rel="stylesheet" />
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: url("../images/ditherbg1.png") no-repeat center center fixed;
-        background-size: cover;
-        color: aliceblue;
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("../images/ditherbg1.png") no-repeat center center fixed;
+            background-size: cover;
+            color: aliceblue;
 
-        font-family: "DotGothic16", sans-serif;
-        font-size: 14px;
-      }
+            font-family: "DotGothic16", sans-serif;
+            font-size: 14px;
+            overflow-x: hidden;
+        }
 
-      * {
-        box-sizing: border-box;
-      }
+        * {
+            box-sizing: border-box;
+        }
 
-      .main-container {
-        max-width: 1200px;
-        min-height: 600px;
-        margin: 40px auto;
-        background: rgba(36, 20, 69, 0);
-        /* border-radius: 18px; */
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        display: flex;
-        flex-direction: column;
-      }
+        .main-container {
+            max-width: 1200px;
+            min-height: 600px;
+            margin: 40px auto;
+            background: rgba(36, 20, 69, 0);
+            /* border-radius: 18px; */
+            /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+            display: flex;
+            flex-direction: column;
+        }
 
-      #header {
-        width: 100%;
-        /* background-color: #422835; */
-        height: 150px;
-        /* background-image: url('../images/h7_2.png'); */
-        background-size: contain;
-        background-position: center;
-      }
+        #header {
+            width: 100%;
+            /* background-color: #422835; */
+            height: 150px;
+            /* background-image: url('../images/h7_2.png'); */
+            background-size: contain;
+            background-position: center;
+        }
 
-      .topBar {
-        width: 100%;
-        height: 30px;
-        padding: 10px;
-        font-size: smaller;
-      }
+        .topBar {
+            width: 100%;
+            height: 30px;
+            padding: 10px;
+            font-size: smaller;
+        }
 
-      .flex-body {
-        display: flex;
-        flex: 1;
-      }
+        .flex-body {
+            display: flex;
+            flex: 1;
+        }
 
-      .main-area {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
+        .main-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-      /* Navigation bar */
-      .navbar {
-        /* background-color: #4A5B63; */
-        color: white;
-        height: 40px;
-        /* background-color: #493B4A; */
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+        /* Navigation bar */
+        .navbar {
+            /* background-color: #4A5B63; */
+            color: white;
+            height: 40px;
+            /* background-color: #493B4A; */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-      .navbar a {
-        color: white;
-        text-decoration: none;
-        font-size: 1em;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
 
-      .navbar ul {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        width: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-      }
+        .navbar ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
 
-      /* Main content and right sidebar */
-      .content-area {
-        display: flex;
-        flex: 1;
-      }
+        /* Main content and right sidebar */
+        .content-area {
+            display: flex;
+            flex: 1;
+        }
 
-      .sidebar {
-        width: 27%;
-        /* background-color: #f4f4f4; */
-      }
+        .sidebar {
+            width: 27%;
+            /* background-color: #f4f4f4; */
+        }
 
-      .left {
-        /* background-color: #216e90; */
-        width: 260px;
-        padding: 1rem;
-      }
+        .left {
+            /* background-color: #216e90; */
+            width: 260px;
+            padding: 1rem;
+        }
 
-      .right {
-        background-color: #221c28;
-        background-image: url("../images/MEQTVX8_o.png");
-        /* background-size: contain; */
-      }
+        .right {
+            background-color: #221c28;
+            background-image: url("../images/MEQTVX8_o.png");
+            /* background-size: contain; */
+        }
 
-      .content {
-        flex: 1;
-        padding: 1rem;
-        background-color: #131718;
-        color: #221c28;
-        padding: 5px;
-        margin: 5px;
-        background-image: url("../images/sandy.jpg");
-        /* background-size: cover; */
-      }
+        .content {
+            flex: 1;
+            padding: 1rem;
+            background-color: #131718;
+            color: #221c28;
+            padding: 5px;
+            margin: 5px;
+            background-image: url("../images/sandy.jpg");
+            /* background-size: cover; */
+        }
 
-      .box {
-        /* border: 1px solid #33ea6d; */
-        padding: 5px;
-        margin: 2%;
-      }
+        .box {
+            /* border: 1px solid #33ea6d; */
+            padding: 5px;
+            margin: 2%;
+        }
 
-      .status-flex {
-        display: flex;
-      }
+        .status-flex {
+            display: flex;
+        }
 
-      .blogposts,
-      .status-update,
-      .blogsqaure {
-        width: 100%;
-        /* background-color: ; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        .blogposts,
+        .status-update,
+        .blogsqaure {
+            width: 100%;
+            /* background-color: ; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-      .status-updates {
-        overflow-y: scroll;
-        height: 300px;
-        border: 25px solid;
-        border-image: url(../images/MEPI84T_o.png) 80 round;
-        background-color: #8f7b54;
-        color: #f4f4f4;
-        background-clip: padding-box;
-       
-      }
+        .status-updates {
+            overflow-y: scroll;
+            height: 300px;
+            border: 25px solid;
+            border-image: url(../images/MEPI84T_o.png) 80 round;
+            background-color: #8f7b54;
+            color: #f4f4f4;
+            background-clip: padding-box;
+        }
 
-      .blogposts {
-        width: 100%;
-        border: 20px solid;
-        border-image: url(../images/lace.png) 84 round;
-        background-color: #ddd6d0;
-        background-clip: padding-box;
-      }
+        .blogposts {
+            width: 100%;
+            border: 20px solid;
+            border-image: url(../images/lace.png) 84 round;
+            background-color: #ddd6d0;
+            background-clip: padding-box;
+        }
 
-      /* Fact Box */
+        /* Fact Box */
 
-      .factbox {
-        display: flex;
-        flex-direction: column;
-        background-color: #d8cdbb;
-        text-align: center;
-        border: 10px solid;
-        border-image: url(../images/frame3full.png) 10 round;
-        color: #221c28;
+        .factbox {
+            display: flex;
+            flex-direction: column;
+            background-color: #d8cdbb;
+            text-align: center;
+            border: 10px solid;
+            border-image: url(../images/frame3full.png) 10 round;
+            color: #221c28;
 
-        /* font-family: "Yomogi", cursive;
+            /* font-family: "Yomogi", cursive;
              font-weight: 600; */
-      }
+        }
 
-      .factbutton {
-        border: 3px double black;
-        border-radius: 5px;
-        background-color: #777a56;
-        color: rgb(255, 255, 255);
-        padding: 1%;
-        width: 50%;
-        display: block;
-        margin: 2px auto;
-        font-family: "Yomogi", cursive;
-        font-weight: 600;
-        font-size: 1.2em;
-      }
+        .factbutton {
+            border: 3px double black;
+            border-radius: 5px;
+            background-color: #777a56;
+            color: rgb(255, 255, 255);
+            padding: 1%;
+            width: 50%;
+            display: block;
+            margin: 2px auto;
+            font-family: "Yomogi", cursive;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
 
-      .factbutton:hover {
-        background-color: #8c8e7d;
-        cursor: pointer;
-      }
+        .factbutton:hover {
+            background-color: #8c8e7d;
+            cursor: pointer;
+        }
 
-      /* endless scroll option */
+        /* endless scroll option */
 
-      .scroll-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        .scroll-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            /* on top of the background-overlay */
+            width: 100%;
+            padding: 0 2rem;
+        }
 
-      .spacer {
-        height: 100vh;
-        /* Creates vertical space between messages */
-      }
+        .spacer {
+            height: 100vh;
+            /* Creates vertical space between messages */
+        }
 
-      footer {
-        background-color: #7e664c;
-        /* background color for footer */
-        width: 100%;
-        height: 40px;
-        padding: 10px;
-        text-align: center;
-        /* this centers the footer text */
-      }
+        footer {
+            background-color: #7e664c;
+            /* background color for footer */
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            text-align: center;
+            /* this centers the footer text */
+        }
 
-      /* profile stuff */
+        /* profile stuff */
 
-      .profile-box {
-        border: 10px solid;
-        border-image: url(../images/frame3full.png) 10 round;
-        background-color: #6e7c6f;
-      }
+        .profile-box {
+            border: 10px solid;
+            border-image: url(../images/frame3full.png) 10 round;
+            background-color: #6e7c6f;
+        }
 
-      .chat-box {
-        border: 10px solid;
-        border-image: url(../images/frame3full.png) 10 round;
-        background-color: #bba786;
-      }
+        .chat-box {
+            border: 10px solid;
+            border-image: url(../images/frame3full.png) 10 round;
+            background-color: #bba786;
+        }
 
-      .tree {
-        /* background-color: red; */
-        width: 100%;
-        padding: 0%;
-      }
+        .tree {
+            /* background-color: red; */
+            width: 100%;
+            padding: 0%;
+        }
 
-      .mushroomguard {
-        /* background-color: aqua; */
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-      }
+        .mushroomguard {
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
 
-      .moonphase {
-        border: 30px solid;
-        border-image: url(../images/floral1v2\ -\ Copy.png) 30 round;
-        background-color: #221c28;
-        background-clip: padding-box;
-        /* width: /%; */
-      }
+        .moonphase {
+            border: 30px solid;
+            border-image: url(../images/floral1v2\ -\ Copy.png) 30 round;
+            background-color: #221c28;
+            background-clip: padding-box;
+            /* width: /%; */
+        }
 
-      .welcome-banner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+        .welcome-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      .blogheader {
-        font-family: "Yomogi", cursive;
-        font-size: 1.1em;
-        font-weight: bold;
-        text-align: center;
-        /* margin-bottom: 10px; */
-        width: 90%;
-      }
+        .blogheader {
+            font-family: "Yomogi", cursive;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            /* margin-bottom: 10px; */
+            width: 90%;
+        }
 
-      ul {
-        list-style-type: none;
-        padding-left: 2px;
-      }
+        ul {
+            list-style-type: none;
+            padding-left: 2px;
+        }
+
+        p,
+        img {
+            z-index: 100;
+        }
+
+        .scroll-section-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            z-index: 0;
+            margin: 0 auto;
+            display: block;
+            /* overflow: hidden; background-color: turquoise; */
+        }
+
+        .overlay {
+            width: 100%;
+            height: 1300px;
+            background-color: #6e7c6f;
+            background: linear-gradient(180deg,
+                    rgba(34, 28, 40, 0) 0%,
+                    #000000e8 100%);
+        }
+
+        .glitch-bg {
+            width: 100vw;
+            opacity: 0.88;
+            display: block;
+            position: relative;
+            z-index: 0;
+        }
+
+        .over2 {
+            height: 600px;
+            background: linear-gradient(180deg,
+                    #000000e8 0%, rgb(38, 5, 5) 50%, #2a0101 100%);
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <script src="./oneko.js"></script>
     <div class="main-container">
-      <div class="topBar">
-        <marquee>its was this easy?? ar eyou kidding me</marquee>
-      </div>
-      <div id="headerArea">
-        <div id="header" style="height: 87px"></div>
-      </div>
-      <div class="flex-body">
-        <aside class="sidebar left">
-          <div class="box profile-box">
-            <img style="width: 100%" src="../images/pfpsample.png" />
-            <p>Username: Ellie</p>
-            <p>Role: Witch</p>
-            <p>Bio: A witch with a passion for coding and magic.</p>
-          </div>
-          <!-- <div class="box chat-box">
+        <div class="topBar">
+            <marquee>its was this easy?? ar eyou kidding me</marquee>
+        </div>
+        <div id="headerArea">
+            <div id="header" style="height: 87px"></div>
+        </div>
+        <div class="flex-body">
+            <aside class="sidebar left">
+                <div class="box profile-box">
+                    <img style="width: 100%" src="../images/pfpsample.png" />
+                    <p>Username: Ellie</p>
+                    <p>Role: Witch</p>
+                    <p>Bio: A witch with a passion for coding and magic.</p>
+                </div>
+                <!-- <div class="box chat-box">
                     <iframe src="https://www3.cbox.ws/box/?boxid=3546748&boxtag=0Nr9Zh" width="100%" height="300"
                         allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0"
                         scrolling="auto"></iframe>
                 </div> -->
-          <!-- <div class="box radio">
+                <!-- <div class="box radio">
             Listen to Oakheave Radio or something
             <img style="width: 100%" src="../images/MEQRYN8_o.png" />
           </div> -->
-          <div class="mushroomguard">
-            <iframe
-              src="https://shroom.ink/guard.html/?site=&shroom=9"
-              height="250px"
-              width="200px"
-              scrolling="no"
-              frameborder="0"
-            ></iframe>
-          </div>
-          <div class="box moonphase">
-            <!-- // Begin Current Moon Phase HTML (c) [MoonConnection.com](http://MoonConnection.com) // -->
-            <!-- Thank you OrangeAugust on reddit!! https://www.reddit.com/r/neocities/comments/1hz3zvv/fun_things_to_add_to_your_blog/  -->
-            <center>
-              <table cellpadding="0" cellspacing="0" border="0" width="138">
-                <tr>
-                  <td align="center">
-                    <a
-                      href="https://www.moonconnection.com"
-                      target="mc\_moon\_ph"
-                    >
-                      <img
-                        src="https://www.moonmodule.com/cs/dm/vn.gif"
-                        width="138"
-                        height="210"
-                        border="0"
-                        alt=""
-                    /></a>
-                    <div style="position: relative; width: 128px">
-                      <div
-                        style="
+                <div class="mushroomguard">
+                    <iframe src="https://shroom.ink/guard.html/?site=&shroom=9" height="250px" width="200px"
+                        scrolling="no" frameborder="0"></iframe>
+                </div>
+                <div class="box moonphase">
+                    <!-- // Begin Current Moon Phase HTML (c) [MoonConnection.com](http://MoonConnection.com) // -->
+                    <!-- Thank you OrangeAugust on reddit!! https://www.reddit.com/r/neocities/comments/1hz3zvv/fun_things_to_add_to_your_blog/  -->
+                    <center>
+                        <table cellpadding="0" cellspacing="0" border="0" width="138">
+                            <tr>
+                                <td align="center">
+                                    <a href="https://www.moonconnection.com" target="mc\_moon\_ph">
+                                        <img src="https://www.moonmodule.com/cs/dm/vn.gif" width="138" height="210"
+                                            border="0" alt="" /></a>
+                                    <div style="position: relative; width: 128px">
+                                        <div style="
                           position: absolute;
                           top: -30px;
                           left: 6px;
                           background: #000000;
                           width: 116px;
                           text-align: center;
-                        "
-                      >
-                        <a
-                          href="https://www.moonconnection.com/moon\_phases.phtml"
-                          target="mc\_moon\_ph"
-                        >
-                          <font
-                            color="#7F7F7F"
-                            size="1"
-                            face="arial,helvetica,sans-serif"
-                          >
-                            <span
-                              style="
+                        ">
+                                            <a href="https://www.moonconnection.com/moon\_phases.phtml"
+                                                target="mc\_moon\_ph">
+                                                <font color="#7F7F7F" size="1" face="arial,helvetica,sans-serif">
+                                                    <span style="
                                 color: #7f7f7f;
                                 font-family: arial, helvetica, sans-serif;
                                 font-size: 10px;
-                              "
-                              >lunar phase</span
-                            >
-                          </font>
-                        </a>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </center>
-            <!-- // end moon phase HTML // -->
-          </div>
-        </aside>
-        <div class="main-area">
-          <nav class="navbar">
-            <ul>
-              <li>
-                <a href="#">
-                  <img style="width: 45px" src="../images/potion.gif" />
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="spells.html">
-                  <img style="width: 45px" src="../images/potion.gif" />
-                  <span>Book of Shadows</span></a
-                >
-              </li>
-              <li>
-                <a href="#">
-                  <img style="width: 45px" src="../images/potion.gif" />
-                  <span>Web Shrine</span></a
-                >
-              </li>
-              <li>
-                <a href="herbroute.html">
-                  <img style="width: 45px" src="../images/potion.gif" />
-                  <span>Herb Routes</span></a
-                >
-              </li>
-            </ul>
-          </nav>
-          <div class="content-area">
-            <main class="content">
-              <div
-                class="main-topborder"
-                style="display: flex; justify-content: space-between"
-              >
-                <img src="../images/Pentagram (6).gif" />
-                <img src="../images/Pentagram (6).gif" />
-              </div>
-              <div class="welcome-banner">
-                <img src="../images/greencandle.gif" />
-              </div>
-              <div class="box main-info">
-                Hello there dear reader, congrats on stumbling upon my little
-                corner of the web! This is a personal project where I share my
-                journey as a witch under the guidance of some really cool
-                people at Oakheaven!<br />Feel free to rifle through my little journal and
-                see what I've been up to. Maybe you'll find something useful or
-                maybe even *wink* surprising. 
-              </div>
-              <div class="box status-flex">
-                  <div class="box blogposts">
-                                      <div class="blogheader">Latest blog post <hr></div>
-
-                    Nov 3, 2005
-                    <br /><br />
-                    It's been a few days since the coven finished the summoning
-                    ritual. It was surprisingly fun once I stopped being
-                    squeamish about it. Whew, what a year it's been preparing
-                    for this. If you don't hear back from me dear reader you
-                    know it was a success <br />
-                  </div>
-
-                  <div class="status-updates box">
-                                      <div class="blogheader">Status updates <hr></div>
-
-                    <ul>
-                      <li>
-                        <b>2005-11-04</b><br />
-                        Ritual was a success I think? Been having some weird
-                        dreams
-                      </li>
-                      <li>
-                        <b>2005-11-02</b><br />Just got home, ugh cleaning up is
-                        so annoying
-                      </li>
-                      <li>
-                        <b>2005-10-31</b><br />
-                        Omg todays the day, I've been prepin for the past few
-                        months
-                      </li>
-                      <li>
-                        <b>2005-10-26</b><br />
-                        The final ingredients are finally ready to harvest.
-                        Ghoul Fungus is so annoying to grow
-                      </li>
-                      <li>
-                        <b>2005-10-04</b><br />
-                        I finally got all the things I need to start farming my
-                        mushrooms
-                      </li>
-                      <li>
-                        <b>2005-09-27</b><br />Someone got chosen, i wonder what
-                        poor fool stepped into the fairy ring
-                      </li>
-                      <li>
-                        <b>2005-09-24</b><br />Been getting some bad vibes
-                        recently, gotta sage my room tonight
-                      </li>
-                    </ul>
-                  </div>
-              </div>
-              <div class="box status-flex">
-             <div class="box radio">
-            Listen to Oakheave Radio or something
-            <img style="width: 300px" src="../images/MEQRYN8_o.png" />
-          </div>
-              <div class="collection box">
-                <img src="../images/tulip01.gif" />
-                <img src="../images/dandy02.gif" />
-              </div>
-              </div>
-            </main>
-            <aside class="sidebar right">
-              <img
-                style="width: 100%; padding-top: 10px"
-                src="../images/ME101MRL_o.png"
-              />
-              <div class="box factbox">
-                <span class="fact-header"><b>Tips & Facts</b></span>
-                <img
-                  id="displayImage"
-                  src="../images/stuff.png"
-                  alt="Display Image"
-                  style="width: 100%"
-                />
-                <button class="factbutton" onclick="randomChange()">
-                  Change
-                </button>
-                <p id="displayText">
-                  Remember to put your water jars out on full moons!
-                </p>
-              </div>
-              <div class="box chat-box">
-                <iframe
-                  src="https://www3.cbox.ws/box/?boxid=3546748&boxtag=0Nr9Zh"
-                  width="100%"
-                  height="300"
-                  allowtransparency="yes"
-                  allow="autoplay"
-                  frameborder="0"
-                  marginheight="0"
-                  marginwidth="0"
-                  scrolling="auto"
-                ></iframe>
-              </div>
-
-              <div class="tree">
-                <img src="../images/tree2_right.png" />
-              </div>
+                              ">lunar phase</span>
+                                                </font>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </center>
+                    <!-- // end moon phase HTML // -->
+                </div>
             </aside>
-          </div>
+            <div class="main-area">
+                <nav class="navbar">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img style="width: 45px" src="../images/potion.gif" />
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="spells.html">
+                                <img style="width: 45px" src="../images/potion.gif" />
+                                <span>Book of Shadows</span></a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img style="width: 45px" src="../images/potion.gif" />
+                                <span>Web Shrine</span></a>
+                        </li>
+                        <li>
+                            <a href="herbroute.html">
+                                <img style="width: 45px" src="../images/potion.gif" />
+                                <span>Herb Routes</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="content-area">
+                    <main class="content">
+                        <div class="main-topborder" style="display: flex; justify-content: space-between">
+                            <img src="../images/Pentagram (6).gif" />
+                            <img src="../images/Pentagram (6).gif" />
+                        </div>
+                        <div class="welcome-banner">
+                            <img src="../images/greencandle.gif" />
+                        </div>
+                        <div class="box main-info">
+                            Hello there dear reader, congrats on stumbling upon my little
+                            corner of the web! This is a personal project where I share my
+                            journey as a witch under the guidance of some really cool people
+                            at Oakheaven!<br />Feel free to rifle through my little journal
+                            and see what I've been up to. Maybe you'll find something useful
+                            or maybe even *wink* surprising.
+                        </div>
+                        <div class="box status-flex">
+                            <div class="box blogposts">
+                                <div class="blogheader">
+                                    Latest blog post
+                                    <hr />
+                                </div>
+
+                                Nov 3, 2005
+                                <br /><br />
+                                It's been a few days since the coven finished the summoning
+                                ritual. It was surprisingly fun once I stopped being squeamish
+                                about it. Whew, what a year it's been preparing for this. If
+                                you don't hear back from me dear reader you know it was a
+                                success <br />
+                            </div>
+
+                            <div class="status-updates box">
+                                <div class="blogheader">
+                                    Status updates
+                                    <hr />
+                                </div>
+
+                                <ul>
+                                    <li>
+                                        <b>2005-11-04</b><br />
+                                        Ritual was a success I think? Been having some weird
+                                        dreams
+                                    </li>
+                                    <li>
+                                        <b>2005-11-02</b><br />Just got home, ugh cleaning up is
+                                        so annoying
+                                    </li>
+                                    <li>
+                                        <b>2005-10-31</b><br />
+                                        Omg todays the day, I've been prepin for the past few
+                                        months
+                                    </li>
+                                    <li>
+                                        <b>2005-10-26</b><br />
+                                        The final ingredients are finally ready to harvest. Ghoul
+                                        Fungus is so annoying to grow
+                                    </li>
+                                    <li>
+                                        <b>2005-10-04</b><br />
+                                        I finally got all the things I need to start farming my
+                                        mushrooms
+                                    </li>
+                                    <li>
+                                        <b>2005-09-27</b><br />Someone got chosen, i wonder what
+                                        poor fool stepped into the fairy ring
+                                    </li>
+                                    <li>
+                                        <b>2005-09-24</b><br />Been getting some bad vibes
+                                        recently, gotta sage my room tonight
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box status-flex">
+                            <div class="box radio">
+                                Listen to Oakheave Radio or something
+                                <img style="width: 300px" src="../images/MEQRYN8_o.png" />
+                            </div>
+                            <div class="collection box">
+                                <img src="../images/tulip01.gif" />
+                                <img src="../images/dandy02.gif" />
+                            </div>
+                        </div>
+                    </main>
+                    <aside class="sidebar right">
+                        <img style="width: 100%; padding-top: 10px" src="../images/ME101MRL_o.png" />
+                        <div class="box factbox">
+                            <span class="fact-header"><b>Tips & Facts</b></span>
+                            <img id="displayImage" src="../images/stuff.png" alt="Display Image" style="width: 100%" />
+                            <button class="factbutton" onclick="randomChange()">
+                                Change
+                            </button>
+                            <p id="displayText">
+                                Remember to put your water jars out on full moons!
+                            </p>
+                        </div>
+                        <div class="box chat-box">
+                            <iframe src="https://www3.cbox.ws/box/?boxid=3546748&boxtag=0Nr9Zh" width="100%"
+                                height="300" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0"
+                                marginwidth="0" scrolling="auto"></iframe>
+                        </div>
+
+                        <div class="tree">
+                            <img src="../images/tree2_right.png" />
+                        </div>
+                    </aside>
+                </div>
+            </div>
         </div>
-      </div>
-      <footer id="footer">666 Tartarus domain, 2025</footer>
+        <footer id="footer">666 Tartarus domain, 2025</footer>
     </div>
-    <div class="scroll-container">
-      <div class="spacer"></div>
-      <div class="message">Message 1: It begins...</div>
-      <div class="spacer"></div>
-      <div class="message">Message 2: Still going...</div>
+
+    <div class="scroll-section-wrapper">
+        <div class="background-overlay">
+            <div class="overlay"></div>
+            <img class="glitch-bg" src="../images/glicthoverlay.gif" alt="Glitch Background" />
+            <div class="overlay over2"></div>
+            <div class="glitch-bg"
+                style="background-color: #2a0101;opacity: 1; width: 100%; display: flex; justify-content: center;">
+
+                <img src="../images/deadend.gif" alt="Glitch Background"
+                    style="background-color: #2a0101; opacity: 1;" />
+            </div>
+        </div>
+        <div class="scroll-container">
+            <div class="spacer"></div>
+            <div class="message">Oh? hi, interested in learning more keep going</div>
+            <img src="../images/MEQRYN8_o.png" alt="Oakheaven Radio" />
+            <div class="spacer"></div>
+            <img src="../images/MEQRYN8_o.png" alt="Oakheaven Radio"
+                style="position: relative; left: 350px; display: block" />
+            <div class="message">Message 2: Still going...</div>
+            <img src="../images/MEQRYN8_o.png" alt="Oakheaven Radio"
+                style="position: relative; right: 450px; display: block" />
+                  <div class="spacer"></div>
+            <div class="message">Oh? hi, interested in learning more keep going</div>
+              <div class="spacer"></div>
+              <div class="spacer"></div>
+              <div class="spacer"></div>
+            <div class="message">D̷̮̩͚̭̗͉̯̗̍̀́̈́͂͠O̸̡̦̗͍̹̠̜̫̲͙̬͂̈̈͑̀̓́̈́̽̃̈͂̅̋̌N̵̢͉̰̣̺̲͌͂̀́̏͊͌͊̅̕͝T̷̢͚͖̗̳̹͔̖̠̪̰͛̀̎̓͊̒̀̚ ̸̝̦̈̎D̶̘̪̐̀̀͒̌͒̑̽͊̏̏̕̕͝O̶̺̙̯͔̼͓̪̭͉̜̫̥̎͒̾̾̀͛̍̏̌̅͆͆̊̊͝͝ ̶̰̲̈̏̑̌̌̌ͅI̸̺͎̊̀̍͘T̷̙̙̫͕͎̘̳̬͎̫͖̈̒͗̑̀̿͐͑̄̌̌̐̐̏͝ͅ</div>
+              <div class="spacer"></div>
+            <div class="message">Oh? hi, interested in learning more keep going</div>
+              <div class="spacer"></div>
+            
+        </div>
+
     </div>
 
     <script>
-      const messages = [
-        "Rosemary can substitute for nearly any herb in spellwork.",
-        "Yarrow often grows on forest edges or near disturbed ground.It’s used for protection, divination, and stopping both blood and bad dreams.",
-        "Mugwort grows in sunny clearings, especially near ruins or roads. Burned, it enhances dreams. Carried, it protects from the 'unseen walkers' in the woods.",
-        "If you find a plant growing where three animal paths meet, leave it.",
-        "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains.",
-      ];
+        const messages = [
+            "Rosemary can substitute for nearly any herb in spellwork.",
+            "Yarrow often grows on forest edges or near disturbed ground.It’s used for protection, divination, and stopping both blood and bad dreams.",
+            "Mugwort grows in sunny clearings, especially near ruins or roads. Burned, it enhances dreams. Carried, it protects from the 'unseen walkers' in the woods.",
+            "If you find a plant growing where three animal paths meet, leave it.",
+            "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains.",
+        ];
 
-      let currentIndex = 0;
+        let currentIndex = 0;
 
-      function randomChange() {
-        const text = document.getElementById("displayText");
-        const image = document.getElementById("displayImage");
+        function randomChange() {
+            const text = document.getElementById("displayText");
+            const image = document.getElementById("displayImage");
 
-        const chosenMessage = messages[currentIndex];
-        text.textContent = chosenMessage;
+            const chosenMessage = messages[currentIndex];
+            text.textContent = chosenMessage;
 
-        if (
-          chosenMessage ===
-          "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains."
-        ) {
-          image.src = "../images/ghost.jpg"; // special image
-        } else {
-          image.src = "../images/stuff.png"; // regular image
+            if (
+                chosenMessage ===
+                "Ghoul Fungus (Hebeloma aminophilum) is a rare, eerie mushroom native to Australia that thrives on dead remains."
+            ) {
+                image.src = "../images/ghost.jpg"; // special image
+            } else {
+                image.src = "../images/stuff.png"; // regular image
+            }
+
+            // Move to the next index, looping back to 0
+            currentIndex = (currentIndex + 1) % messages.length;
         }
-
-        // Move to the next index, looping back to 0
-        currentIndex = (currentIndex + 1) % messages.length;
-      }
     </script>
-  </body>
+</body>
+
 </html>
