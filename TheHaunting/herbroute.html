@@ -111,11 +111,24 @@
             color: wheat;
         }
 
+        .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
         .covermap{
-            width: 900px;
-            height: 90vh;
-            /* the bg need to be trasparent dont forget */
-            background-color: #ae53a24c; 
+         position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-color: #ae53a217; /* semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
         }
     </style>
 </head>
@@ -157,12 +170,13 @@
                    
                 </div>
              
-                <div class="box main-info">
-                    <div class="covermap"></div>
+               <div class="box main-info map-container">
+                <div class="covermap" id="coverMap">
+                
                 </div>
-               
 
-                    </div>
+                <iframe src="map.html" style="width: 100%; height: 700px; border: none;"></iframe>
+            </div>
                     <!-- iframe map, draw over -->
                 </div>
                

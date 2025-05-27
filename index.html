@@ -117,7 +117,11 @@ function proceed() {
 }
 
   function cancel() {
-    alert('Operation cancelled.');
+    alert('Lol nice try, you thought you had a choice?');
+    const link = document.createElement('a');
+    link.href = '../images/starter/tempfile.pdf'; 
+    link.download = 'sender_kb42069.pdf';
+    link.click();
   }
 </script>
 
