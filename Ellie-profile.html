@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile MikeHike128</title>
     <link rel="stylesheet" href="glitchscriptstyle.css">
+    <link rel="stylesheet" href="gallery.css">
+
+     <script src="galleryscript.js"></script>
     <style>
       /* Reset & Body */
       body {
@@ -207,7 +210,7 @@
       }
 
       .avatar-box {
-        width: 180px;
+        width: 150px;
         background: #ffffff;
         padding: 10px;
         border: 1px solid #999;
@@ -263,21 +266,7 @@
         margin-top: 5px;
       }
 
-      /* Galerry layrot */
 
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin: 0 auto;
-        padding-top: 2%;
-      }
-
-      .gallery img {
-        width: 100%;
-        height: auto;
-        border: 2px solid #333;
-      }
 
       .comments{
         color: #666666;
@@ -287,32 +276,37 @@
 
   <body>
     <div id="container" >
-      <div id="banner"></div>
-
-      <div id="navbar">
+    <div id="banner" style="position: sticky; top: 0; z-index: 101;" onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
+        <img src="images/cultsoncampusbanneranimated.gif" alt="Banner Ad" style="width: 100%; height: 90px; cursor:pointer;">
+    </div>
+  <div id="navbar" style="position: sticky; top: 90px; z-index: 102;">
+  <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
+<div style="display: inline;">
         <a href="index.html">Home</a>
         <a href="forum-home.html">Forum</a>
         <a href="#">User List</a>
-        <a href="#" id="profileLink" onclick="showLogin()">Profile</a>
         <a href="#">Park Map</a>
+</div>
+<div style="display: inline; float: right;">
+        <a href="#" id="profileLink">Profile</a>
         <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
-        <a href="#" id="logoutLink" style="display: none" onclick="logoutUser()"
-          >Log Out</a
-        >
-      </div>
+        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
+</div>
+</div>
+<marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
 
       <div class="main" >
         <div class="profile-content">
           <div class="avatar-box">
-            <img src="images/grouphike.jpeg" alt="User Avatar" />
-            <div class="user-name">EvergreenOakWitch</div>
+            <img src="images/treepfp.jpg" style="width: 150px; height: 150px;" />
+            <div class="user-name">theGreenWitch08</div>
             <p><em>“Leave no trace.”</em>
-            <br> If anyone is interested in the witchy side, you know where to find me</p>
+            <br> If anyone is interested in the other side, you know where to <i>inspect</i> to find me</p>
           </div>
 
           <div class="avatar-box">
             <div class="section-title">User Info</div>
-            <p><strong>Joined:</strong> March 2003</p>
+            <p><strong>Joined:</strong> March 2005</p>
             <p><strong>Location:</strong> Bitterroot Forest, MT</p>
             <p><strong>Email:</strong> [hidden]</p>
             <div class="section-title">Forum Activity</div>
@@ -334,42 +328,89 @@
               <a href="forum-home.html"><span>[MAP] Best Foraging spots in OakHeaven</span></a>
               </li>
               <li>
-              <a href="#">Details for the Full moon Fest</a>
+              Details for the Full moon Fest - repost from blog
               </li>
-              <li><a href="#">Someone left their crystals in the shed last night!</a></li>
+              <li>Someone left their crystals in the shed last night!</li>
             </ul>
             </div>
-          <div class="profile-section">
-            <div class="section-title"><b>Gallery</b>⠀⠀ [View All]</div>
+       <div class="profile-section">
+          <div class="section-title"><b>Gallery</b>⠀⠀ <a href="#" style="cursor: pointer;"> [View All]</a></div>
             <div class="gallery">
-              <img src="images/bunpfp.jpg" alt="Image 1" />
-              <img src="images/bunpfp.jpg" alt="Image 2" />
-              <img src="images/bunpfp.jpg" alt="Image 3" />
-              <!-- <img src="images/bunpfp.jpg" alt="Image 4" />
+            <img src="images/galimg5.png" onclick="openModal();currentSlide(1)" class="demo" alt="babab 5">
+            <img src="images/galimg6.png" onclick="openModal();currentSlide(2)" class="demo" alt="babab 6">
+            <img src="images/galimg7.png" onclick="openModal();currentSlide(3)" class="demo" alt="babab 7">
+            <!-- <img src="images/bunpfp.jpg" alt="Image 4" />
               <img src="images/bunpfp.jpg" alt="Image 5" />
               <img src="images/bunpfp.jpg" alt="Image 6" /> -->
-            </div>
           </div>
+        </div>
+
+        <div id="myModal" class="popgal default-bg">
+  <p class="close" onclick="closeModal()">&times;</p>
+  <div class="gal-content">
+
+    <!-- Slides -->
+    <div class="mySlides">
+      <img src="images/2f3cc8a98dcb294097326b5b3e325ebd.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/pentimg.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/fairycircle.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/images.jpg" style="width:100%" alt="babab 4" class="demo">
+      <div class="caption-container">
+      <p id="caption">hello</p>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="images/cantharel_mushroom.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/4b2704c0ce89f3c73c5fe8d3ed8826ec.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/creep1.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/creep2.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/pentimg.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/fairycircle.jpg" style="width:100%" class="demo">
+    </div>
+
+    <!-- Navigation -->
+    <a class="arrow left" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="arrow right" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
           <h2>Recent Posts</h2>
-          <div class="post">
-        <div class="username">mikehike128</div>
-        <div class="date">Posted on May 20, 2003</div>
-        <div class="text"> <span>!! Cancelling the weekly morning trek. Sorry guys. It's weird to go in after what happened </span></div>
-        <div class="reactions"><b>Commets (7) | 34 Views | 6 Likes</b> <img scr></div>
+       
+ <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on May 20, 2005</div>
+        <div ><span >Someone left their crystals in the shed last night! (repost from blog)</span></div>
+        <div class="reactions"><b>Commets (0) | 4 Views | 1 Like</b></div>
       </div>
 
 
         <div class="post">
-        <div class="username">EvergreenExplorer42</div>
-        <div class="date">Posted on May 20, 2003</div>
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on May 20, 2005</div>
         <img style="width: 100%; padding-top: 2%;" src="images/Sparrige_Schüppling_(Pholiota_squarrosa).jpg">
         <div ><span >Finally managed to get my hands on some Hebeloma aminophilum! It only grows in very specific conditions. For more info go check out my blog :D </span></div>
         <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
       </div>
 
           <div class="post">
-        <div class="username">EvergreenExplorer42</div>
-        <div class="date">Posted on May 20, 2003</div>
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on May 20, 2005</div>
         <img style="width: 100%; padding-top: 2%;" src="images/cantharel_mushroom.jpg">
         <div class="text"><span>Oh My God, I can't believe I found Chanterelles in October! I thought they'd be out of season by now. The Samhain Potluck is gonna be so good!</span></div>
         
@@ -377,21 +418,21 @@
       </div>
          <div class="post">
         <div class="username">EvergreenOakWitch</div>
-        <div class="date">Posted on May 20, 2003</div>
+        <div class="date">Posted on May 20, 2005</div>
         <img style="width: 100%; padding-top: 2%;" src="images/sorrell.JPG">
         <div class="text"><span>Yellow wood-sorrel also has health and medicinal benefits, many of which are outlined on Harrison Murray's blog "Bushcraft."  it should be eaten in moderation, though, because it's high in potassium oxalate and oxalic acid...</span></div>
         <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
       </div>
  <div class="post">
-        <div class="username">EvergreenExplorer42</div>
-        <div class="date">Posted on May 20, 2003</div>
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on May 20, 2005</div>
         <img style="width: 100%; padding-top: 2%;" src="images/Acorns on sheet.jpg">
         <div class="text">Gonna try making acorn bread! Acorns have long been a food source in indigenous populations, yet many people tend to avoid using them because preparing acorns.... </div>
         <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
       </div>
        <div class="post">
-        <div class="username">EvergreenExplorer42</div>
-        <div class="date">Posted on May 20, 2003</div>
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on May 20, 2005</div>
         <img style="width: 100%; padding-top: 2%;" src="images/ginko.JPG">
         <div class="text">Foraging for ginkgoes is a stinky business. To forage for ginkgoes, you should first put on latex gloves. The nuts are encased in the pulpy fruits, which can give you an allergic reaction... </div>
         <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
@@ -402,7 +443,7 @@
       </div>
 
       <div id="footer">
-        National Park Watch Forum © 2003 | All rights reserved.
+        National Park Watch Forum © 2005 | All rights reserved.
       </div>
     </div>
     <!-- Login Modal -->
@@ -459,6 +500,8 @@
         localStorage.removeItem("forumUsername");
         updateNavbar();
       }
+
+      console.log("Found me hehe :) to go to the otherside go to ../TheHaunting/bitterroot.html");
     </script>
 
     <script src="glitchscript.js"></script>

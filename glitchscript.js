@@ -7,7 +7,7 @@ const originals = []; // store original text for each paragraph
 const wordsArray = []; // store words array for each paragraph
 
 const alternateWords = [
-  "heRe", "here", "her", "he's coming", "mike", "  ", "Look here!", "HeLp", "Bsnefwe", "efioefjoewif", "efieff", "hidden", "look", "LOOK", "I", "I AM", "I", "I"
+  "heRe", "here", "her", "he's coming", "mike", "  ", "Look here!", "HeLp", "Bsnefwe", "efioefjoewif", "efieff", "hidden", "look", "LOOK", "I", "I AM", "I", "I", "console", "Help", "heLPkef"
 ];
 
 // Initialize original texts and split words

@@ -301,6 +301,44 @@
       margin-right: 10px;
       
     }
+
+      /* experiemnts */
+
+    .glitch {
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% {
+        text-shadow: 2px 0 red, -2px 0 cyan;
+        transform: translate(0);
+      }
+
+      20% {
+        text-shadow: -2px 0 red, 2px 0 cyan;
+        transform: translate(1px, -1px);
+      }
+
+      40% {
+        text-shadow: 2px 2px red, -2px -2px cyan;
+        transform: translate(-1px, 1px);
+      }
+
+      60% {
+        text-shadow: -1px -1px red, 1px 1px cyan;
+        transform: translate(1px, 1px);
+      }
+
+      80% {
+        text-shadow: 1px 1px red, -1px -1px cyan;
+        transform: translate(-1px, -1px);
+      }
+
+      100% {
+        text-shadow: 0 0 red, 0 0 cyan;
+        transform: translate(0);
+      }
+    }
   </style>
 </head>
 
@@ -331,50 +369,14 @@
 
     <div id="main">
       <div id="content">
-        <h2> !Trending! Forum Threads</h2>
-        <div class="post forum-post">
-          <div class="thread">
-            <div class="thread-title">
-              <a href="#">[REPORT] Missing! Has anyone seen Mike Scott?<br></a>
-            </div>
-            <div class="thread-meta">
-              Started by <strong>mikehike128</strong><br>
-              Replies: 14 | Last Post: Today 14:32
-            </div>
-          </div>
-
-          <div class="thread">
-            <div class="thread-title">
-              <a href="#">Please stop throwing trash in the forest</a>
-            </div>
-            <div class="thread-meta">
-              Started by <strong>✔OakheavenParkOfficial</strong><br>
-              Replies: 8 | Last Post: Today 13:04
-            </div>
-          </div>
-          <!--       
-      <div class="thread">
-        <div class="thread-title">
-          <a href="#">Unusual campfire smells near Pine Hollow?</a>
-        </div>
-        <div class="thread-meta">
-          Started by <strong>ForestFreak</strong><br>
-          Replies: 8 | Last Post: Today 13:04
-        </div>
-      </div> -->
+        <div class="breadcrumbs" style="color: #666; padding-bottom: 5px;">
+            MikeHike128 > forum > [documentation]
         </div>
         <div class="post mike1">
-          <h2>[REPORT] Missing! Has anyone seen Mike Scott? </h2>
+          <h2>[Documentation] Something is wrong near the great Oak, a list of everything strange </h2>
 
-          <div class="text">I'm posting this using my son Mike's account. He went camping in Oakheaven Park three days
-            ago and hasn’t come home yet. We haven’t been able to reach him, and this is completely out of character for
-            him. He mentioned something about ghosthunting or catching something on camera, I can't remember. I thought
-            he was acting strage, does ayone know what he was talking about on his posts? <br><br>I know a lot of you
-            know each other so if anyone saw him recently or has any information at all, please let me know. <br> He’s
-            17, about 5’10”, brown hair, was wearing a green jacket and carrying a dark blue backpack.
-            Please, if you’re out there hiking or know the area well, keep an eye out. We’re desperate to find him. <br>
-            Thank you,
-            Mike’s mum
+          <div class="text">Theres something wrong at Oakheaven Park, I don't know what it is but this thread it dedicated to documenting everything strange that has been happening in the park lately. <br><br> Feel free to add anything you have seen or heard, I will try to keep this thread updated with everything I can find. <br><br>
+            Edit: so apparently people can't edit this for some reason, so I will just keep updating it myself. <br><br>
             <div class="thread-meta">
               <div style="display: flex; align-items: center; justify-content: flex-end; margin-bottom: 3px;">
              <span>Started by  <a href="mike-profile.html" style="cursor: pointer;"> <strong>mikehike128</strong></a></span>
@@ -384,42 +386,7 @@
               Replies: 5 | Last Post: 26 October 2005
             </div>
             <hr>
-
-            <div class="comment">
-              <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
-                <div class="username">MtJames0180</div>
-                <div class="thread-meta">Posted 21 October 2005</div>
-              </div>
-              <div class="reply">
-                I knew he'd been acting weird lately. I saw him a few days ago, he was talking about some old ghost
-                stories from the park, I knew he was recently got into the whole occult stuff. I thought he was just
-                joking around, but now I'm worried. I hope he's okay.
-              </div>
-            </div>
-            <div class="comment">
-              <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
-                <div class="username">OakheavenParkOfficial</div>
-                <div class="thread-meta" style="text-align: left;">Posted 21 October 2005</div>
-              </div>
-              <div class="reply">
-                Please stay calm, we are aware of the situation and are actively searching for Mike. We have teams in
-                the area and will keep you updated. If anyone has seen him or has any information, please contact us
-                immediately.
-              </div>
-            </div>
-            <div class="comment">
-              <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
-                <div class="username">theGreenWitch08</div>
-                <div class="thread-meta">Posted 22 October 2005</div>
-              </div>
-              <div class="reply">
-                I'm sure he's fine whereever he is. <br> probably just needs some time alone, I get it.
-              </div>
-            </div>
-            <div class="comment">
+            <div class="comment 5">
               <div class="profile">
                 <img src="images/bunpfp.jpg" style="width: 50%;">
                 <div class="username">Shoutbox</div>
@@ -429,72 +396,58 @@
                 Those woods have weird energy, man. Wouldn't go in there without a guide. Sending strength.
               </div>
             </div>
+            <div class="comment 4">
+              <div class="profile">
+                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <div class="username">theGreenWitch08</div>
+                <div class="thread-meta">Posted 22 October 2005</div>
+              </div>
+              <div class="reply">
+Do you guys see that? I think its a deer or soemthing but it's been staring for ages now<br><br>                                              <img style="width: 100%;" src="images/ghost.jpg">
+
+              </div>
+            </div>
+            <div class="comment 3">
+              <div class="profile">
+                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <div class="username">OakheavenParkOfficial</div>
+                <div class="thread-meta" style="text-align: left;">Posted 21 October 2005</div>
+              </div>
+              <div class="reply">
+                Since when was this a thing? First time coming across this sign. I swear I've never seen this and I've used this trail multiple times before. 
+                                              <img style="width: 100%;" src="images/acd055aa2bde5f6a17039e048c78abea.jpg">
+
+              </div>
+            </div>
+            <div class="comment 2">
+              <div class="profile">
+                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <div class="username">MikeHike128</div>
+                <div class="thread-meta">Posted 21 October 2005</div>
+              </div>
+              <div class="reply">
+                Camping near the picnic area today. I thought I heard something so I decided to check it out. Gonna post every tiny thing, I need to keep a log<br><br>
+                              <img style="width: 100%;" src="images/dark forest.jpg">
+
+              </div>
+            </div>
+            <div class="comment 1">
+              <div class="profile">
+                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <div class="username">MikeHike128</div>
+                <div class="thread-meta">Posted 21 October 2005</div>
+              </div>
+              <div class="reply">
+               rhrgeg oh gods oh gds, literally running as i type this. what the fuck th fuck is that. i'm gonna cry. I lef tmy camp gear, i need to get outta here wtf.<br><br>
+                              <img style="width: 100%;" src="images/ifiyc5voqnf41.jpg">
+
+              </div>
+            </div>
 
           </div>
         </div>
 
-        <div class="post oakpost">
-          <h2>Please stop throwing trash in the forest</h2>
-
-          <div class="text"> We understand that many of you love Oakheaven Park and want to keep it beautiful. However,
-            we have noticed an increase in littering, especially near the picnic areas and trails. Please remember to
-            take your trash with you or use the bins provided.<br> This includes larger items. This is not a dumping
-            ground.<br><br>
-          <div class="gallery">
-            <img src="images/shoes.webp" class="trashimg">
-            <img src="images/shoes.webp" class="trashimg">
-
-            <img src="images/shoes.webp" class="trashimg">
-
-            <img src="images/shoes.webp" class="trashimg">
-
-
-
-          </div>
-          <div class="thread-meta">
-            <div style="display: flex; align-items: center; justify-content: flex-end; margin-bottom: 3px;">
-             <span>Started by <strong>✔OakheavenParkOfficial</strong></span></a>
-              <img src="images/bunpfp.jpg" alt="User Avatar" class="avatar"
-                style="width: 22px; height: 22px; margin-right: 6px;">
-            </div>
-            Replies: 3 | Last Post: 26 October 2005
-          </div>
-          <hr>
-
-          <div class="comment">
-            <div class="profile">
-              <img src="images/bunpfp.jpg" style="width: 50%;">
-              <div class="username">MtJames0180</div>
-              <div class="thread-meta">Posted 21 October 2005</div>
-            </div>
-            <div class="reply">
-             Wait, I think those blue sneakers belong to Mike? I swear they are, I rememeber him showing them to me when we went camping last month.
-            </div>
-          </div>
-         
-          <div class="comment">
-            <div class="profile">
-              <img src="images/bunpfp.jpg" style="width: 50%;">
-              <div class="username">theGreenWitch08</div>
-              <div class="thread-meta">Posted 22 October 2005</div>
-            </div>
-            <div class="reply">
-              Throwing trash with no care is disgusting. These people will get what they deserve. 
-            </div>
-          </div>
-          <div class="comment">
-            <div class="profile">
-              <img src="images/bunpfp.jpg" style="width: 50%;">
-              <div class="username">MountainHiker99</div>
-              <div class="thread-meta">Posted 23 October 2005</div>
-            </div>
-            <div class="reply">
-              Maybe instead of just complaining, we could organize a cleanup day? I know some people who would be willing to help.
-            </div>
-          </div>
-
-        </div>
-      </div>
+       
       <!-- more posts -->
     </div>
 
@@ -503,7 +456,7 @@
         <h3>Users [View all]</h3>
         <div class="user-status">
           <div class="user" onclick="window.location.href='mike-profile.html'" style="cursor:pointer;">
-            <span class="online-indicator" style="background-color: lime;"></span>
+            <span class="online-indicator"></span>
             <img src="https://i.imgur.com/Jt0nYdp.png" alt="Avatar" class="avatar">
             MikeHike128
           </div>
@@ -513,7 +466,8 @@
             mtJames0180
           </div>
           <div class="user" onclick="window.location.href='Ellie-profile.html'" style="cursor:pointer;">
-            <span class="online-indicator"></span>
+            <span class="online-indicator"
+              style="background-color: lime;"></span>
             <img src="https://i.imgur.com/kF1IadF.png" alt="Avatar" class="avatar">
             theGreenWitch08
           </div>
@@ -598,6 +552,43 @@
       updateNavbar();
     }
 
+
+    let glitchDuration = 100; // starting glitch duration in ms
+    const durationIncrement = 200; // how much longer it gets each time
+    const maxGlitchDuration = 1000;
+
+    const applyGlitch = () => {
+    const elements = document.body.querySelectorAll("*");
+    elements.forEach(el => el.classList.add("glitch"));
+
+    setTimeout(() => {
+    elements.forEach(el => el.classList.remove("glitch"));
+    }, glitchDuration); // Glitch duration
+    glitchDuration = Math.min(glitchDuration + durationIncrement, maxGlitchDuration);
+    };
+
+    // First glitch happens 3–4 seconds after load
+    window.addEventListener("load", () => {
+    const firstDelay = 5000;
+    setTimeout(() => {
+    applyGlitch();
+    startRandomGlitchLoop(); // comment this out if you want it to happen only once
+    }, firstDelay);
+    });
+
+
+    function startRandomGlitchLoop() {
+    const randomInterval = () => Math.random() * 1000 + 8000;
+
+    const loop = () => {
+    setTimeout(() => {
+    applyGlitch();
+    loop();
+    }, randomInterval());
+    };
+
+    loop();
+    }
   </script>
 
 </body>

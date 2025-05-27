@@ -3,557 +3,699 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile MikeHike128</title>
-    <style>
-      /* Reset & Body */
-      body {
-        margin: 0;
-        padding: 0;
-        background: #bcb9b3;
-        /* Windows 98 beige */
-        font-family: Verdana, Arial, sans-serif;
-        font-size: 12px;
-        color: #000000;
-      }
+  <title>Profile MikeHike128</title>
+  <link rel="stylesheet" href="gallery.css" >
+  <style>
+    /* Reset & Body */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #bcb9b3;
+      /* Windows 98 beige */
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      color: #000000;
+    }
 
-      /* Wrapper */
-      #container {
-        width: 900px;
-        margin: 0 auto;
-        background: #eeeeee;
-        border: 1px solid #666666;
-        box-shadow: 0px 0px 10px #999999;
-      }
+    /* Wrapper */
+    #container {
+      width: 900px;
+      margin: 0 auto;
+      background: #eeeeee;
+      border: 1px solid #666666;
+      box-shadow: 0px 0px 10px #999999;
+    }
 
-      /* Banner ad at top */
-      #banner {
-        width: 100%;
-        height: 90px;
-        background: url("/images/banner-ad.gif") no-repeat center;
-        background-color: #cccccc;
-        border-bottom: 2px solid #333;
-      }
+    /* Banner ad at top */
+    #banner {
+      width: 100%;
+      height: 90px;
+      background: url("/images/banner-ad.gif") no-repeat center;
+      background-color: #cccccc;
+      border-bottom: 2px solid #333;
+    }
 
-      /* Navigation bar */
-      #navbar {
-        background: #2c592c;
-        padding: 5px;
-        color: #ffffff;
-        font-weight: bold;
-        border-bottom: 3px double #003300;
-      }
+    /* Navigation bar */
+    #navbar {
+      background: #2c592c;
+      padding: 5px;
+      color: #ffffff;
+      font-weight: bold;
+      border-bottom: 3px double #003300;
+    }
 
-      #navbar a {
-        color: #ffffff;
-        text-decoration: none;
-        margin: 0 10px;
-      }
+    #navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
 
-      #navbar a:hover {
-        text-decoration: underline;
-      }
+    #navbar a:hover {
+      text-decoration: underline;
+    }
 
-      /* Main content area */
-      .main {
-        display: flex;
-        padding: 10px;
-      }
+    /* Main content area */
+    .main {
+      display: flex;
+      padding: 10px;
+    }
 
-      /* Left-side discussion/posts */
-      #content {
-        flex: 3;
-        padding-right: 10px;
-      }
+    /* Left-side discussion/posts */
+    #content {
+      flex: 3;
+      padding-right: 10px;
+    }
 
-      /* Posts/content edits and all that stuff */
+    /* Posts/content edits and all that stuff */
 
-      /* Sidebar */
-      .sidebar {
-        flex: 1;
-        background: #eeeeee;
-        padding: 10px;
-        border-left: 1px solid #999;
-      }
+    /* Sidebar */
+    .sidebar {
+      flex: 1;
+      background: #eeeeee;
+      padding: 10px;
+      border-left: 1px solid #999;
+    }
 
-      #online-users,
-      #ads {
-        margin-bottom: 20px;
-      }
+    #online-users,
+    #ads {
+      margin-bottom: 20px;
+    }
 
-      #online-users h3,
-      #ads h3 {
-        font-size: 11px;
-        color: #333333;
-        border-bottom: 1px solid #666666;
-        margin-bottom: 5px;
-      }
+    #online-users h3,
+    #ads h3 {
+      font-size: 11px;
+      color: #333333;
+      border-bottom: 1px solid #666666;
+      margin-bottom: 5px;
+    }
 
-      /* Simulated banner ads */
-      #ad-banner {
-        width: 120px;
-        height: 240px;
-        background: url("/images/fake-ad-1.gif") no-repeat;
-        background-size: cover;
-        margin-bottom: 10px;
-      }
+    /* Simulated banner ads */
+    #ad-banner {
+      width: 120px;
+      height: 240px;
+      background: url("/images/fake-ad-1.gif") no-repeat;
+      background-size: cover;
+      margin-bottom: 10px;
+    }
 
-      #ad-banner2 {
-        width: 120px;
-        height: 240px;
-        background: url("/images/fake-ad-2.gif") no-repeat;
-        background-size: cover;
-      }
+    #ad-banner2 {
+      width: 120px;
+      height: 240px;
+      background: url("/images/fake-ad-2.gif") no-repeat;
+      background-size: cover;
+    }
 
-      /* Footer */
-      #footer {
-        text-align: center;
-        font-size: 10px;
-        color: #666666;
-        padding: 10px;
-        background: #cccccc;
-        border-top: 2px solid #999;
-        margin-top: 20px;
-      }
+    /* Footer */
+    #footer {
+      text-align: center;
+      font-size: 10px;
+      color: #666666;
+      padding: 10px;
+      background: #cccccc;
+      border-top: 2px solid #999;
+      margin-top: 20px;
+    }
 
-      /* Login Modal */
-      #loginModal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        font-family: Verdana, sans-serif;
-      }
+    /* Login Modal */
+    #loginModal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      font-family: Verdana, sans-serif;
+    }
 
-      #loginBox {
-        background-color: #fff;
-        width: 300px;
-        margin: 100px auto;
-        padding: 20px;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 10px #000;
-      }
+    #loginBox {
+      background-color: #fff;
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      border: 2px solid #333;
+      box-shadow: 5px 5px 10px #000;
+    }
 
-      #loginBox h2 {
-        margin-top: 0;
-        font-size: 16px;
-        color: #003300;
-      }
+    #loginBox h2 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #003300;
+    }
 
-      #loginBox input[type="text"] {
-        width: 90%;
-        padding: 5px;
-        margin-bottom: 10px;
-        font-size: 12px;
-      }
+    #loginBox input[type="text"] {
+      width: 90%;
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
 
-      #loginBox button {
-        padding: 5px 10px;
-        background-color: #006600;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-size: 12px;
-      }
+    #loginBox button {
+      padding: 5px 10px;
+      background-color: #006600;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
 
-      #loginBox button:hover {
-        background-color: #004400;
-      }
+    #loginBox button:hover {
+      background-color: #004400;
+    }
 
-      .user-status .user {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        font-size: 11px;
-        color: #333333;
-      }
+    .user-status .user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: #333333;
+    }
 
-      .avatar {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin: 0 6px;
-        border: 1px solid #666;
-        box-shadow: 0 0 2px #aaa;
-      }
+    .avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 0 6px;
+      border: 1px solid #666;
+      box-shadow: 0 0 2px #aaa;
+    }
 
-      .online-indicator {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin-right: 5px;
-        background-color: rgb(215, 0, 0);
-        border-radius: 50%;
-        /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
-        animation: pulse 1s infinite ease-in-out;
-      }
+    .online-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 5px;
+      background-color: rgb(215, 0, 0);
+      border-radius: 50%;
+      /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
+      animation: pulse 1s infinite ease-in-out;
+    }
 
-      /* Optional: online glow pulse
+    /* Optional: online glow pulse
 @keyframes pulse {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.3); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
 } */
 
-      .profile-content {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding-right: 2%;
-      }
-
-      .avatar-box {
-        width: 180px;
-        background: #ffffff;
-        padding: 10px;
-        border: 1px solid #999;
-        box-shadow: inset 0 0 4px #aaa;
-        /* text-align: center; */
-      }
-
-      .avatar-box img {
-        width: 150px;
-        height: 150px;
-        border: 2px solid #333;
-        margin-bottom: 10px;
-      }
-
-      .user-name {
-        font-size: 14px;
-        font-weight: bold;
-        color: #003300;
-        /* text-align: center; */
-      }
-
-      .profile-details {
-        flex-grow: 1;
-      }
-
-      .profile-section {
-        margin-bottom: 20px;
-        background: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-        box-shadow: inset 0 0 4px #ccc;
-      }
-
-      .post {
-        background: #f8f8f8;
-        border: 1px solid #999999;
-        margin-bottom: 15px;
-        padding: 10px;
-      }
-
-      .post .username {
-        font-weight: bold;
-        color: #003366;
-        font-size: 13px;
-      }
-
-      .post .date {
-        font-size: 10px;
-        color: #666666;
-      }
-
-      .post .text {
-        margin-top: 5px;
-      }
-
-      /* Galerry layrot */
-
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin: 0 auto;
-        padding-top: 2%;
-      }
-
-      .gallery img {
-        width: 100%;
-        height: auto;
-        border: 2px solid #333;
-      }
-
-      .comments{
-        color: #666666;
-      }
-
-
-      /* experiemnts */
-
-       .glitch {
-      animation: glitch 1s infinite;
+    .profile-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-right: 2%;
     }
 
-    @keyframes glitch {
-      0% {
-        text-shadow: 2px 0 red, -2px 0 cyan;
-        transform: translate(0);
-      }
-      20% {
-        text-shadow: -2px 0 red, 2px 0 cyan;
-        transform: translate(1px, -1px);
-      }
-      40% {
-        text-shadow: 2px 2px red, -2px -2px cyan;
-        transform: translate(-1px, 1px);
-      }
-      60% {
-        text-shadow: -1px -1px red, 1px 1px cyan;
-        transform: translate(1px, 1px);
-      }
-      80% {
-        text-shadow: 1px 1px red, -1px -1px cyan;
-        transform: translate(-1px, -1px);
-      }
-      100% {
-        text-shadow: 0 0 red, 0 0 cyan;
-        transform: translate(0);
-      }
+    .avatar-box {
+      width: 150px;
+      background: #ffffff;
+      padding: 10px;
+      border: 1px solid #999;
+      box-shadow: inset 0 0 4px #aaa;
+      /* text-align: center; */
     }
-    </style>
-  </head>
 
-  <body>
-    <div id="container">
-      <div id="banner"></div>
+    .avatar-box img {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #333;
+      margin-bottom: 10px;
+    }
 
-      <div id="navbar">
+    .user-name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #003300;
+      /* text-align: center; */
+    }
+
+    .profile-details {
+      flex-grow: 1;
+    }
+
+    .profile-section {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #999;
+      box-shadow: inset 0 0 4px #ccc;
+    }
+
+    .post {
+      background: #f8f8f8;
+      border: 1px solid #999999;
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+
+    .post .username {
+      font-weight: bold;
+      color: #003366;
+      font-size: 13px;
+    }
+
+    .post .date {
+      font-size: 10px;
+      color: #666666;
+    }
+
+    .post .text {
+      margin-top: 5px;
+    }
+
+    /* Galerry layrot */
+
+
+
+    .comments {
+      color: #666666;
+    }
+
+
+    /* gallery modal: thank you w3 schools */
+
+    .popgal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.gal-content {
+  position: relative;
+  margin: auto;
+  max-width: 80%;
+}
+
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.mySlides img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  user-select: none;
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+.caption-container {
+  text-align: center;
+  padding: 10px;
+  color: #ccc;
+  font-size: 18px;
+}
+
+.gallery img {
+  /* width: 100px; */
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  opacity: 0.7;
+}
+
+.demo.active {
+  border: 2px solid white;
+}
+
+.popgal.default-bg {
+  background: rgba(0, 0, 0, 0.9);
+}
+.popgal.jumpscare {
+  background: url('images/6355.png') center center no-repeat;
+  background-size: cover;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- audio stuff -->
+   <audio id="screamer" src="sounds"></audio>
+
+
+  <!-- content -->
+  <div id="container">
+    <div id="banner" style="position: sticky; top: 0; z-index: 101;"
+      onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
+      <img src="images/cultsoncampusbanneranimated.gif" alt="Banner Ad"
+        style="width: 100%; height: 90px; cursor:pointer;">
+    </div>
+    <div id="navbar" style="position: sticky; top: 90px; z-index: 102;">
+      <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
+      <div style="display: inline;">
         <a href="index.html">Home</a>
         <a href="forum-home.html">Forum</a>
         <a href="#">User List</a>
-        <a href="#" id="profileLink" onclick="showLogin()">Profile</a>
         <a href="#">Park Map</a>
-        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
-        <a href="#" id="logoutLink" style="display: none" onclick="logoutUser()"
-          >Log Out</a
-        >
       </div>
+      <div style="display: inline; float: right;">
+        <a href="#" id="profileLink">Profile</a>
+        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
+        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
+      </div>
+    </div>
+    <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
 
-      <div class="main">
-        <div class="profile-content">
-          <div class="avatar-box">
-            <img src="images/grouphike.jpeg" alt="User Avatar" />
-            <div class="user-name">MikeHike128</div>
-            <p><em>If I go missing, it's because I went to find the truth.</em></p>
-          </div>
-
-          <div class="avatar-box">
-            <div class="section-title">User Info</div>
-            <p><strong>Joined:</strong> January 2003</p>
-            <p><strong>Location:</strong> Oaksprite, MT</p>
-            <p><strong>Email:</strong> [hidden]</p>
-            <div class="section-title">Forum Activity</div>
-            <p><strong>Posts:</strong> 29</p>
-            <p><strong>Threads Started:</strong> 2</p>
-            <p><strong>Last Active:</strong> 1124 Weeks ago</p>
-            <p>
-              <strong>Current Status:</strong>
-              <span style="color: red">Offline</span>
-            </p>
-          </div>
+    <div class="main">
+      <div class="profile-content">
+        <div class="avatar-box">
+          <img src="images/mikepfp.png" alt="User Avatar" />
+          <div class="user-name">MikeHike128</div>
+          <p><em>If I go missing, it's because I went to find the truth.</em></p>
         </div>
 
-        <div class="sidebar">
-          <div class="profile-section">
-            <div class="section-title"><b>Recent Threads</b></div>
-            <ul>
-                <li>
-                <a href="forum-home.html">[❗REPORT] Missing! Has anyone seen Mike Scott?</a>
-              </li>
-              <li>
-                <a href="#">[Documentation] Something is wrong near the great Oak, a list of everything strange</a>
-              </li>
-            </ul>
-          </div>
-          <div class="profile-section">
-            <div class="section-title"><b>Gallery</b>⠀⠀ [View All]</div>
-            <div class="gallery">
-              <img src="images/bunpfp.jpg" alt="Image 1" />
-              <img src="images/bunpfp.jpg" alt="Image 2" />
-              <img src="images/bunpfp.jpg" alt="Image 3" />
-              <!-- <img src="images/bunpfp.jpg" alt="Image 4" />
+        <div class="avatar-box">
+          <div class="section-title">User Info</div>
+          <p><strong>Joined:</strong> January 2005</p>
+          <p><strong>Location:</strong> Oaksprite, MT</p>
+          <p><strong>Email:</strong> [hidden]</p>
+          <div class="section-title">Forum Activity</div>
+          <p><strong>Posts:</strong> 29</p>
+          <p><strong>Threads Started:</strong> 2</p>
+          <p><strong>Last Active:</strong> 1124 Weeks ago</p>
+          <p>
+            <strong>Current Status:</strong>
+            <span style="color: red">Offline</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="profile-section">
+          <div class="section-title"><b>Recent Threads</b></div>
+          <ul>
+            <li>
+              <a href="forum-home.html">[❗REPORT] Missing! Has anyone seen Mike Scott?</a>
+            </li>
+            <li>
+              <a href="documentation.html">[Documentation] Something is wrong near the great Oak, a list of everything
+                strange</a>
+            </li>
+          </ul>
+        </div>
+        <div class="profile-section">
+          <div class="section-title"><b>Gallery</b>⠀⠀ <a href="#" style="cursor: pointer;"> [View All]</a></div>
+          <div class="gallery">
+             <img src="images/galimg1.png" onclick="openModal();currentSlide(1)" class="demo" alt="babab 1">
+  <img src="images/galimg2.png" onclick="openModal();currentSlide(2)" class="demo" alt="babab 2">
+  <img src="images/galimg3.png" onclick="openModal();currentSlide(3)" class="demo" alt="babab 3">
+            <!-- <img src="images/bunpfp.jpg" alt="Image 4" />
               <img src="images/bunpfp.jpg" alt="Image 5" />
               <img src="images/bunpfp.jpg" alt="Image 6" /> -->
-            </div>
           </div>
-          <h2>Recent Posts</h2>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-              Has anyone seen Mike Scott around? (@mikehike128) I haven't seen
-              him in a while. I know he was planning to check out the new trail.
-              Just putting this out there in case someone does know him/seen him
-              around - James
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
-            </div>
-          </div>
+        </div>
 
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-                I tried to stay away from the park today. I went back. I had to. It called me. The smell. It's everywhere now. It's in my head.
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr /> <hr>
-                 <div class="text comments">⠀⠀⠀⠀[4.21] JamesCocoo: DUDE! can you pick up your phone </div>
-            </div>
+        <div id="myModal" class="popgal default-bg">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="gal-content">
+
+    <!-- Slides -->
+    <div class="mySlides">
+      <img src="images/dark forest.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/trekpath.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/grouphike.jpeg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/riverdry.webp" style="width:100%" alt="babab 4" class="demo">
+      <div class="caption-container">
+      <p id="caption">hello</p>
+      </div>
+    </div>
+    <div class="mySlides">
+      <img src="images/mosspatterns.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/ifiyc5voqnf41.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/creep1.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/creep2.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/pentimg.jpg" style="width:100%" class="demo">
+    </div>
+    <div class="mySlides">
+      <img src="images/fairycircle.jpg" style="width:100%" class="demo">
+    </div>
+
+    <!-- Navigation -->
+    <a class="arrow left" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="arrow right" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+</div>
+<h2>Recent Posts</h2>
+
+
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on October 16, 2005</div>
+          <div class="text">
+            I tried to stay away from the park today. I went back. I had to. It called me, it's watching. It's in my
+            head.
           </div>
-           <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-             Sorry guys I think I'm gonna cancel the sunday hike. I think I'm just stressed with classes. I don't know if I can handle the hike right now. I was looking forward to it, but I think I need to take a break. 
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
-            </div>
+          <div class="reactions">
+            <b>Comments (1) | 34 Views | 2 Likes</b> <img scr />
+            <hr>
+            <div class="text comments">⠀⠀⠀⠀ [@ MtJames0180]: DUDE! can you pick up your phone </div>
           </div>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-             Camping near the oak tonight, it's the only place that doesnt smell. I can't sleep. Every rustle outside sounds like footsteps. The quiet in the park isn't natural. It's a silence. James is snoring like a bear. I can hear him from the tent. I thought I heard something outside, but it was just a deer. I think. I hope. I think I'm going to check it out. I don't know why I'm posting this. Maybe to keep me from going crazy? Or maybe to let someone know if something happens? I don't know. Just... wish me luck.
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr /> <hr>
-                 <div class="text comments">⠀⠀⠀⠀[4.21] JamesCocoo: Rude much, also you need to stop reading reddit horr... </div>
-            </div>
+        </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on October 3, 2005</div>
+          <div class="text">
+            I think I need to take a break from the park. I keep seeing things out of the corner of my eye, and the
+            silence is unnerving. I don't know if it's just me, but it feels like the forest is... watching? I don't
+            know how to explain it. Maybe I'm just tired.
           </div>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-              I saw Ellie today. She was there, near the old oak, just... standing. Not foraging, not hiking. Just watching and muttering to the oak tree. I thought it was odd, but she seemed... at peace? I don't know. I didn't want to intrude. She looked up and smiled at me, though. It was nice. (Hope she doesn't see this)
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
-            </div>
+          <div class="reactions">
+            <b>Comments (0) | 32 Views | 2 Likes</b>
+
           </div>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-             Okay, something's off. I was in the Western Clearing again, trying to figure out why it's so quiet. And there's this smell. Not like normal forest decay, more... cloying. Like something sweet and rotten at the same time. Makes my stomach turn. And I swear, I felt like I was being watched the whole time. Just a feeling, I guess.
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
-            </div>
+        </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on September 20, 2005</div>
+          <div class="text">
+            Okay something is definitely off. I'm not crazy. I made a thread about it, but I don't think anyone is
+            taking me seriously. If you guys have anything to add t it please do.
           </div>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-              Went back to that clearing near the old oak today, hoping to catch some more bird activity. Oddly quiet. Usually, it's bustling with robins and jays, but barely a peep. The air felt a bit... still. Maybe it's just the time of year? Or maybe something else? I don't know. Just thought I'd share...
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
-            </div>
+          <div class="reactions">
+            <b>Comments (0) | 24 Views | 3 Likes</b> <img scr />
           </div>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2003</div>
-            <div class="text">
-              Spent the afternoon exploring the lower sections of Oakhaven, near the old logging road. Found a really interesting patch of oyster mushrooms growing on a fallen log. They were huge! I think Ellie mentioned this during Calc yesterday. I took some photos and will post them later.
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
-            </div>
+        </div>
+
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on September 4, 2005</div>
+          <div class="text">
+            Camping near the oak tonight, it's the only place that doesnt smell. I can't sleep. Every rustle outside
+            sounds like footsteps. The quiet in the park isn't natural. It's a silence. James is snoring like a bear. I
+            can hear him from the tent. I thought I heard something outside, but it was just a deer. I think. I hope. I
+            think I'm going to check it out. I don't know why I'm posting this. Maybe to keep me from going crazy? Or
+            maybe to let someone know if something happens? I don't know. Just... wish me luck.
           </div>
-          <div class="post">
-            <div class="username">MikeHike128</div>
-            <div class="date">Posted on May 20, 2002</div>
-            <div class="text">
-              Just got back from a fantastic hike on the Ridge Trail! The weather was perfect, clear skies and a gentle breeze. Saw some amazing wildflowers starting to bloom. Even managed to snap a few decent photos of a dee...
-            </div>
-            <div class="reactions">
-              <b>Commets (3) | 34 Views | 2 Likes</b> <img scr />
+          <div class="reactions">
+            <b>Comments (1) | 34 Views | 6 Likes</b> <img scr />
+            <hr>
+            <div class="text comments">⠀⠀⠀⠀[@ MtJames0180]: Rude much, also you need to stop reading reddit horr...
             </div>
           </div>
         </div>
-      </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on August 22, 2005</div>
+          <div class="text">
+            I saw Ellie today. She was there, near the old oak, just... standing. Not foraging, not hiking. Just
+            watching and muttering to the oak tree. I thought it was odd, but she seemed... at peace? I don't know. I
+            didn't want to intrude. She looked up and smiled at me, though. It was nice. (Hope she doesn't see this)
+          </div>
+          <div class="reactions">
+            <b>Comments (0) | 32 Views | 2 Likes</b>
+          </div>
+        </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on July 17, 2005</div>
+          <div class="text">
+            Okay, something's off. I was in the Western Clearing again, trying to figure out why it's so quiet. And
+            there's this smell. Not like normal forest decay, more... cloying. Like something sweet and rotten at the
+            same time. Makes my stomach turn. And I swear, I felt like I was being watched the whole time. Just a
+            feeling, I guess.
+          </div>
+          <div class="reactions">
+            <b>Comments (0) | 32 Views | 2 Likes</b>
+          </div>
+        </div>
 
-      <div id="footer">
-        National Park Watch Forum © 2003 | All rights reserved.
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on April 29, 2005</div>
+          <div class="text">
+            Sorry guys I think I'm gonna cancel the sunday hike. I think I'm just stressed with classes, maybe I'm just
+            sleep deprived. I don't know if I can handle the hike right now. I was looking forward to it, but I think I
+            need to take a break.
+          </div>
+          <div class="reactions">
+            <b>Comments (0) | 32 Views | 2 Likes</b>
+          </div>
+        </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on April 13, 2005</div>
+          <div class="text">
+            Went back to that clearing near the old oak today, hoping to catch some more bird activity. Oddly quiet.
+            Usually, it's bustling with robins and jays, but barely a peep. The air felt a bit... still. Maybe it's just
+            the time of year? Or maybe something else? I don't know. Just thought I'd share...
+          </div>
+          <div class="reactions">
+            <b>Comments (0) | 32 Views | 2 Likes</b>
+          </div>
+        </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on February 25, 2005</div>
+          <div class="text">
+            Spent the afternoon exploring the lower sections of Oakhaven, near the old logging road. Found a really
+            interesting patch of oyster mushrooms growing on a fallen log. They were huge! I think Ellie mentioned this
+            during Calc yesterday. I took some photos and will post them later.
+          </div>
+          <div class="reactions">
+            <b>Comments (0) | 32 Views | 2 Likes</b>
+          </div>
+        </div>
+        <div class="post">
+          <div class="username">MikeHike128</div>
+          <div class="date">Posted on January 5, 2005</div>
+          <div class="text">
+            Just got back from a fantastic hike on the Ridge Trail! The weather was perfect, clear skies and a gentle
+            breeze. Saw some amazing wildflowers starting to bloom. Even managed to snap a few decent photos of a deer
+            in the distance.
+          </div>
+          <div class="reactions">
+            <b>Comments (0) | 12 Views | 2 Likes</b>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Login Modal -->
-    <div id="loginModal">
-      <div id="loginBox">
-        <h2>Sign In to the Forum</h2>
-        <input
-          type="text"
-          id="usernameInput"
-          placeholder="Enter your username"
-        />
-        <br />
-        <button onclick="loginUser()">Sign In</button>
-      </div>
+
+    <div id="footer">
+      National Park Watch Forum © 2005 | All rights reserved.
     </div>
+  </div>
+  <!-- Login Modal -->
+  <div id="loginModal">
+    <div id="loginBox">
+      <h2>Sign In to the Forum</h2>
+      <input type="text" id="usernameInput" placeholder="Enter your username" />
+      <br />
+      <button onclick="loginUser()">Sign In</button>
+    </div>
+  </div>
 
-    <scrip.t>
-      // Open login modal
-      function showLogin() {
-        document.getElementById("loginModal").style.display = "block";
-      }
+  <script>
+    // Open login modal
+    function showLogin() {
+      document.getElementById("loginModal").style.display = "block";
+    }
 
-      // Handle login
-      function loginUser() {
-        const username = document.getElementById("usernameInput").value;
-        if (username.trim() !== "") {
-          localStorage.setItem("forumUsername", username);
-          updateNavbar();
-          document.getElementById("loginModal").style.display = "none";
-        }
-      }
-
-      // Update navbar with username
-      function updateNavbar() {
-        const username = localStorage.getItem("forumUsername");
-        const profileLink = document.getElementById("profileLink");
-        const loginLink = document.getElementById("loginLink");
-
-        if (username) {
-          profileLink.innerText = `Profile (${username})`;
-          loginLink.style.display = "none";
-          document.getElementById("logoutLink").style.display = "inline";
-        } else {
-          profileLink.innerText = "Profile";
-          loginLink.style.display = "inline";
-          document.getElementById("logoutLink").style.display = "none";
-        }
-      }
-
-      // Check login on load
-      window.onload = updateNavbar;
-
-      function logoutUser() {
-        localStorage.removeItem("forumUsername");
+    // Handle login
+    function loginUser() {
+      const username = document.getElementById("usernameInput").value;
+      if (username.trim() !== "") {
+        localStorage.setItem("forumUsername", username);
         updateNavbar();
+        document.getElementById("loginModal").style.display = "none";
       }
+    }
+
+    // Update navbar with username
+    function updateNavbar() {
+      const username = localStorage.getItem("forumUsername");
+      const profileLink = document.getElementById("profileLink");
+      const loginLink = document.getElementById("loginLink");
+
+      if (username) {
+        profileLink.innerText = `Profile (${username})`;
+        loginLink.style.display = "none";
+        document.getElementById("logoutLink").style.display = "inline";
+      } else {
+        profileLink.innerText = "Profile";
+        loginLink.style.display = "inline";
+        document.getElementById("logoutLink").style.display = "none";
+      }
+    }
+
+    // Check login on load
+    window.onload = updateNavbar;
+
+    function logoutUser() {
+      localStorage.removeItem("forumUsername");
+      updateNavbar();
+    }
 
 
-       
-       let glitchDuration = 100; // starting glitch duration in ms
+
+    let glitchDuration = 100; // starting glitch duration in ms
     const durationIncrement = 200; // how much longer it gets each time
-     const maxGlitchDuration = 1000;
+    const maxGlitchDuration = 1000;
 
-  const applyGlitch = () => {
+    const applyGlitch = () => {
       const elements = document.body.querySelectorAll("*");
       elements.forEach(el => el.classList.add("glitch"));
 
       setTimeout(() => {
         elements.forEach(el => el.classList.remove("glitch"));
       }, glitchDuration); // Glitch duration
-       glitchDuration = Math.min(glitchDuration + durationIncrement, maxGlitchDuration);
+      glitchDuration = Math.min(glitchDuration + durationIncrement, maxGlitchDuration);
     };
 
     // First glitch happens 3–4 seconds after load
@@ -566,7 +708,7 @@
     });
 
 
-     function startRandomGlitchLoop() {
+    function startRandomGlitchLoop() {
       const randomInterval = () => Math.random() * 1000 + 8000;
 
       const loop = () => {
@@ -578,6 +720,11 @@
 
       loop();
     }
-    </script>
-  </body>
+
+
+
+   </script>
+  <script src="galleryscript.js"></script>
+</body>
+
 </html>

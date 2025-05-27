@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -12,6 +15,8 @@
             background: url('../images/ditherbg1.png') no-repeat center center fixed;
             background-size: cover;
             color: aliceblue;
+            
+             font-family: "DotGothic16", sans-serif;
         }
 
         * {
@@ -141,16 +146,25 @@
 
         .blogposts,
         .status-updates {
-            width: 50%;
-            border: 30px solid;
-            border-image: url(../images/floral1v2.png) 30 round;
+            width: 100%;
+           
         }
 
         .status-updates{
             overflow-y: scroll;
-            height: 250px;
+            height: 300px;
+             border: 25px solid;
+            border-image: url(../images/MEPI84T_o.png) 80 round;
+            background-color: #8F7B54;
+            color: #f4f4f4;
+            background-clip: padding-box;
         }
 
+        .blogposts{
+            width: 100%;
+             border: 40px solid;
+            border-image: url(../images/lace.png) 84 round;
+        }
         /* Fact Box */
 
         .factbox {
@@ -161,6 +175,10 @@
             border: 10px solid;
             border-image: url(../images/frame3full.png) 10 round;
             color: #221C28;
+
+             /* font-family: "Yomogi", cursive;
+             font-weight: 600; */
+            
         }
 
         .factbutton {
@@ -168,10 +186,13 @@
             border-radius: 5px;
             background-color: #777a56;
             color: rgb(255, 255, 255);
-            padding: 3%;
+            padding: 1%;
             width: 50%;
             display: block;
-            margin: 5px auto;
+            margin: 2px auto;
+             font-family: "Yomogi", cursive;
+             font-weight: 600;
+             font-size: 1.2em;
         }
 
         .factbutton:hover {
@@ -242,6 +263,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .blogheader {
+                     font-family: "Yomogi", cursive;
+
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            background-color: #f4f4f4;
+        }
+
+        ul{
+            list-style-type: none;
+            padding-left: 2px;
         }
 
     </style>
@@ -333,14 +369,27 @@
                             <img src="../images/greencandle.gif">
                         </div>
                         <div class="box main-info">
-                            hi hi welcome this is what my blog is about
+                            
+                            Hello there dear reader, congrats on stumbling upon my little corner of the web! This is a personal project where I share my journey as a witch under the guidance of some really cool people!<br>Feel free to rifle through my little journal and see what I've been up to. Maybe you'll find something useful or maybe even *wink* surprising. (idk man)
                         </div>
                         <div class="box status-flex">
                             <div class="box blogposts">
-                                blogposts
+                                <div class="blogheader">Latest blog post</div>
+                                Nov 3, 2005
+                                <br><br>
+                                It's been a few days since the coven finished the summoning ritual. It was surprisingly fun once I stopped being squeamish about it. Whew, what a year it's been preparing for this. If you don't hear back from me dear reader you know it was a success <br>
                             </div>
                             <div class="status-updates box">
-                                status updates
+                                <div class="blogheader">Status updates</div>
+                                <ul>
+                                <li><b>2005-11-04</b><br> Ritual was a success I think? Been having some weird dreams</li>
+                                <li><b>2005-11-02</b><br>Just got home, ugh cleaning up is so annoying</li>
+                                <li><b>2005-10-31</b><br> Omg todays the day, I've been prepin for the past few months</li>
+                                <li><b>2005-10-26</b><br> The final ingredients are finally ready to harvest. Ghoul Fungus is so annoying to grow</li>
+                                <li><b>2005-10-04</b><br> I finally got all the things I need to start farming my mushrooms</li>
+                                <li><b>2005-09-27</b><br>Someone got chosen, i wonder what poor fool stepped into the fairy ring</li>
+                                <li><b>2005-09-24</b><br>Been getting some bad vibes recently, gotta sage my room tonight</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="collection box">
