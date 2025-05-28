@@ -38,7 +38,7 @@ function gotResults(result) {
   image(video, 0, 0, width, height);
   image(segmentation.backgroundMask, 0, 0, width, height);
   filter(GRAY); //greyscale filter
-  opacity = max(15, opacity - 1);
+  opacity = max(20, opacity - 1);
   tint(0, 255, 255, opacity); // changed opacity 
    console.log(opacity);
 }

@@ -44,7 +44,7 @@ function draw() {
 function gotSpeech() {
   console.log("You said:", speechRec.resultString);
         if (speechRec.resultString.toLowerCase() === 'yes i am') {
-          window.location.href = 'finish.html';
+          window.location.href = 'iniation2.html';
         } else {
           document.body.style.background = 'black';
         }
