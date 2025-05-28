@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jacquard+12&family=Jacquard+12+Charted&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Princess+Sofia&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&family=Yomogi&display=swap" rel="stylesheet">
     <style>
          body {
             margin: 0;
             padding: 0;
         background: url('../images/thegrove.png') no-repeat center center fixed;
-
+ cursor: url('../images/planchette.png') 16 16, auto;
             /* background-size: cover; */
             color: aliceblue;
             color: #310c2c;
+              font-family: "Nanum Pen Script", cursive;
         }
 
         * {
             box-sizing: border-box;
         }
+
+            a, button, .hidden-button, .main-topborder {
+  cursor: url('../images/planchette1.png') 16 16, pointer;
+}
 
         .main-container {
             max-width: 1200px;
@@ -39,6 +47,7 @@
         }
 
         .main-area {
+            
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -47,6 +56,7 @@
 
         /* Navigation bar */
         .navbar {
+
             /* background-color: #4A5B63; */
             /* height: 40px; */
             /* background-color: #493B4A; */
@@ -61,7 +71,6 @@
         .navbar a {
             color: rgb(34, 2, 31);
             text-decoration: none;
-            font-size: 1.2em;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -87,9 +96,11 @@
 
 
         .left {
-            width: 220px;
+            width: 250px;
             height: 100%;
             padding: 1%;
+            font-size: 25px;
+
             /* background-color: #451c1c; */
 
         }
@@ -133,6 +144,7 @@
     </style>
 </head>
 <body>
+      <script src="./oneko.js"></script>
       <div class="main-container">
     <div class="flex-body">
         <aside class="sidebar left">
@@ -142,17 +154,26 @@
                 <ul>
                     <li>
                         <a href="bitterroot.html">
-                            <img style="width: 45px;" src="../images/potion.gif">
-                            <span>Home</span>
+                            <p>Home<br>
+                            > Fact box <br> >Music Player</p>
                         </a>
                     </li>
-                    <li><a href="spells.html"> <img style="width: 45px;" src="../images/potion.gif"> <span>Book of Shadows</span></a>
+                    <li>
+                        <a href="spells.html">
+                            <span>Book of Shadows</span>
+                        </a>
                     </li>
-                    <li><a href="#"> <img style="width: 45px;" src="../images/potion.gif"> <span>Web
-                                Shrine</span></a></li>
-                    <li><a href="herbroute.html"> <img style="width: 45px;" src="../images/potion.gif"> <span>Herb
-                                Routes</span></a></li>
-                </ul>
+                    <li>
+                        <a href="webshrine.html">
+                            <p>Web Shrine <br> > theOtherSide</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="herbroute.html">
+                            <span>Herb Routes</span>
+                        </a>
+                    </li>
+                    </ul>
 
             </nav>
                         </div>
@@ -160,13 +181,13 @@
 
             
                         <div class="hidden-button" onvl>
-                            <img src="../images/tulip01.gif">
+                            <img src="../images/tulip01.gif" style="height: 25px;">
                         </div>
         </aside>
         <div class="main-area">
             <main class="content">
                 <div class="main-topborder" style="display: flex; justify-content: space-between">
-                    <span>A map of the best spots to forrage and find ingristes. shh, look closely and you might able to find those hard to get ones</span>
+                    <span>A map of the best spots to forage and find ingredients. Shh, look closely and you might be able to find those hard-to-get ones.</span>
                    
                 </div>
              

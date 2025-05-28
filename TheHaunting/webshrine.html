@@ -187,10 +187,10 @@
 }
 
 .modal-content {
-  background-color: #111;
+  background-color: #000000;
   margin: 15% auto;
   padding: 30px;
-  border: 2px solid #f00;
+  border: 2px solid #480303;
   width: 300px;
   color: #fff;
   text-align: center;
@@ -203,15 +203,15 @@
   padding: 8px;
   margin-top: 10px;
   background: #000;
-  border: 1px solid #f00;
-  color: #f00;
+  border: 1px solid #480303;
+  color: #ffffff;
 }
 
 .modal-content button {
   margin-top: 10px;
   padding: 6px 20px;
-  background-color: #f00;
-  color: #000;
+  background-color: #480303;
+  color: #d5d5d5;
   border: none;
   cursor: pointer;
 }
@@ -220,14 +220,14 @@
   position: absolute;
   top: 8px;
   right: 12px;
-  color: #f00;
+  color: #ffffff;
   font-size: 24px;
   cursor: pointer;
 }
 
 .error {
   margin-top: 10px;
-  color: #f00;
+  color: #ffffff;
   font-size: 0.9rem;
 }
     </style>
@@ -294,18 +294,18 @@ hi
         <div class="message">D̷̮̩͚̭̗͉̯̗̍̀́̈́͂͠O̸̡̦̗͍̹̠̜̫̲͙̬͂̈̈͑̀̓́̈́̽̃̈͂̅̋̌N̵̢͉̰̣̺̲͌͂̀́̏͊͌͊̅̕͝T̷̢͚͖̗̳̹͔̖̠̪̰͛̀̎̓͊̒̀̚ ̸̝̦̈̎D̶̘̪̐̀̀͒̌͒̑̽͊̏̏̕̕͝O̶̺̙̯͔̼͓̪̭͉̜̫̥̎͒̾̾̀͛̍̏̌̅͆͆̊̊͝͝ ̶̰̲̈̏̑̌̌̌ͅI̸̺͎̊̀̍͘T̷̙̙̫͕͎̘̳̬͎̫͖̈̒͗̑̀̿͐͑̄̌̌̐̐̏͝ͅ</div>
         <div style="height: 350px"></div>
         <div class="footerps">
-          <img src="../images/eyered.gif"  id="secretTrigger" style="cursor: pointer;">
+          <img src="../images/eyered.gif" id="secretTrigger" style="cursor: pointer;" onclick="document.getElementById('clickSound').play();">
         </div>
       </div>
 
       <!-- Password Modal -->
 <div id="passwordModal" class="modal">
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Enter the password to proceed:</p>
+    <span class="close" onclick="document.getElementById('clickSound').play();">&times;</span>
+    <p>[Type the password to enter]</p>
     <input type="password" id="passwordInput" placeholder="Password">
-    <button id="submitPassword">Submit</button>
-    <p id="errorMessage" class="error" style="display:none;">Incorrect password.</p>
+    <button id="submitPassword" onclick="document.getElementById('clickSound').play();">Submit</button>
+    <p id="errorMessage" class="error" style="display:none;">Incorrect. <br> [it's 6 digits, some music might help]</p>
   </div>
 </div>
       <div class="mikemessages">
@@ -355,7 +355,7 @@ hi
     </div>
 
     <audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
-    <audio id="triggerevent" src="../images/audio/creepy-ambient-7539.mp3" loop></audio>
+    <!-- <audio id="triggerevent" src="../images/audio/creepy-ambient-7539.mp3" loop></audio> -->
 
     <script>
         // Password modal box code. Copilor helped in fine tuning this function(s) as I was having trouble with some of the functions
@@ -367,7 +367,7 @@ hi
   const input = document.getElementById('passwordInput');
   const error = document.getElementById('errorMessage');
 
-  const correctPassword = "Catboys"; 
+  const correctPassword = "330730"; 
   const redirectURL = "iniationpage1.html"; 
 
   trigger.addEventListener('click', () => {
@@ -388,7 +388,10 @@ hi
 
   submitBtn.addEventListener('click', () => {
     if (input.value === correctPassword) {
+      document.getElementById('clickSound').play();
+      setTimeout(() => {
       window.location.href = redirectURL;
+      }, 200);
     } else {
       error.style.display = 'block';
     }

@@ -17,7 +17,7 @@
       background: url("../images/ditherbg1.png") no-repeat center center fixed;
       background-size: cover;
       color: aliceblue;
-
+      cursor: url('../images/planchette.png') 16 16, auto;
       font-family: "DotGothic16", sans-serif;
       font-size: 14px;
       overflow-x: hidden;
@@ -26,6 +26,8 @@
     * {
       box-sizing: border-box;
     }
+
+
 
     .main-container {
       max-width: 1200px;
@@ -199,7 +201,6 @@
 
     .factbutton:hover {
       background-color: #8c8e7d;
-      cursor: pointer;
     }
 
     /* endless scroll option */
@@ -451,6 +452,10 @@
       color: #f00;
       font-size: 0.9rem;
     }
+
+        a, button, .factbutton {
+  cursor: url('../images/planchette1.png') 16 16, pointer;
+} 
   </style>
 </head>
 
@@ -525,23 +530,23 @@
           <ul>
             <li>
               <a href="#">
-                <img style="width: 45px" src="../images/potion.gif" />
+                <img style="width: 40px" src="../images/potion.gif" />
                 <span>Home</span>
               </a>
             </li>
             <li>
               <a href="spells.html">
-                <img style="width: 45px" src="../images/potion.gif" />
+                <img style="width: 28px" src="../images/clover01.gif" />
                 <span>Book of Shadows</span></a>
             </li>
             <li>
               <a href="#">
-                <img style="width: 45px" src="../images/potion.gif" />
+                <img style="width: 25px" src="../images/candle.gif" />
                 <span>Web Shrine</span></a>
             </li>
             <li>
               <a href="herbroute.html">
-                <img style="width: 45px" src="../images/potion.gif" />
+                <img style="width: 27px" src="../images/dandy02.gif" />
                 <span>Herb Routes</span></a>
             </li>
           </ul>
@@ -625,13 +630,15 @@
               <div class="box radio">
                 Listen to Oakheave Radio or something
                 <a onclick="window.open('music.html', 'musicWindow', 'width=325,height=460,resizable=no'); return false;"
-                  style="cursor: pointer;">
+                 >
                   <img style="width: 270px; margin-top: 15px;" src="../images/cassette.png" />
                 </a>
               </div>
               <div class="collection box">
-                <img src="../images/tulip01.gif" />
-                <img src="../images/dandy02.gif" />
+               
+                <img src="../images/dcxw68a-f62b5d32-c73c-4b7e-99e9-bf3b9391eff8.png"/>
+               
+                
               </div>
             </div>
           </main>
@@ -653,9 +660,9 @@
                 scrolling="auto"></iframe>
             </div>
 
-            <div class="tree">
+            <!-- <div class="tree">
               <img src="../images/tree2_right.png" />
-            </div>
+            </div> -->
           </aside>
         </div>
       </div>
@@ -663,7 +670,7 @@
     <footer id="footer">666 Tartarus domain, 2025</footer>
   </div>
 
-  <div class="scroll-section-wrapper">
+  <!-- <div class="scroll-section-wrapper">
     <div class="background-overlay">
       <div class="overlay"></div>
 
@@ -709,7 +716,6 @@
       </div>
     </div>
 
-    <!-- Password Modal -->
     <div id="passwordModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -736,7 +742,7 @@
       <img src="../images/turnback.gif" class="glitch-img right"
         style="animation-delay: 0.7s; width: 15%; top: 2100px; right: 300px" />
     </div>
-  </div>
+  </div> -->
 
   <audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
   <audio id="triggerevent" src="../images/audio/creepy-ambient-7539.mp3" loop></audio>

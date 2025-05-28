@@ -1,7 +1,17 @@
+ let speechRec;
+
 function setup() {
   createCanvas(windowWidth, windowHeight*2);
   noStroke();
   frameRate(15); // Slightly choppy for realism
+
+  // verbal stuff
+    // Create speech recognition object (English, continuous listening)
+        speechRec = new p5.SpeechRec('en-US', gotSpeech);
+        speechRec.continuous = true;
+        speechRec.interimResults = false;
+        speechRec.start();
+        
 }
 
 function draw() {
@@ -30,3 +40,12 @@ function draw() {
     rect(0, 0, width, height);
   }
 }
+
+function gotSpeech() {
+  console.log("You said:", speechRec.resultString);
+        if (speechRec.resultString.toLowerCase() === 'yes i am') {
+          window.location.href = 'finish.html';
+        } else {
+          document.body.style.background = 'black';
+        }
+        }
