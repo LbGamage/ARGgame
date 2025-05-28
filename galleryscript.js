@@ -38,10 +38,9 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 
   // Jumpscare logic
-  if (slideIndex === 5) {
+  if (slideIndex === 6) {
     modal.classList.remove("default-bg");
     modal.classList.add("jumpscare");
-    const scream = document.getElementById('screamer');
       console.log("JUMPSCARE TRIGGERED");
 
     if (scream) scream.play();

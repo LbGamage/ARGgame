@@ -101,7 +101,7 @@
       gently on my corner of the cosmos. <br><br>Cast aside what remains of life. <br>Throw
       away the keys and starv eout this disease. <br>
 
-    this is exactly where the universe wants you to be if you want to learn the truth</span> <hr>
+    this is exactly where the universe wants you to be if you want to learn the truth <br>But the truth comes at a price</span> <hr>
 
      <div>Are you ready to continue?
         [yes] [no]
@@ -110,7 +110,7 @@
    
 
     <img src="../images/Angels40.jpg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; opacity: 0.15; z-index: -5; pointer-events: none;">
-
+    <audio src="../images/audio/nightmare-68768.mp3" autoplay loop></audio>
     <!-- <img src="../images/eye (1).gif" /> -->
     <script src="iniation-bg.js"></script>
     <script>
@@ -118,6 +118,11 @@
       document.getElementById('loading-screen').style.display = 'none';
       document.getElementById('main-content').style.display = 'block';
     }
+
+    window.addEventListener('click', () => {
+    const audio = document.getElementById('bg-audio');
+    audio.play();
+  }, { once: true }); // only run once
     </script>
   </body>
 </html>

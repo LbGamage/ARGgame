@@ -236,7 +236,7 @@ body {
       transition: all 0.2s ease-in-out;
     }
 
-    .thread:hover {
+    .mikethread:hover {
       background: #f0fff0;
       border-color: #004400;
       box-shadow: 0 0 5px lime;
@@ -262,6 +262,14 @@ body {
       text-decoration: underline;
     }
 
+     .user-link {
+          cursor: pointer;
+        }
+        .user-link:hover {
+          text-decoration: underline;
+          color: #004400;
+        }
+
     </style>
 </head>
 <body>
@@ -271,12 +279,12 @@ body {
     </div>
 
  <div id="navbar" style="position: sticky; top: 90px; z-index: 1002;">
-  <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
+  <div class="oakheavenBanner"> <img src="images/oakheavenlogo.png" style="width: 30%;"> </div>
 <div style="display: inline;">
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);" >Home</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" >Forum</a>
-        <a href="#">User List</a>
-        <a href="#">Park Map</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);" style="cursor: pointer;" >Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" style="cursor: pointer;">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" style="cursor: pointer;">User List</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" style="cursor: pointer;">Park Map</a>
 </div>
 <div style="display: inline; float: right;">
         <a href="#" id="profileLink">Profile</a>
@@ -289,11 +297,11 @@ body {
 
   <div id="main">
     <div id="content">
-         <h2> !Trending! Forum Threads</h2>
+         <h2> Trending! Forum Threads</h2>
         <div class="post forum-post">
-              <div class="thread">
+              <div class="thread mikethread" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200)" style="cursor: pointer;">
         <div class="thread-title">
-          <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);">[REPORT]Missing! Has anyone seen Mike Scott?<br></a>
+          <a >[REPORT]Missing! Has anyone seen Mike Scott?<br></a>
         </div>
         <div class="thread-meta">
           Started by <strong>mikehike128</strong><br>
@@ -322,7 +330,7 @@ body {
       </div>
       </div>
 
-      <h2><img src="https://i.imgur.com/fd83V3R.png" class="cursed-icon"> Posts</h2>
+      <h2> Posts</h2>
       
       <div class="post">
         <div class="username">theGreenWitch08</div>
@@ -349,15 +357,7 @@ body {
         <div class="reactions"><b>Commets (1) | 34 Views | 6 Likes</b> <img scr></div>
       </div>
 
-       <div class="post">
-        <div class="username">MountainHiker99</div>
-        <div class="date">Posted on October 20, 2005</div>
-          <div class="text">Saw this guy near trail 7. Any idea what it might be? Man I wish I brought my camera</div>
-                <img style="width: 100%; padding-top: 2%;" src="images/fox.jpg">
-     <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
-                <div class="text">[@Shoutbox]: Yea. your mum (jk thats obvisouly just a cat)</div>
-
-      </div>
+      
 
 
        <div class="post">
@@ -369,14 +369,31 @@ body {
                  >>[mtJames0180]: Not cool man. Seriously though, has anyone actually seen him?</div>
 
       </div>
-      
-      <div class="post">
-        <div class="username">theGreenWitch08</div>
-        <div class="date">Posted on October 17, 2005</div>
-         <div class="text">Oh My God, I can't believe I found Chanterelles in October! I thought they'd be out of season by now. The Samhain Potluck is gonna be so good!</div>
-        <img style="width: 100%; padding-top: 2%;" src="images/cantharel_mushroom.jpg">
-        <div class="reactions"><b>Commets (0) | 34 Views | 9 Likes</b> <img scr></div>
+
+       <div class="post">
+        <div class="username">MountainHiker99</div>
+        <div class="date">Posted on October 20, 2005</div>
+          <div class="text">Saw this guy near trail 7. Any idea what it might be? Man I wish I brought my camera</div>
+                <img style="width: 100%; padding-top: 2%;" src="images/fox.jpg">
+     <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+                <div class="text">[@Shoutbox]: Yea. your mum (jk thats obvisouly just a cat)</div>
+
       </div>
+      
+      
+
+         <div class="post">
+        <div class="username">MikeHike128</div>
+        <div class="date">Posted on November 3, 2005</div>
+         <div class="text">Accidentally stepped in a fairy circle, haha. I've never seen one so big before </div>
+        <img style="width: 100%; padding-top: 2%;" src="images/fairycircle.jpg">
+       
+        <div class="reactions"><b>Commets (2) | 8 Views | 2 Likes</b> <img scr></div>
+         <div class="text">[@theGreenWitch08]: Lol the fairies are gonna steal your name or something! <br>
+        </div>
+      </div>
+
+
        <div class="post">
         <div class="username">MountainHiker99</div>
         <div class="date">Posted on October 16, 2005</div>
@@ -393,7 +410,13 @@ body {
                 <div class="reactions"><b>Commets (2) | 34 Views | 2 Likes</b> <img scr></div>
                 <div class="text">[@theGreenWitch08]: So true, it's so easy to grow what you need in here too!</div>
       </div>
-
+    <div class="post">
+        <div class="username">theGreenWitch08</div>
+        <div class="date">Posted on October 3, 2005</div>
+         <div class="text">Oh My God, I can't believe I found Chanterelles in October! I thought they'd be out of season by now. The Samhain Potluck is gonna be so good!</div>
+        <img style="width: 100%; padding-top: 2%;" src="images/cantharel_mushroom.jpg">
+        <div class="reactions"><b>Commets (0) | 34 Views | 9 Likes</b> <img scr></div>
+      </div>
       <div class="post">
         <div class="username">theGreenWitch08</div>
         <div class="date">Posted on September 20, 2005</div>
@@ -483,27 +506,27 @@ body {
   <div class="user-status">
     <div class="user" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);"  style="cursor:pointer;">
       <span class="online-indicator"></span>
-      <img src="https://i.imgur.com/Jt0nYdp.png" alt="Avatar" class="avatar">
-      MikeHike128
+      <img src="images/mikepfp.png" alt="Avatar" class="avatar">
+      <span class="user-link">MikeHike128</span>
     </div>
     <div class="user">
       <span class="online-indicator"></span>
-      <img src="https://i.imgur.com/uFQbD4U.png" alt="Avatar" class="avatar">
+      <img src="images/Oneiromancy.png" alt="Avatar" class="avatar">
       mtJames0180
     </div>
     <div class="user" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='Ellie-profile.html'; }, 200);" style="cursor:pointer;">
       <span class="online-indicator" ></span>
-      <img src="https://i.imgur.com/kF1IadF.png" alt="Avatar" class="avatar">
-      theGreenWitch08
+      <img src="images/treepfp.jpg" alt="Avatar" class="avatar">
+      <span>theGreenWitch08</span>
     </div>
     <div class="user">
       <span class="online-indicator"></span>
-      <img src="https://i.imgur.com/w1XCHRc.png" alt="Avatar" class="avatar">
+      <img src="images/pentimg.jpg" alt="Avatar" class="avatar">
       Moonstone83
     </div>
     <div class="user">
       <span class="online-indicator"></span>
-      <img src="https://i.imgur.com/fd83V3R.png" alt="Avatar" class="avatar">
+      <img src="images/skullgrass.jpg" alt="Avatar" class="avatar">
       Shoutbox  
     </div>
   </div>
@@ -523,7 +546,7 @@ body {
   </div>
 </div>
 <!-- Login Modal -->
-<div id="loginModal">
+<div id="loginModal" style="z-index: 2000;">
   <div id="loginBox">
     <h2>Sign In to the Forum</h2>
     <input type="text" id="usernameInput" placeholder="Enter your username">

@@ -103,7 +103,7 @@
   background: rgba(0, 0, 0, 0.9);
 }
 .popgal.jumpscare {
-  background: url('images/6355.png') center center no-repeat;
+  background: url('images/eye.gif') center center no-repeat;
   background-size: cover;
 }
 

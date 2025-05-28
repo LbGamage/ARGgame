@@ -1,59 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Scattered Word Swap</title>
-  <style>
-    .changing-word {
-      color: red;
-      font-style: italic;
-      text-shadow: 0 0 2px cyan;
+<audio id="bg-audio" src="../images/audio/nightmare-68768.mp3" loop></audio>
+
+<div style="height: 1500px;">
+  <h1>Scroll down</h1>
+  <div id="trigger" style="margin-top: 800px;">Trigger Point</div>
+</div>
+
+<script>
+  const audio = document.getElementById('bg-audio');
+  const trigger = document.getElementById('trigger');
+  let played = false;
+
+  window.addEventListener('scroll', () => {
+    const triggerTop = trigger.getBoundingClientRect().top;
+
+    if (!played && triggerTop < window.innerHeight) {
+      audio.play();
+      played = true; // prevent it from playing again
     }
-  </style>
-</head>
-<body>
-  <h1>This is a headline for the haunted page</h1>
-  <p>This paragraph has some words that might change or glitch. Be careful.</p>
-  <div>Nothing is quite what it seems, not here, not ever.</div>
-  <p>It is only a matter of time before he arrives.</p>
-
-  <script>
-    const alternateWords = [
-      "herre", "here", "her", "he's coming", "mike", "run", "why?", "soon", "noise", "hollow"
-    ];
-
-    function randomIndex(length) {
-      return Math.floor(Math.random() * length);
-    }
-
-    function getTextElements() {
-      return Array.from(document.querySelectorAll("p, div, span, h1, h2, h3, h4, h5, h6"));
-    }
-
-    function swapWordsInElement(el) {
-      const originalText = el.textContent;
-      const words = originalText.split(/\s+/);
-      const newWords = [...words];
-
-      const numToChange = Math.floor(Math.random() * 2) + 1; // 1–2 words
-
-      for (let i = 0; i < numToChange; i++) {
-        const indexToChange = randomIndex(newWords.length);
-        const replacement = alternateWords[randomIndex(alternateWords.length)];
-        newWords[indexToChange] = `<span class="changing-word">${replacement}</span>`;
-      }
-
-      el.innerHTML = newWords.join(' ');
-    }
-
-    setInterval(() => {
-      const elements = getTextElements();
-      const count = Math.floor(Math.random() * 2) + 1; // 1–2 elements
-      for (let i = 0; i < count; i++) {
-        const el = elements[randomIndex(elements.length)];
-        if (el) swapWordsInElement(el);
-      }
-    }, 3000); // every 3 seconds
-  </script>
-</body>
-</html>
+  });
+</script>

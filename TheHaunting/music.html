@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap"
+        rel="stylesheet" />
+    <style>
+body {
+    background: url('../images/thegrove.png') no-repeat center center fixed;
+    background-size: cover;
+}
+    </style>
+</head>
+
+<body>
+    <div id="app" style="height: 100vh">
+        <!-- Webamp will attempt to center itself within this div -->
+    </div>
+    <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
+    <script>
+        const Webamp = window.Webamp;
+        const webamp = new Webamp({
+            // Optional. An array of objects representing skins.
+            // These will appear in the "Options" menu under "Skins".
+            // Note: These URLs must be served with the correct CORs headers.
+            //
+            // These will appear in the dropdown menu under "Skins".
+
+            initialTracks: [
+                {
+                    metaData: {
+                        title: "Evanescence",
+                        artist: "Haunted",
+                    },
+                    url: "../images/winamp/Evanescence - Haunted (Remastered 2023) - Official Visualizer.mp3",
+                },
+                
+                {
+                    metaData: {
+                        title: "Matchbox Twenty",
+                        artist: "3AM",
+                    },
+                    url: "../images/winamp/Matchbox Twenty - 3AM (Official Video) [HD Remaster].mp3",
+                },
+                {
+                    metaData: {
+                        title: "Avenged Sevenfold",
+                        artist: "Unholy Confessions",
+                    },
+                    url: "../images/winamp/Avenged Sevenfold - Unholy Confessions (Original First Cut Music Video).mp3",
+                },
+                {
+                    metaData: {
+                        title: "30 Seconds To Mars",
+                        artist: "Capricorn",
+                    },
+                    url: "../images/winamp/30 Seconds To Mars - Capricorn (A Brand New Name) (Official Music Video).mp3",
+                }, 
+                {
+                    metaData: {
+                        title: "The White Stripes",
+                        artist: "Seven Nation Army",
+                    },
+                    url: "../images/winamp/The White Stripes - Seven Nation Army (Official Music Video).mp3",
+                }, {
+                    metaData: {
+                        title: "Tom Robinson",
+                        artist: "2-4-6-8 Motorway",
+                    },
+                    url: "../images/winamp/Tom Robinson Band 2-4-6-8 Motorway.mp3",
+                }, {
+  metaData: {
+    title: "Breaking Benjamin",
+    artist: "The Diary of Jane",
+  },
+  url: "../images/winamp/Breaking Benjamin - The Diary of Jane.mp3",
+},
+
+
+            ],
+            initialSkin: {
+                url: "../images/winamp/breedamp_organica.wsz"
+            }
+        });
+
+        // Returns a promise indicating when it's done loading.
+        webamp.renderWhenReady(document.getElementById("app"));
+    </script>
+</body>
+
+</html>

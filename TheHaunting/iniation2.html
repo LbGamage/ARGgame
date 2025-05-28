@@ -4,19 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.dom.min.js"></script>
+        <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+
+         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap"
+            rel="stylesheet"
+        />
 
     <style>
-        .camera{
+
+            canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw !important;
+                height: 100vh !important;
+                z-index: -10;
+                pointer-events: none;
+                display: block;
+            }
+
+            
+            body {
+                margin: 0;
+                font-family: Verdana, Arial, sans-serif;
+                font-size: 20px;
+                color: white;
+                font-weight: bolder;
+                font-family: "DotGothic16", sans-serif;
+                overflow-x: hidden;
+            }
+
+            .soulsucker{
+                position: absolute;
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            }
+
+        .camera {
             width: 705px;
             height: 505px;
             border: none;
+            
+            /* box-shadow: 0 4px 32px rgba(0,0,0,0.5); */
         }
 
-    
+        /* inspired by Simple progress bar animation by Traf  https://codepen.io/traf/pen/oKbaqQ*/
+        body {
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.progress {
+  background: rgba(0, 0, 0, 0);
+  border: 3px solid white;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+  margin-top: 15px;
+}
+
+.text-info{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.progress-value {
+    animation: load 30s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    background: #fff;
+    height: 30px;
+    width: 0;
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+
+
+
+.current {
+    animation: blink 1s step-start infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.complete, .dulya, .praybut {
+    display: none;
+}
+
     </style>
 </head>
-    <iframe src="ghostcamera.html" class="camera" scrolling="no"></iframe>
+
+<div class="soulsucker">
+    <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+        <iframe src="ghostcamera.html" class="camera" scrolling="no"></iframe>
+        <img class="dulya" src="../images/eye (1).gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; pointer-events: none;">
+    </div>
     <!-- <iframe src="ghostcamera.html" class="camera"></iframe> -->
+<div class="progress">
+  <div class="progress-value"></div>
+
+</div>
+<div class="text-info">
+    <span class="current">[absorbing soul...] Please do not struggle</span>
+    <span class="complete">[upload complete]</span>
+    <p id="demo"></p>
+    <!-- <span>Welcome to bitterwood Coven. You've just signed a soul contract. GODNAME welcomes you/ We'll be in touch soon</span> -->
+     <button class="praybut">[P R A Y]</button>
+</div>
+</div>
+    
+    <audio src="../images/audio/soulupload.mp3" autoplay loop id="bg-audio"></audio>
+   
+    <script src="iniation-bg.js"></script>
+<script> 
+
+
+  // from w3 schools
+
+
+        var i = 0;
+var txt = "Welcome to bitterwood Coven. You've just signed a soul contract. GODNAME welcomes you";
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function () {
+        const current = document.querySelector(".current");
+        const complete = document.querySelector(".complete");
+        const dulya = document.querySelector(".dulya");
+        const pray = document.querySelector(".praybut");
+
+        // Set a timeout for the length of the progress animation (30s)
+        setTimeout(() => {
+            if (current) current.style.display = "none";
+            if (complete) complete.style.display = "inline";
+            typeWriter();
+            dulya.style.display = "inline" 
+            pray.style.display = "inline" // or "block" if needed
+        }, 30000); // 30 seconds
+    });
+
+  
+</script>
+
 
     <!-- voice rec or movement or something to fill a loading bar, voice rec to read a spell. -->
 </body>

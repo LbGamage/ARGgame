@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+         <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("../images/ditherbg1.png") no-repeat center center fixed;
+        background-size: cover;
+        color: aliceblue;
+
+        font-family: "DotGothic16", sans-serif;
+        font-size: 14px;
+        overflow-x: hidden;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .main-container {
+        max-width: 1200px;
+        min-height: 600px;
+        margin: 40px auto;
+        background: rgba(114, 60, 223, 0.954);
+        /* border-radius: 18px; */
+        /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+        display: flex;
+        flex-direction: column;
+      }
+
+        /* endless scroll option */
+
+      .scroll-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        /* on top of the background-overlay */
+        width: 100%;
+        padding: 0 2rem;
+      }
+
+      .spacer {
+        height: 100vh;
+        /* Creates vertical space between messages */
+      }
+
+        ul {
+        list-style-type: none;
+        padding-left: 2px;
+      }
+
+      p,
+      img {
+        z-index: 100;
+      }
+
+      .scroll-section-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        z-index: 0;
+        margin: 0 auto;
+        display: block;
+        /* overflow: hidden; background-color: turquoise; */
+      }
+
+      .overlay {
+        width: 100%;
+        height: 1300px;
+        background-color: #6e7c6f;
+        background: linear-gradient(
+          180deg,
+          rgba(34, 28, 40, 0) 0%,
+          #000000e8 100%
+        );
+      }
+
+      .glitch-bg {
+        width: 100vw;
+        opacity: 0.88;
+        display: block;
+        position: relative;
+        z-index: 0;
+      }
+
+      .over2 {
+        height: 600px;
+        background: linear-gradient(
+          180deg,
+          #000000e8 0%,
+          rgb(38, 5, 5) 50%,
+          #2a0101 100%
+        );
+      }
+
+      .over3 {
+        height: 600px;
+        background: linear-gradient(
+          0deg,
+          #000000e8 0%,
+          rgb(38, 5, 5) 90%,
+          #2a0101 100%
+        );
+      }
+
+      .mikemessages {
+        position: absolute;
+        top: 1200px;
+        left: 0;
+        width: 100vw;
+        height: 0;
+        overflow: visible;
+        z-index: 0;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .glitch-img {
+        position: absolute;
+        width: 20%;
+        animation: blink 2s infinite;
+        opacity: 1;
+      }
+
+      .glitch-img.left {
+        left: 15px;
+      }
+
+      .glitch-img.right {
+        right: 15px;
+      }
+
+      .spacer {
+        height: 100vh;
+      }
+
+      /* Blinking effect */
+      @keyframes blink {
+        0%,
+        20%,
+        100% {
+          opacity: 1;
+        }
+        10%,
+        30%,
+        60% {
+          opacity: 0;
+        }
+        40%,
+        70%,
+        90% {
+          opacity: 1;
+        }
+      }
+
+      /* password styling check */
+
+      .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #111;
+  margin: 15% auto;
+  padding: 30px;
+  border: 2px solid #f00;
+  width: 300px;
+  color: #fff;
+  text-align: center;
+  font-family: monospace;
+  position: relative;
+}
+
+.modal-content input {
+  width: 80%;
+  padding: 8px;
+  margin-top: 10px;
+  background: #000;
+  border: 1px solid #f00;
+  color: #f00;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 6px 20px;
+  background-color: #f00;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #f00;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.error {
+  margin-top: 10px;
+  color: #f00;
+  font-size: 0.9rem;
+}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+hi
+    </div>
+     <div class="scroll-section-wrapper">
+      <div class="background-overlay">
+        <div class="overlay"></div>
+       
+        <img
+          class="glitch-bg"
+          src="../images/glicthoverlay.gif"
+          alt="Glitch Background"
+        />
+        <div class="overlay over2"></div>
+        <div
+          class="glitch-bg"
+          style="
+            background-color: #2a0101;
+            opacity: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <img
+            src="../images/deadend.gif"
+            alt="Glitch Background"
+            style="background-color: #2a0101; opacity: 1"
+          />
+        </div>
+        <div class="overlay over3"></div>
+      </div>
+      <div class="scroll-container">
+        <div class="spacer"></div>
+        <div class="message">
+          Oh? hi there, You sure you know where you're going?
+           <div id="triggersound"></div>
+        </div>
+        <img src="../images/MEQRYN8_o.png" alt="Oakheaven Radio" />
+        <div class="spacer"></div>
+        <img
+          src="../images/MEQRYN8_o.png"
+          alt="Oakheaven Radio"
+          style="position: relative; left: 350px; display: block"
+        />
+        <div class="message">Wanna learn more keep going</div>
+        <img
+          src="../images/MEQRYN8_o.png"
+          alt="Oakheaven Radio"
+          style="position: relative; right: 450px; display: block"
+        />
+
+        <div class="message">
+          You're so close, just a little further and you'll find something
+          special
+        </div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="message">D̷̮̩͚̭̗͉̯̗̍̀́̈́͂͠O̸̡̦̗͍̹̠̜̫̲͙̬͂̈̈͑̀̓́̈́̽̃̈͂̅̋̌N̵̢͉̰̣̺̲͌͂̀́̏͊͌͊̅̕͝T̷̢͚͖̗̳̹͔̖̠̪̰͛̀̎̓͊̒̀̚ ̸̝̦̈̎D̶̘̪̐̀̀͒̌͒̑̽͊̏̏̕̕͝O̶̺̙̯͔̼͓̪̭͉̜̫̥̎͒̾̾̀͛̍̏̌̅͆͆̊̊͝͝ ̶̰̲̈̏̑̌̌̌ͅI̸̺͎̊̀̍͘T̷̙̙̫͕͎̘̳̬͎̫͖̈̒͗̑̀̿͐͑̄̌̌̐̐̏͝ͅ</div>
+        <div style="height: 350px"></div>
+        <div class="footerps">
+          <img src="../images/eyered.gif"  id="secretTrigger" style="cursor: pointer;">
+        </div>
+      </div>
+
+      <!-- Password Modal -->
+<div id="passwordModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Enter the password to proceed:</p>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button id="submitPassword">Submit</button>
+    <p id="errorMessage" class="error" style="display:none;">Incorrect password.</p>
+  </div>
+</div>
+      <div class="mikemessages">
+        <img
+          src="../images/msg1.gif"
+          class="glitch-img left"
+          style="animation-delay: 0.2s; width: 22%"
+        />
+        <div class="spacer"></div>
+        <img
+          src="../images/msg2.gif"
+          class="glitch-img right"
+          style="animation-delay: 0.8s; width: 25%"
+        />
+
+        <img
+          src="../images/msg3.gif"
+          class="glitch-img left"
+          style="animation-delay: 0.7s; width: 15%; top: 1700px"
+        />
+        <img
+          src="../images/msg3.gif"
+          class="glitch-img right"
+          style="animation-delay: 0.2s; width: 15%; top: 1900px; right: 80px"
+        />
+        <img
+          src="../images/turnback.gif"
+          class="glitch-img left"
+          style="animation-delay: 0.5s; width: 15%; top: 1400px; left: 240px"
+        />
+        <img
+          src="../images/turnback.gif"
+          class="glitch-img right"
+          style="animation-delay: 0.3s; width: 15%; top: 2200px; right: 100px"
+        />
+        <img
+          src="../images/turnback.gif"
+          class="glitch-img left"
+          style="animation-delay: 0.5s; width: 15%; top: 2000px; left: 200px"
+        />
+        <img
+          src="../images/turnback.gif"
+          class="glitch-img right"
+          style="animation-delay: 0.7s; width: 15%; top: 2100px; right: 300px"
+        />
+      </div>
+    </div>
+
+    <audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
+    <audio id="triggerevent" src="../images/audio/creepy-ambient-7539.mp3" loop></audio>
+
+    <script>
+        // Password modal box code. Copilor helped in fine tuning this function(s) as I was having trouble with some of the functions
+
+    const modal = document.getElementById('passwordModal');
+  const trigger = document.getElementById('secretTrigger');
+  const closeBtn = document.querySelector('.close');
+  const submitBtn = document.getElementById('submitPassword');
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('errorMessage');
+
+  const correctPassword = "Catboys"; 
+  const redirectURL = "iniationpage1.html"; 
+
+  trigger.addEventListener('click', () => {
+    modal.style.display = 'block';
+    input.value = '';
+    error.style.display = 'none';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  submitBtn.addEventListener('click', () => {
+    if (input.value === correctPassword) {
+      window.location.href = redirectURL;
+    } else {
+      error.style.display = 'block';
+    }
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') submitBtn.click();
+  });
+
+
+   const audio = document.getElementById('triggerevent');
+  const triggermusic = document.getElementById('triggersound');
+  let played = false;
+
+  window.addEventListener('scroll', () => {
+    const triggerTop = triggermusic.getBoundingClientRect().top;
+
+    if (!played && triggerTop < window.innerHeight) {
+      audio.play();
+      played = true; // prevent it from playing again
+    }
+  });
+    </script>
+</body>
+</html>

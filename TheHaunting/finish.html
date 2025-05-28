@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.dom.min.js"></script>
+        <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Crafty+Girls&family=DotGothic16&family=Jersey+10&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Serif+Dives+Akuru&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Princess+Sofia&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yomogi&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw !important;
+                height: 100vh !important;
+                z-index: -10;
+                pointer-events: none;
+                display: block;
+            }
+
+            body {
+                margin: 0;
+                font-family: Verdana, Arial, sans-serif;
+                font-size: 20px;
+                color: white;
+                font-weight: bolder;
+                font-family: "DotGothic16", sans-serif;
+                overflow-x: hidden;
+            }
+            </style>
+</head>
+<body>
+
+    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2em; text-align: center;">
+        [WE 'LL BE IN TOUCH SOON]
+    </div>
+    
+    <img src="../images/Angels40.jpg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; opacity: 0.85; z-index: -5; pointer-events: none;">
+
+    
+       <script src="iniation-bg.js"></script>
+
+       <audio src="../images/audio/8D KNOCK KNOCK 15 sec for Twitch - binaural knocking.mp3" autoplay></audio>
+  
+   
+    <script>
+     window.addEventListener('click', () => {
+    const audio = document.getElementById('bg-audio');
+    audio.volume = 1.0; // Set volume to maximum
+    audio.play();
+  }, { once: true });
+    </script>
+</body>
+</html>

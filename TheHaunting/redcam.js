@@ -11,6 +11,7 @@ BodyPix
 let bodypix;
 let video;
 let segmentation;
+let opacity = 180;
 
 let options = {
   outputStride: 16, //adjust the output stride and see which one works best!
@@ -37,8 +38,9 @@ function gotResults(result) {
   image(video, 0, 0, width, height);
   image(segmentation.backgroundMask, 0, 0, width, height);
   filter(GRAY); //greyscale filter
-  tint(255, 255, 255, 150); // changed opacity 
-
+  opacity = max(15, opacity - 1);
+  tint(0, 255, 255, opacity); // changed opacity 
+   console.log(opacity);
 }
 
 // Event when model is loaded

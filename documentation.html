@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oakheaven Forum</title>
 
   <style>
@@ -31,7 +31,7 @@
     #banner {
       width: 100%;
       height: 90px;
-      background: url('/images/banner-ad.gif') no-repeat center;
+      background: url("/images/banner-ad.gif") no-repeat center;
       background-color: #cccccc;
       border-bottom: 2px solid #333;
     }
@@ -94,7 +94,7 @@
     #ad-banner {
       width: 100%;
       height: 240px;
-      background: url('/images/fake-ad-1.gif') no-repeat;
+      background: url("/images/fake-ad-1.gif") no-repeat;
       background-size: cover;
       margin-bottom: 10px;
     }
@@ -102,7 +102,7 @@
     #ad-banner2 {
       width: 120px;
       height: 240px;
-      background: url('/images/fake-ad-2.gif') no-repeat;
+      background: url("/images/fake-ad-2.gif") no-repeat;
       background-size: cover;
     }
 
@@ -116,7 +116,6 @@
       border-top: 2px solid #999;
       margin-top: 20px;
     }
-
 
     /* Login Modal */
     #loginModal {
@@ -165,7 +164,6 @@
     #loginBox button:hover {
       background-color: #004400;
     }
-
 
     .user-status .user {
       display: flex;
@@ -252,7 +250,6 @@
 
     /* ------------- */
 
-
     /* Comments Section */
     .comments {
       margin-top: 30px;
@@ -267,8 +264,6 @@
     .comment:nth-child(even) {
       background: #eaeaea;
     }
-
-
 
     .comment .profile img {
       width: 100%;
@@ -299,10 +294,9 @@
       height: 150px;
       object-fit: cover;
       margin-right: 10px;
-      
     }
 
-      /* experiemnts */
+    /* experiemnts */
 
     .glitch {
       animation: glitch 1s infinite;
@@ -339,171 +333,220 @@
         transform: translate(0);
       }
     }
+
+    .user-link {
+      cursor: pointer;
+    }
+
+    .user-link:hover {
+      text-decoration: underline;
+      color: #004400;
+    }
   </style>
 </head>
 
 <body>
+  <audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
   <div id="container">
-    <div id="banner" style="position: sticky; top: 0; z-index: 1001;"
-      onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
-      <img src="images/sims.gif" alt="Banner Ad" style="width: 100%; height: 90px;">
+    <div id="banner" style="position: sticky; top: 0; z-index: 1001"
+      onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor: pointer">
+      <img src="images/sims.gif" alt="Banner Ad" style="width: 100%; height: 90px" />
     </div>
 
-    <div id="navbar" style="position: sticky; top: 90px; z-index: 1002;">
-      <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
-      <div style="display: inline;">
-        <a href="index.html">Home</a>
-        <a href="forum-home.html">Forum</a>
-        <a href="#">User List</a>
-        <a href="#">Park Map</a>
+    <div id="navbar" style="position: sticky; top: 90px; z-index: 102">
+      <div class="oakheavenBanner">
+        <img src="images/oakheavenlogo.png" style="width: 30%" />
       </div>
-      <div style="display: inline; float: right;">
+      <div style="display: inline">
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);"
+          style="cursor: pointer">Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer">User List</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer">Park Map</a>
+      </div>
+      <div style="display: inline; float: right">
         <a href="#" id="profileLink">Profile</a>
-        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
-        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
+        <a href="#" id="loginLink"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { showLogin(); }, 200);">Sign
+          In</a>
+        <a href="#" id="logoutLink" style="display: none"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { logoutUser(); }, 200);">Log
+          Out</a>
       </div>
     </div>
-    <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
-
-
+    <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts
+      Unite! | NO LONGER ACTIVE</marquee>
 
     <div id="main">
       <div id="content">
-        <div class="breadcrumbs" style="color: #666; padding-bottom: 5px;">
-            MikeHike128 > forum > [documentation]
+        <div class="breadcrumbs" style="color: #666; padding-bottom: 5px">
+          MikeHike128 > forum > [documentation]
         </div>
         <div class="post mike1">
-          <h2>[Documentation] Something is wrong near the great Oak, a list of everything strange </h2>
+          <h2>
+            [Documentation] Something is wrong near the great Oak, a list of
+            everything strange
+          </h2>
 
-          <div class="text">Theres something wrong at Oakheaven Park, I don't know what it is but this thread it dedicated to documenting everything strange that has been happening in the park lately. <br><br> Feel free to add anything you have seen or heard, I will try to keep this thread updated with everything I can find. <br><br>
-            Edit: so apparently people can't edit this for some reason, so I will just keep updating it myself. <br><br>
+          <div class="text">
+            Theres something wrong at Oakheaven Park, I don't know what it is
+            but this thread it dedicated to documenting everything strange
+            that has been happening in the park lately. <br /><br />
+            Feel free to add anything you have seen or heard, I will try to
+            keep this thread updated with everything I can find. <br /><br />
+            Edit: so apparently people can't edit this for some reason, so I
+            will just keep updating it myself. <br /><br />
             <div class="thread-meta">
-              <div style="display: flex; align-items: center; justify-content: flex-end; margin-bottom: 3px;">
-             <span>Started by  <a href="mike-profile.html" style="cursor: pointer;"> <strong>mikehike128</strong></a></span>
+              <div style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    margin-bottom: 3px;
+                  ">
+                <span>Started by
+                  <a href="mike-profile.html" style="cursor: pointer">
+                    <strong>mikehike128</strong></a></span>
                 <img src="images/bunpfp.jpg" alt="User Avatar" class="avatar"
-                  style="width: 22px; height: 22px; margin-right: 6px;">
+                  style="width: 22px; height: 22px; margin-right: 6px" />
               </div>
               Replies: 5 | Last Post: 26 October 2005
             </div>
-            <hr>
+            <hr />
             <div class="comment 5">
               <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <img src="images/skullgrass.jpg" style="width: 70px; height: 70px" />
                 <div class="username">Shoutbox</div>
                 <div class="thread-meta">Posted 23 October 2005</div>
               </div>
               <div class="reply">
-                Those woods have weird energy, man. Wouldn't go in there without a guide. Sending strength.
+                Those woods have weird energy, man. Wouldn't go in there
+                without a guide. Sending strength.
               </div>
             </div>
+
             <div class="comment 4">
               <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
-                <div class="username">theGreenWitch08</div>
+                <img src="images/mikepfp.png" style="width: 70px; height: 70px" />
+                <div class="username">MikeHike128</div>
                 <div class="thread-meta">Posted 22 October 2005</div>
               </div>
               <div class="reply">
-Do you guys see that? I think its a deer or soemthing but it's been staring for ages now<br><br>                                              <img style="width: 100%;" src="images/ghost.jpg">
-
+                Do you guys see that? I think its a deer or soemthing but it's
+                been staring for ages now<br /><br />
+                <img style="width: 100%" src="images/ghost.jpg" />
               </div>
             </div>
             <div class="comment 3">
               <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
-                <div class="username">OakheavenParkOfficial</div>
-                <div class="thread-meta" style="text-align: left;">Posted 21 October 2005</div>
+                <img src="images/mikepfp.png" style="width: 70px; height: 70px" />
+                <div class="username">MikeHike128</div>
+                <div class="thread-meta" style="text-align: left">
+                  Posted 21 October 2005
+                </div>
               </div>
               <div class="reply">
-                Since when was this a thing? First time coming across this sign. I swear I've never seen this and I've used this trail multiple times before. 
-                                              <img style="width: 100%;" src="images/acd055aa2bde5f6a17039e048c78abea.jpg">
-
+                Since when was this a thing? First time coming across this
+                sign. I swear I've never seen this and I've used this trail
+                multiple times before.
+                <img style="width: 100%" src="images/acd055aa2bde5f6a17039e048c78abea.jpg" />
               </div>
             </div>
             <div class="comment 2">
               <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <img src="images/mikepfp.png" style="width: 70px; height: 70px" />
                 <div class="username">MikeHike128</div>
                 <div class="thread-meta">Posted 21 October 2005</div>
               </div>
               <div class="reply">
-                Camping near the picnic area today. I thought I heard something so I decided to check it out. Gonna post every tiny thing, I need to keep a log<br><br>
-                              <img style="width: 100%;" src="images/dark forest.jpg">
-
+                Camping near the picnic area today. I thought I heard
+                something so I decided to check it out. Gonna post every tiny
+                thing, I need to keep a log<br /><br />
+                <img style="width: 100%" src="images/dark forest.jpg" />
               </div>
             </div>
             <div class="comment 1">
               <div class="profile">
-                <img src="images/bunpfp.jpg" style="width: 50%;">
+                <img src="images/mikepfp.png" style="width: 70px; height: 70px" />
                 <div class="username">MikeHike128</div>
                 <div class="thread-meta">Posted 21 October 2005</div>
               </div>
               <div class="reply">
-               rhrgeg oh gods oh gds, literally running as i type this. what the fuck th fuck is that. i'm gonna cry. I lef tmy camp gear, i need to get outta here wtf.<br><br>
-                              <img style="width: 100%;" src="images/ifiyc5voqnf41.jpg">
-
+                rhrgeg oh gods oh gds, literally running as i type this. what
+                the fuck th fuck is that. i'm gonna cry. I lef tmy camp gear,
+                i need to get outta here wtf.<br /><br />
+                <img style="width: 100%" src="images/ifiyc5voqnf41.jpg" />
               </div>
             </div>
-
           </div>
         </div>
 
-       
-      <!-- more posts -->
-    </div>
+        <!-- more posts -->
+      </div>
 
-    <div id="sidebar">
-      <div id="online-users">
-        <h3>Users [View all]</h3>
-        <div class="user-status">
-          <div class="user" onclick="window.location.href='mike-profile.html'" style="cursor:pointer;">
-            <span class="online-indicator"></span>
-            <img src="https://i.imgur.com/Jt0nYdp.png" alt="Avatar" class="avatar">
-            MikeHike128
+      <div id="sidebar">
+        <div id="online-users">
+          <h3>Users [View all]</h3>
+          <div class="user-status">
+            <div class="user"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);"
+              style="cursor: pointer">
+              <span class="online-indicator"></span>
+              <img src="images/mikepfp.png" alt="Avatar" class="avatar" />
+              <span class="user-link">MikeHike128</span>
+            </div>
+            <div class="user">
+              <span class="online-indicator"></span>
+              <img src="images/Oneiromancy.png" alt="Avatar" class="avatar" />
+              mtJames0180
+            </div>
+            <div class="user"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='Ellie-profile.html'; }, 200);"
+              style="cursor: pointer">
+              <span class="online-indicator" style="background-color: lime"></span>
+              <img src="images/treepfp.jpg" alt="Avatar" class="avatar" />
+              <span class="user-link">theGreenWitch08</span>
+            </div>
+            <div class="user">
+              <span class="online-indicator"></span>
+              <img src="images/pentimg.jpg" alt="Avatar" class="avatar" />
+              Moonstone83
+            </div>
+            <div class="user">
+              <span class="online-indicator"></span>
+              <img src="images/skullgrass.jpg" alt="Avatar" class="avatar" />
+              Shoutbox
+            </div>
           </div>
-          <div class="user">
-            <span class="online-indicator"></span>
-            <img src="https://i.imgur.com/uFQbD4U.png" alt="Avatar" class="avatar">
-            mtJames0180
+        </div>
+
+        <div id="ads">
+          <h3>Sponsored</h3>
+          <div id="ad-banner">
+            <img src="../images/misc-5.gif" style="width: 100%" />
           </div>
-          <div class="user" onclick="window.location.href='Ellie-profile.html'" style="cursor:pointer;">
-            <span class="online-indicator"
-              style="background-color: lime;"></span>
-            <img src="https://i.imgur.com/kF1IadF.png" alt="Avatar" class="avatar">
-            theGreenWitch08
+          <div id="ad-banner">
+            <img src="../images/economist-6.gif" style="width: 100%" />
           </div>
-          <div class="user">
-            <span class="online-indicator"></span>
-            <img src="https://i.imgur.com/w1XCHRc.png" alt="Avatar" class="avatar">
-            Moonstone83
-          </div>
-          <div class="user">
-            <span class="online-indicator"></span>
-            <img src="https://i.imgur.com/fd83V3R.png" alt="Avatar" class="avatar">
-            Shoutbox
+          <div id="ad-banner">
+            <img src="../images/ebay.jpg" style="width: 100%" />
           </div>
         </div>
       </div>
-
-      <div id="ads">
-        <h3>Sponsored</h3>
-        <div id="ad-banner"><iframe src="https://www3.cbox.ws/box/?boxid=3546748&boxtag=0Nr9Zh" width="100%"
-            height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0"
-            scrolling="auto"></iframe> </div>
-        <div id="ad-banner2"></div>
-      </div>
     </div>
-  </div>
 
-  <div id="footer">
-    National Park Watch Forum © 2005 | All rights reserved.
-  </div>
+    <div id="footer">
+      National Park Watch Forum © 2005 | All rights reserved.
+    </div>
   </div>
   <!-- Login Modal -->
   <div id="loginModal">
     <div id="loginBox">
       <h2>Sign In to the Forum</h2>
-      <input type="text" id="usernameInput" placeholder="Enter your username">
-      <br>
+      <input type="text" id="usernameInput" placeholder="Enter your username" />
+      <br />
       <button onclick="loginUser()">Sign In</button>
     </div>
   </div>
@@ -539,9 +582,6 @@ Do you guys see that? I think its a deer or soemthing but it's been staring for 
         loginLink.style.display = "inline";
         document.getElementById("logoutLink").style.display = "none";
       }
-
-
-
     }
 
     // Check login on load
@@ -552,45 +592,45 @@ Do you guys see that? I think its a deer or soemthing but it's been staring for 
       updateNavbar();
     }
 
-
     let glitchDuration = 100; // starting glitch duration in ms
     const durationIncrement = 200; // how much longer it gets each time
     const maxGlitchDuration = 1000;
 
     const applyGlitch = () => {
-    const elements = document.body.querySelectorAll("*");
-    elements.forEach(el => el.classList.add("glitch"));
+      const elements = document.body.querySelectorAll("*");
+      elements.forEach((el) => el.classList.add("glitch"));
 
-    setTimeout(() => {
-    elements.forEach(el => el.classList.remove("glitch"));
-    }, glitchDuration); // Glitch duration
-    glitchDuration = Math.min(glitchDuration + durationIncrement, maxGlitchDuration);
+      setTimeout(() => {
+        elements.forEach((el) => el.classList.remove("glitch"));
+      }, glitchDuration); // Glitch duration
+      glitchDuration = Math.min(
+        glitchDuration + durationIncrement,
+        maxGlitchDuration
+      );
     };
 
     // First glitch happens 3–4 seconds after load
     window.addEventListener("load", () => {
-    const firstDelay = 5000;
-    setTimeout(() => {
-    applyGlitch();
-    startRandomGlitchLoop(); // comment this out if you want it to happen only once
-    }, firstDelay);
+      const firstDelay = 5000;
+      setTimeout(() => {
+        applyGlitch();
+        startRandomGlitchLoop(); // comment this out if you want it to happen only once
+      }, firstDelay);
     });
 
-
     function startRandomGlitchLoop() {
-    const randomInterval = () => Math.random() * 1000 + 8000;
+      const randomInterval = () => Math.random() * 1000 + 8000;
 
-    const loop = () => {
-    setTimeout(() => {
-    applyGlitch();
-    loop();
-    }, randomInterval());
-    };
+      const loop = () => {
+        setTimeout(() => {
+          applyGlitch();
+          loop();
+        }, randomInterval());
+      };
 
-    loop();
+      loop();
     }
   </script>
-
 </body>
 
 </html>

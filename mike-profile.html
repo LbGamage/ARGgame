@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile MikeHike128</title>
-  <link rel="stylesheet" href="gallery.css" >
+  <link rel="stylesheet" href="gallery.css">
   <style>
     /* Reset & Body */
     body {
@@ -181,6 +182,8 @@
       box-shadow: 0 0 2px #aaa;
     }
 
+
+
     .online-indicator {
       display: inline-block;
       width: 8px;
@@ -265,7 +268,7 @@
 
     /* glitch */
 
-       .glitch {
+    .glitch {
       animation: glitch 1s infinite;
     }
 
@@ -274,22 +277,27 @@
         text-shadow: 2px 0 red, -2px 0 cyan;
         transform: translate(0);
       }
+
       20% {
         text-shadow: -2px 0 red, 2px 0 cyan;
         transform: translate(1px, -1px);
       }
+
       40% {
         text-shadow: 2px 2px red, -2px -2px cyan;
         transform: translate(-1px, 1px);
       }
+
       60% {
         text-shadow: -1px -1px red, 1px 1px cyan;
         transform: translate(1px, 1px);
       }
+
       80% {
         text-shadow: 1px 1px red, -1px -1px cyan;
         transform: translate(-1px, -1px);
       }
+
       100% {
         text-shadow: 0 0 red, 0 0 cyan;
         transform: translate(0);
@@ -306,17 +314,13 @@
 
 
     /* gallery modal: thank you w3 schools */
-
-    
-
   </style>
 </head>
 
 <body>
 
   <!-- audio stuff -->
-   <audio id="screamer" src="sounds"></audio>
-
+  <audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
 
   <!-- content -->
   <div id="container">
@@ -326,17 +330,25 @@
         style="width: 100%; height: 90px; cursor:pointer;">
     </div>
     <div id="navbar" style="position: sticky; top: 90px; z-index: 102;">
-      <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
+      <div class="oakheavenBanner"> <img src="images/oakheavenlogo.png" style="width: 30%;"> </div>
       <div style="display: inline;">
-        <a href="index.html">Home</a>
-        <a href="forum-home.html">Forum</a>
-        <a href="#">User List</a>
-        <a href="#">Park Map</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);"
+          style="cursor: pointer;">Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer;">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer;">User List</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer;">Park Map</a>
       </div>
       <div style="display: inline; float: right;">
         <a href="#" id="profileLink">Profile</a>
-        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
-        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
+        <a href="#" id="loginLink"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { showLogin(); }, 200);">Sign
+          In</a>
+        <a href="#" id="logoutLink" style="display:none;"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { logoutUser(); }, 200);">Log
+          Out</a>
       </div>
     </div>
     <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
@@ -370,10 +382,12 @@
           <div class="section-title"><b>Recent Threads</b></div>
           <ul>
             <li>
-              <a href="forum-home.html">[❗REPORT] Missing! Has anyone seen Mike Scott?</a>
+              <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+                style="cursor: pointer;">[REPORT] Missing! Has anyone seen Mike Scott?</a>
             </li>
             <li>
-              <a href="documentation.html">[Documentation] Something is wrong near the great Oak, a list of everything
+              <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='documentation.html'; }, 200);"
+                href="documentation.html">[❗ Documentation] Something is wrong near the great Oak, a list of everything
                 strange</a>
             </li>
           </ul>
@@ -381,9 +395,9 @@
         <div class="profile-section">
           <div class="section-title"><b>Gallery</b>⠀⠀ <a href="#" style="cursor: pointer;"> [View All]</a></div>
           <div class="gallery">
-             <img src="images/galimg1.png" onclick="openModal();currentSlide(1)" class="demo" alt="babab 1">
-  <img src="images/galimg2.png" onclick="openModal();currentSlide(2)" class="demo" alt="babab 2">
-  <img src="images/galimg3.png" onclick="openModal();currentSlide(3)" class="demo" alt="babab 3">
+            <img src="images/galimg1.png" onclick="openModal();currentSlide(1)" class="demo" alt="babab 1">
+            <img src="images/galimg2.png" onclick="openModal();currentSlide(2)" class="demo" alt="babab 2">
+            <img src="images/galimg3.png" onclick="openModal();currentSlide(3)" class="demo" alt="babab 3">
             <!-- <img src="images/bunpfp.jpg" alt="Image 4" />
               <img src="images/bunpfp.jpg" alt="Image 5" />
               <img src="images/bunpfp.jpg" alt="Image 6" /> -->
@@ -391,51 +405,53 @@
         </div>
 
         <div id="myModal" class="popgal default-bg">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <div class="gal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div class="gal-content">
 
-    <!-- Slides -->
-    <div class="mySlides">
-      <img src="images/dark forest.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/trekpath.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/grouphike.jpeg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/riverdry.webp" style="width:100%" alt="babab 4" class="demo">
-      <div class="caption-container">
-      <p id="caption">hello</p>
-      </div>
-    </div>
-    <div class="mySlides">
-      <img src="images/mosspatterns.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/ifiyc5voqnf41.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/creep1.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/creep2.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/pentimg.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/fairycircle.jpg" style="width:100%" class="demo">
-    </div>
+            <!-- Slides -->
+            <div class="mySlides">
+              <img src="images/dark forest.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/trekpath.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/grouphike.jpeg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/riverdry.webp" style="width:100%" alt="babab 4" class="demo">
+              <div class="caption-container">
+                <p id="caption">hello</p>
+              </div>
+            </div>
+            <div class="mySlides">
+              <img src="images/mosspatterns.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/ifiyc5voqnf41.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/creep1.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/creep2.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/pentimg.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/fairycircle.jpg" style="width:100%" class="demo">
+            </div>
 
-    <!-- Navigation -->
-    <a class="arrow left" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="arrow right" onclick="plusSlides(1)">&#10095;</a>
+            <!-- Navigation -->
+            <a class="arrow left"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); plusSlides(-1);">&#10094;</a>
+            <a class="arrow right"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); plusSlides(1);">&#10095;</a>
 
-  </div>
-</div>
-<h2>Recent Posts</h2>
+          </div>
+        </div>
+        <h2>Recent Posts</h2>
 
 
         <div class="post">
@@ -643,7 +659,7 @@
 
     // First glitch happens 3–4 seconds after load
     window.addEventListener("load", () => {
-      const firstDelay = 5000;
+      const firstDelay = 4000;
       setTimeout(() => {
         applyGlitch();
         startRandomGlitchLoop(); // comment this out if you want it to happen only once
@@ -652,7 +668,7 @@
 
 
     function startRandomGlitchLoop() {
-      const randomInterval = () => Math.random() * 1000 + 8000;
+      const randomInterval = () => Math.random() * 1000 + 7000;
 
       const loop = () => {
         setTimeout(() => {
@@ -666,7 +682,7 @@
 
 
 
-   </script>
+  </script>
   <script src="galleryscript.js"></script>
 </body>
 

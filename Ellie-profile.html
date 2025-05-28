@@ -1,341 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile MikeHike128</title>
-    <link rel="stylesheet" href="glitchscriptstyle.css">
-    <link rel="stylesheet" href="gallery.css">
 
-     <script src="galleryscript.js"></script>
-    <style>
-      /* Reset & Body */
-      body {
-        margin: 0;
-        padding: 0;
-        background: #bcb9b3;
-        /* Windows 98 beige */
-        font-family: Verdana, Arial, sans-serif;
-        font-size: 12px;
-        color: #000000;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile MikeHike128</title>
+  <link rel="stylesheet" href="glitchscriptstyle.css">
+  <link rel="stylesheet" href="gallery.css">
 
-      /* Wrapper */
-      #container {
-        width: 900px;
-        margin: 0 auto;
-        background: #eeeeee;
-        border: 1px solid #666666;
-        box-shadow: 0px 0px 10px #999999;
-      }
+ 
+  <style>
+    /* Reset & Body */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #bcb9b3;
+      /* Windows 98 beige */
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      color: #000000;
+    }
 
-      /* Banner ad at top */
-      #banner {
-        width: 100%;
-        height: 90px;
-        background: url("/images/banner-ad.gif") no-repeat center;
-        background-color: #cccccc;
-        border-bottom: 2px solid #333;
-      }
+    /* Wrapper */
+    #container {
+      width: 900px;
+      margin: 0 auto;
+      background: #eeeeee;
+      border: 1px solid #666666;
+      box-shadow: 0px 0px 10px #999999;
+    }
 
-      /* Navigation bar */
-      #navbar {
-        background: #2c592c;
-        padding: 5px;
-        color: #ffffff;
-        font-weight: bold;
-        border-bottom: 3px double #003300;
-      }
+    /* Banner ad at top */
+    #banner {
+      width: 100%;
+      height: 90px;
+      background: url("/images/banner-ad.gif") no-repeat center;
+      background-color: #cccccc;
+      border-bottom: 2px solid #333;
+    }
 
-      #navbar a {
-        color: #ffffff;
-        text-decoration: none;
-        margin: 0 10px;
-      }
+    /* Navigation bar */
+    #navbar {
+      background: #2c592c;
+      padding: 5px;
+      color: #ffffff;
+      font-weight: bold;
+      border-bottom: 3px double #003300;
+    }
 
-      #navbar a:hover {
-        text-decoration: underline;
-      }
+    #navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
 
-      /* Main content area */
-      .main {
-        display: flex;
-        padding: 10px;
-      }
+    #navbar a:hover {
+      text-decoration: underline;
+    }
 
-      /* Left-side discussion/posts */
-      #content {
-        flex: 3;
-        padding-right: 10px;
-      }
+    /* Main content area */
+    .main {
+      display: flex;
+      padding: 10px;
+    }
 
-      /* Posts/content edits and all that stuff */
+    /* Left-side discussion/posts */
+    #content {
+      flex: 3;
+      padding-right: 10px;
+    }
 
-      /* Sidebar */
-      .sidebar {
-        flex: 1;
-        background: #eeeeee;
-        padding: 10px;
-        border-left: 1px solid #999;
-      }
+    /* Posts/content edits and all that stuff */
 
-      #online-users,
-      #ads {
-        margin-bottom: 20px;
-      }
+    /* Sidebar */
+    .sidebar {
+      flex: 1;
+      background: #eeeeee;
+      padding: 10px;
+      border-left: 1px solid #999;
+    }
 
-      #online-users h3,
-      #ads h3 {
-        font-size: 11px;
-        color: #333333;
-        border-bottom: 1px solid #666666;
-        margin-bottom: 5px;
-      }
+    #online-users,
+    #ads {
+      margin-bottom: 20px;
+    }
 
-      /* Simulated banner ads */
-      #ad-banner {
-        width: 120px;
-        height: 240px;
-        background: url("/images/fake-ad-1.gif") no-repeat;
-        background-size: cover;
-        margin-bottom: 10px;
-      }
+    #online-users h3,
+    #ads h3 {
+      font-size: 11px;
+      color: #333333;
+      border-bottom: 1px solid #666666;
+      margin-bottom: 5px;
+    }
 
-      #ad-banner2 {
-        width: 120px;
-        height: 240px;
-        background: url("/images/fake-ad-2.gif") no-repeat;
-        background-size: cover;
-      }
+    /* Simulated banner ads */
+    #ad-banner {
+      width: 120px;
+      height: 240px;
+      background: url("/images/fake-ad-1.gif") no-repeat;
+      background-size: cover;
+      margin-bottom: 10px;
+    }
 
-      /* Footer */
-      #footer {
-        text-align: center;
-        font-size: 10px;
-        color: #666666;
-        padding: 10px;
-        background: #cccccc;
-        border-top: 2px solid #999;
-        margin-top: 20px;
-      }
+    #ad-banner2 {
+      width: 120px;
+      height: 240px;
+      background: url("/images/fake-ad-2.gif") no-repeat;
+      background-size: cover;
+    }
 
-      /* Login Modal */
-      #loginModal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        font-family: Verdana, sans-serif;
-      }
+    /* Footer */
+    #footer {
+      text-align: center;
+      font-size: 10px;
+      color: #666666;
+      padding: 10px;
+      background: #cccccc;
+      border-top: 2px solid #999;
+      margin-top: 20px;
+    }
 
-      #loginBox {
-        background-color: #fff;
-        width: 300px;
-        margin: 100px auto;
-        padding: 20px;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 10px #000;
-      }
+    /* Login Modal */
+    #loginModal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      font-family: Verdana, sans-serif;
+    }
 
-      #loginBox h2 {
-        margin-top: 0;
-        font-size: 16px;
-        color: #003300;
-      }
+    #loginBox {
+      background-color: #fff;
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      border: 2px solid #333;
+      box-shadow: 5px 5px 10px #000;
+    }
 
-      #loginBox input[type="text"] {
-        width: 90%;
-        padding: 5px;
-        margin-bottom: 10px;
-        font-size: 12px;
-      }
+    #loginBox h2 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #003300;
+    }
 
-      #loginBox button {
-        padding: 5px 10px;
-        background-color: #006600;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-size: 12px;
-      }
+    #loginBox input[type="text"] {
+      width: 90%;
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
 
-      #loginBox button:hover {
-        background-color: #004400;
-      }
+    #loginBox button {
+      padding: 5px 10px;
+      background-color: #006600;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+    }
 
-      .user-status .user {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        font-size: 11px;
-        color: #333333;
-      }
+    #loginBox button:hover {
+      background-color: #004400;
+    }
 
-      .avatar {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin: 0 6px;
-        border: 1px solid #666;
-        box-shadow: 0 0 2px #aaa;
-      }
+    .user-status .user {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: #333333;
+    }
 
-      .online-indicator {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin-right: 5px;
-        background-color: rgb(215, 0, 0);
-        border-radius: 50%;
-        /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
-        animation: pulse 1s infinite ease-in-out;
-      }
+    .avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 0 6px;
+      border: 1px solid #666;
+      box-shadow: 0 0 2px #aaa;
+    }
 
-      /* Optional: online glow pulse
+    .online-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 5px;
+      background-color: rgb(215, 0, 0);
+      border-radius: 50%;
+      /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
+      animation: pulse 1s infinite ease-in-out;
+    }
+
+    /* Optional: online glow pulse
 @keyframes pulse {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.3); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
 } */
 
-      .profile-content {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding-right: 2%;
-      }
+    .profile-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-right: 2%;
+    }
 
-      .avatar-box {
-        width: 150px;
-        background: #ffffff;
-        padding: 10px;
-        border: 1px solid #999;
-        box-shadow: inset 0 0 4px #aaa;
-        /* text-align: center; */
-      }
+    .avatar-box {
+      width: 150px;
+      background: #ffffff;
+      padding: 10px;
+      border: 1px solid #999;
+      box-shadow: inset 0 0 4px #aaa;
+      /* text-align: center; */
+    }
 
-      .avatar-box img {
-        width: 150px;
-        height: 150px;
-        border: 2px solid #333;
-        margin-bottom: 10px;
-      }
+    .avatar-box img {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #333;
+      margin-bottom: 10px;
+    }
 
-      .user-name {
-        font-size: 14px;
-        font-weight: bold;
-        color: #003300;
-        /* text-align: center; */
-      }
+    .user-name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #003300;
+      /* text-align: center; */
+    }
 
-      .profile-details {
-        flex-grow: 1;
-      }
+    .profile-details {
+      flex-grow: 1;
+    }
 
-      .profile-section {
-        margin-bottom: 20px;
-        background: #fff;
-        padding: 10px;
-        border: 1px solid #999;
-        box-shadow: inset 0 0 4px #ccc;
-      }
+    .profile-section {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #999;
+      box-shadow: inset 0 0 4px #ccc;
+    }
 
-      .post {
-        background: #f8f8f8;
-        border: 1px solid #999999;
-        margin-bottom: 15px;
-        padding: 10px;
-      }
+    .post {
+      background: #f8f8f8;
+      border: 1px solid #999999;
+      margin-bottom: 15px;
+      padding: 10px;
+    }
 
-      .post .username {
-        font-weight: bold;
-        color: #003366;
-        font-size: 13px;
-      }
+    .post .username {
+      font-weight: bold;
+      color: #003366;
+      font-size: 13px;
+    }
 
-      .post .date {
-        font-size: 10px;
-        color: #666666;
-      }
+    .post .date {
+      font-size: 10px;
+      color: #666666;
+    }
 
-      .post .text {
-        margin-top: 5px;
-      }
+    .post .text {
+      margin-top: 5px;
+    }
 
 
 
-      .comments{
-        color: #666666;
-      }
-    </style>
-  </head>
+    .comments {
+      color: #666666;
+    }
+  </style>
+</head>
 
-  <body>
-    <div id="container" >
-    <div id="banner" style="position: sticky; top: 0; z-index: 101;" onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
-        <img src="images/cultsoncampusbanneranimated.gif" alt="Banner Ad" style="width: 100%; height: 90px; cursor:pointer;">
+<body>
+  <div id="container">
+    <div id="banner" style="position: sticky; top: 0; z-index: 101;"
+      onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
+      <img src="images/cultsoncampusbanneranimated.gif" alt="Banner Ad"
+        style="width: 100%; height: 90px; cursor:pointer;">
     </div>
-  <div id="navbar" style="position: sticky; top: 90px; z-index: 102;">
-  <div class="oakheavenBanner"> <img src="images/glitch.gif"> </div>
-<div style="display: inline;">
-        <a href="index.html">Home</a>
-        <a href="forum-home.html">Forum</a>
-        <a href="#">User List</a>
-        <a href="#">Park Map</a>
-</div>
-<div style="display: inline; float: right;">
+    <div id="navbar" style="position: sticky; top: 90px; z-index: 102;">
+      <div class="oakheavenBanner"> <img src="images/oakheavenlogo.png" style="width: 30%;"> </div>
+      <div style="display: inline">
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);"
+          style="cursor: pointer">Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer">User List</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);"
+          style="cursor: pointer">Park Map</a>
+      </div>
+      <div style="display: inline; float: right;">
         <a href="#" id="profileLink">Profile</a>
-        <a href="#" id="loginLink" onclick="showLogin()">Sign In</a>
-        <a href="#" id="logoutLink" style="display:none;" onclick="logoutUser()">Log Out</a>
-</div>
-</div>
-<marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
+        <a href="#" id="loginLink"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { showLogin(); }, 200);">Sign
+          In</a>
+        <a href="#" id="logoutLink" style="display:none;"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { logoutUser(); }, 200);">Log
+          Out</a>
+      </div>
+    </div>
+    <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
 
-      <div class="main" >
-        <div class="profile-content">
-          <div class="avatar-box">
-            <img src="images/treepfp.jpg" style="width: 150px; height: 150px;" />
-            <div class="user-name">theGreenWitch08</div>
-            <p><em>“Leave no trace.”</em>
-            <br> If anyone is interested in the other side, you know where to <i>inspect</i> to find me</p>
-          </div>
-
-          <div class="avatar-box">
-            <div class="section-title">User Info</div>
-            <p><strong>Joined:</strong> March 2005</p>
-            <p><strong>Location:</strong> Bitterroot Forest, MT</p>
-            <p><strong>Email:</strong> [hidden]</p>
-            <div class="section-title">Forum Activity</div>
-            <p><strong>Posts:</strong> 583</p>
-            <p><strong>Threads Started:</strong> 48</p>
-            <p><strong>Last Active:</strong> Today at 13:48</p>
-            <p>
-              <strong>Current Status:</strong>
-              <span style="color: lime">Online</span>
-            </p>
-          </div>
+    <div class="main">
+      <div class="profile-content">
+        <div class="avatar-box">
+          <img src="images/treepfp.jpg" style="width: 150px; height: 150px;" />
+          <div class="user-name">theGreenWitch08</div>
+          <p><em>“Leave no trace.”</em>
+            <br> If anyone is interested in the other side, you know where to <i>inspect</i> to find me
+          </p>
         </div>
 
-        <div class="sidebar">
-            <div class="profile-section" >
-            <div class="section-title"><b>Recent Threads</b></div>
-            <ul>
-              <li>
+        <div class="avatar-box">
+          <div class="section-title">User Info</div>
+          <p><strong>Joined:</strong> March 2002</p>
+          <p><strong>Location:</strong> Bitterroot Forest, MT</p>
+          <p><strong>Email:</strong> [hidden]</p>
+          <div class="section-title">Forum Activity</div>
+          <p><strong>Posts:</strong> 52</p>
+          <p><strong>Threads Started:</strong> 4</p>
+          <p><strong>Last Active:</strong> 263 weeks ago</p>
+          <p>
+            <strong>Current Status:</strong>
+            <span style="color: lime">Online</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="profile-section">
+          <div class="section-title"><b>Recent Threads</b></div>
+          <ul>
+            <li>
               <a href="forum-home.html"><span>[MAP] Best Foraging spots in OakHeaven</span></a>
-              </li>
-              <li>
+            </li>
+            <li>
               Details for the Full moon Fest - repost from blog
-              </li>
-              <li>Someone left their crystals in the shed last night!</li>
-            </ul>
-            </div>
-       <div class="profile-section">
+            </li>
+            <li>Someone left their crystals in the shed last night!</li>
+          </ul>
+        </div>
+        <div class="profile-section">
           <div class="section-title"><b>Gallery</b>⠀⠀ <a href="#" style="cursor: pointer;"> [View All]</a></div>
-            <div class="gallery">
+          <div class="gallery">
             <img src="images/galimg5.png" onclick="openModal();currentSlide(1)" class="demo" alt="babab 5">
             <img src="images/galimg6.png" onclick="openModal();currentSlide(2)" class="demo" alt="babab 6">
             <img src="images/galimg7.png" onclick="openModal();currentSlide(3)" class="demo" alt="babab 7">
@@ -346,164 +358,161 @@
         </div>
 
         <div id="myModal" class="popgal default-bg">
-  <p class="close" onclick="closeModal()">&times;</p>
-  <div class="gal-content">
+          <p class="close" onclick="closeModal()">&times;</p>
+          <div class="gal-content">
 
-    <!-- Slides -->
-    <div class="mySlides">
-      <img src="images/2f3cc8a98dcb294097326b5b3e325ebd.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/pentimg.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/fairycircle.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/images.jpg" style="width:100%" alt="babab 4" class="demo">
-      <div class="caption-container">
-      <p id="caption">hello</p>
-      </div>
-    </div>
-    <div class="mySlides">
-      <img src="images/cantharel_mushroom.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/4b2704c0ce89f3c73c5fe8d3ed8826ec.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/creep1.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/creep2.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/pentimg.jpg" style="width:100%" class="demo">
-    </div>
-    <div class="mySlides">
-      <img src="images/fairycircle.jpg" style="width:100%" class="demo">
-    </div>
+            <!-- Slides -->
+            <div class="mySlides">
+              <img src="images/2f3cc8a98dcb294097326b5b3e325ebd.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/pentimg.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/fairycircle.jpg" style="width:100%" class="demo"> 
+              <div class="caption-container">
+                <p id="caption" style="font-size: 10px;">RIP to whoever steps in this lol</p>
+              </div>
+            </div>
+            <div class="mySlides">
+              <img src="images/images.jpg" style="width:100%" alt="babab 4" class="demo">
 
-    <!-- Navigation -->
-    <a class="arrow left" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="arrow right" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="mySlides">
+              <img src="images/cantharel_mushroom.jpg" style="width:100%" class="demo">
+            </div>
+            <div class="mySlides">
+              <img src="images/Acorns on sheet.jpg" style="width:100%" class="demo">
+            </div>
+            
+            
 
-  </div>
-</div>
-          <h2>Recent Posts</h2>
-       
- <div class="post">
-        <div class="username">theGreenWitch08</div>
-        <div class="date">Posted on May 20, 2005</div>
-        <div ><span >Someone left their crystals in the shed last night! (repost from blog)</span></div>
-        <div class="reactions"><b>Commets (0) | 4 Views | 1 Like</b></div>
-      </div>
+            <!-- Navigation -->
+            <a class="arrow left"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); plusSlides(-1);">&#10094;</a>
+            <a class="arrow right"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); plusSlides(1);">&#10095;</a>
+          </div>
+        </div>
+        <h2>Recent Posts</h2>
+
+        <div class="post">
+          <div class="username">theGreenWitch08</div>
+          <div class="date">Posted on May 20, 2005</div>
+          <div><span>Someone left their crystals in the shed last night! (repost from blog)</span></div>
+          <div class="reactions"><b>Commets (0) | 4 Views | 1 Like</b></div>
+        </div>
 
 
         <div class="post">
-        <div class="username">theGreenWitch08</div>
-        <div class="date">Posted on May 20, 2005</div>
-        <img style="width: 100%; padding-top: 2%;" src="images/Sparrige_Schüppling_(Pholiota_squarrosa).jpg">
-        <div ><span >Finally managed to get my hands on some Hebeloma aminophilum! It only grows in very specific conditions. For more info go check out my blog :D </span></div>
-        <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
-      </div>
-
-          <div class="post">
-        <div class="username">theGreenWitch08</div>
-        <div class="date">Posted on May 20, 2005</div>
-        <img style="width: 100%; padding-top: 2%;" src="images/cantharel_mushroom.jpg">
-        <div class="text"><span>Oh My God, I can't believe I found Chanterelles in October! I thought they'd be out of season by now. The Samhain Potluck is gonna be so good!</span></div>
-        
-        <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
-      </div>
-         <div class="post">
-        <div class="username">EvergreenOakWitch</div>
-        <div class="date">Posted on May 20, 2005</div>
-        <img style="width: 100%; padding-top: 2%;" src="images/sorrell.JPG">
-        <div class="text"><span>Yellow wood-sorrel also has health and medicinal benefits, many of which are outlined on Harrison Murray's blog "Bushcraft."  it should be eaten in moderation, though, because it's high in potassium oxalate and oxalic acid...</span></div>
-        <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
-      </div>
- <div class="post">
-        <div class="username">theGreenWitch08</div>
-        <div class="date">Posted on May 20, 2005</div>
-        <img style="width: 100%; padding-top: 2%;" src="images/Acorns on sheet.jpg">
-        <div class="text">Gonna try making acorn bread! Acorns have long been a food source in indigenous populations, yet many people tend to avoid using them because preparing acorns.... </div>
-        <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
-      </div>
-       <div class="post">
-        <div class="username">theGreenWitch08</div>
-        <div class="date">Posted on May 20, 2005</div>
-        <img style="width: 100%; padding-top: 2%;" src="images/ginko.JPG">
-        <div class="text">Foraging for ginkgoes is a stinky business. To forage for ginkgoes, you should first put on latex gloves. The nuts are encased in the pulpy fruits, which can give you an allergic reaction... </div>
-        <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
-      </div>
-      
-
+          <div class="username">theGreenWitch08</div>
+          <div class="date">Posted on May 20, 2005</div>
+          <img style="width: 100%; padding-top: 2%;" src="images/Sparrige_Schüppling_(Pholiota_squarrosa).jpg">
+          <div><span>Finally managed to get my hands on some Hebeloma aminophilum! It only grows in very specific
+              conditions. For more info go check out my blog :D </span></div>
+          <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
         </div>
-      </div>
 
-      <div id="footer">
-        National Park Watch Forum © 2005 | All rights reserved.
+        <div class="post">
+          <div class="username">theGreenWitch08</div>
+          <div class="date">Posted on May 20, 2005</div>
+          <img style="width: 100%; padding-top: 2%;" src="images/cantharel_mushroom.jpg">
+          <div class="text"><span>Oh My God, I can't believe I found Chanterelles in October! I thought they'd be out of
+              season by now. The Samhain Potluck is gonna be so good!</span></div>
+
+          <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
+        </div>
+        <div class="post">
+          <div class="username">EvergreenOakWitch</div>
+          <div class="date">Posted on May 20, 2005</div>
+          <img style="width: 100%; padding-top: 2%;" src="images/sorrell.JPG">
+          <div class="text"><span>Yellow wood-sorrel also has health and medicinal benefits, many of which are outlined
+              on Harrison Murray's blog "Bushcraft." it should be eaten in moderation, though, because it's high in
+              potassium oxalate and oxalic acid...</span></div>
+          <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
+        </div>
+        <div class="post">
+          <div class="username">theGreenWitch08</div>
+          <div class="date">Posted on May 20, 2005</div>
+          <img style="width: 100%; padding-top: 2%;" src="images/Acorns on sheet.jpg">
+          <div class="text">Gonna try making acorn bread! Acorns have long been a food source in indigenous populations,
+            yet many people tend to avoid using them because preparing acorns.... </div>
+          <div class="reactions"><b>Commets (3) | 34 Views | 2 ikes</b> <img scr></div>
+        </div>
+        <div class="post">
+          <div class="username">theGreenWitch08</div>
+          <div class="date">Posted on May 20, 2005</div>
+          <img style="width: 100%; padding-top: 2%;" src="images/ginko.JPG">
+          <div class="text">Foraging for ginkgoes is a stinky business. To forage for ginkgoes, you should first put on
+            latex gloves. The nuts are encased in the pulpy fruits, which can give you an allergic reaction... </div>
+          <div class="reactions"><b>Commets (3) | 34 Views | 2 Likes</b> <img scr></div>
+        </div>
+
+
       </div>
     </div>
-    <!-- Login Modal -->
-    <div id="loginModal">
-      <div id="loginBox">
-        <h2>Sign In to the Forum</h2>
-        <input
-          type="text"
-          id="usernameInput"
-          placeholder="Enter your username"
-        />
-        <br />
-        <button onclick="loginUser()">Sign In</button>
-      </div>
+
+    <div id="footer">
+      National Park Watch Forum © 2005 | All rights reserved.
     </div>
+  </div>
+  <!-- Login Modal -->
+  <div id="loginModal">
+    <div id="loginBox">
+      <h2>Sign In to the Forum</h2>
+      <input type="text" id="usernameInput" placeholder="Enter your username" />
+      <br />
+      <button onclick="loginUser()">Sign In</button>
+    </div>
+  </div>
 
-    <script>
-      // Open login modal
-      function showLogin() {
-        document.getElementById("loginModal").style.display = "block";
-      }
+  
+<audio id="clickSound" src="../images/audio/mouse-click-290204.mp3"></audio>
+  <script>
+    // Open login modal
+    function showLogin() {
+      document.getElementById("loginModal").style.display = "block";
+    }
 
-      // Handle login
-      function loginUser() {
-        const username = document.getElementById("usernameInput").value;
-        if (username.trim() !== "") {
-          localStorage.setItem("forumUsername", username);
-          updateNavbar();
-          document.getElementById("loginModal").style.display = "none";
-        }
-      }
-
-      // Update navbar with username
-      function updateNavbar() {
-        const username = localStorage.getItem("forumUsername");
-        const profileLink = document.getElementById("profileLink");
-        const loginLink = document.getElementById("loginLink");
-
-        if (username) {
-          profileLink.innerText = `Profile (${username})`;
-          loginLink.style.display = "none";
-          document.getElementById("logoutLink").style.display = "inline";
-        } else {
-          profileLink.innerText = "Profile";
-          loginLink.style.display = "inline";
-          document.getElementById("logoutLink").style.display = "none";
-        }
-      }
-
-      // Check login on load
-      window.onload = updateNavbar;
-
-      function logoutUser() {
-        localStorage.removeItem("forumUsername");
+    // Handle login
+    function loginUser() {
+      const username = document.getElementById("usernameInput").value;
+      if (username.trim() !== "") {
+        localStorage.setItem("forumUsername", username);
         updateNavbar();
+        document.getElementById("loginModal").style.display = "none";
       }
+    }
 
-      console.log("Found me hehe :) to go to the otherside go to ../TheHaunting/bitterroot.html");
-    </script>
+    // Update navbar with username
+    function updateNavbar() {
+      const username = localStorage.getItem("forumUsername");
+      const profileLink = document.getElementById("profileLink");
+      const loginLink = document.getElementById("loginLink");
 
-    <script src="glitchscript.js"></script>
-  </body>
+      if (username) {
+        profileLink.innerText = `Profile (${username})`;
+        loginLink.style.display = "none";
+        document.getElementById("logoutLink").style.display = "inline";
+      } else {
+        profileLink.innerText = "Profile";
+        loginLink.style.display = "inline";
+        document.getElementById("logoutLink").style.display = "none";
+      }
+    }
+
+    // Check login on load
+    window.onload = updateNavbar;
+
+    function logoutUser() {
+      localStorage.removeItem("forumUsername");
+      updateNavbar();
+    }
+
+    console.log("Found me hehe :) to go to the otherside go to ../TheHaunting/bitterroot.html");
+  </script>
+ <script src="galleryscript.js"></script>
+  <script src="glitchscript.js"></script>
+</body>
+
 </html>
