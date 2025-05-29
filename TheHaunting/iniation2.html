@@ -37,6 +37,13 @@
                 font-weight: bolder;
                 font-family: "DotGothic16", sans-serif;
                 overflow-x: hidden;
+                  justify-content: center;
+  align-items: center;
+  background: #000;
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
             }
 
             .soulsucker{
@@ -59,16 +66,7 @@
         }
 
         /* inspired by Simple progress bar animation by Traf  https://codepen.io/traf/pen/oKbaqQ*/
-        body {
-  justify-content: center;
-  align-items: center;
-  background: #000;
-  display: flex;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-}
-
+ 
 .progress {
   background: rgba(0, 0, 0, 0);
   border: 3px solid white;
@@ -120,6 +118,9 @@
     </style>
 </head>
 
+<body>
+<audio src="bgaudio/soulupload.mp3" autoplay loop id="bg-audio"></audio>
+
 <div class="soulsucker">
     <div style="position: relative; display: flex; justify-content: center; align-items: center;">
         <iframe src="ghostcamera.html" class="camera" scrolling="no"></iframe>
@@ -139,12 +140,12 @@
 </div>
 </div>
     
-    <audio src="bgaudio/soulupload.mp3" autoplay loop id="bg-audio"></audio>
+    
    
-    <script src="iniation-bg.js"></script>
+    <script src="iniation2bg.js"></script>
 <script> 
 
- window.onlad = function() {
+ window.onload = function() {
         var audio = document.getElementById('bg-audio');
       };
 
