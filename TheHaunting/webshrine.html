@@ -17,11 +17,16 @@
         background: url("../images/ditherbg1.png") no-repeat center center fixed;
         background-size: cover;
         color: aliceblue;
-
+cursor: url('../images/planchette.cur') 16 16, auto;
         font-family: "DotGothic16", sans-serif;
         font-size: 14px;
         overflow-x: hidden;
       }
+
+      
+        a, button, .factbutton {
+  cursor: url('../images/planchette1.cur') 16 16, pointer;
+} 
 
       * {
         box-sizing: border-box;
@@ -31,7 +36,7 @@
         max-width: 1200px;
         min-height: 600px;
         margin: 40px auto;
-        background: rgba(114, 60, 223, 0.954);
+        /* background: rgba(114, 60, 223, 0.954); */
         /* border-radius: 18px; */
         /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
         display: flex;
@@ -230,10 +235,72 @@
   color: #ffffff;
   font-size: 0.9rem;
 }
+
+.navbar {
+      /* background-color: #4A5B63; */
+      color: white;
+      /* height: 40px; */
+      /* background-color: #493B4A; */
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .navbar ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: center;
+    }
     </style>
 </head>
 <body>
-    <div class="main-container">
+
+   <script src="./oneko.js"></script>
+   <div class="main-container">
+    <nav class="navbar">
+          <ul>
+            <li>
+              <a href="#">
+                <img style="width: 40px" src="../images/potion.gif" />
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+                <a href="#" onclick="document.getElementById('clickSound').play(); setTimeout(function(){ window.location.href='spells.html'; }, 1000); return false;">
+                <img style="width: 28px" src="../images/clover01.gif" />
+                <span>Book of Shadows</span>
+                </a>
+              </li>
+              <li>
+              <a href="#" onclick="document.getElementById('clickSound').play(); setTimeout(function(){ window.location.href='herbroute.html'; }, 1000); return false;">
+                <img style="width: 27px" src="../images/dandy02.gif" />
+                <span>Herb Routes</span></a>
+            </li>
+            <li>
+              <a href="#" onclick="document.getElementById('clickSound').play(); setTimeout(function(){ window.location.href='webshrine.html'; }, 1000); return false;">
+                <img style="width: 25px" src="../images/candle.gif" />
+                <span>Web Shrine</span></a>
+            </li>
+            
+          </ul>
+        </nav>
+  <div class="shrineimages" style="display: flex; justify-content: center; align-items: center;">
+   <img src="../images/shrine.png" style="width: 80%; margin-top: 80px;">
+  </div>
 hi
     </div>
      <div class="scroll-section-wrapper">
@@ -270,16 +337,16 @@ hi
           Oh? hi there, You sure you know where you're going?
            <div id="triggersound"></div>
         </div>
-        <img src="../images/MEQRYN8_o.png" alt="Oakheaven Radio" />
+        <img src="../images/todust.jpg" alt="Oakheaven Radio" style="padding-top: 25px;" />
         <div class="spacer"></div>
         <img
-          src="../images/MEQRYN8_o.png"
+          src="../images/embracethemoon.gif"
           alt="Oakheaven Radio"
-          style="position: relative; left: 350px; display: block"
+          style="position: relative; left: 350px; top:500px; display: block"
         />
         <div class="message">Wanna learn more keep going</div>
         <img
-          src="../images/MEQRYN8_o.png"
+          src="../images/weird_unicorn.png"
           alt="Oakheaven Radio"
           style="position: relative; right: 450px; display: block"
         />
@@ -291,8 +358,9 @@ hi
         <div class="spacer"></div>
         <div class="spacer"></div>
         <div class="spacer"></div>
+        <div class="spacer"></div>
         <div class="message">D̷̮̩͚̭̗͉̯̗̍̀́̈́͂͠O̸̡̦̗͍̹̠̜̫̲͙̬͂̈̈͑̀̓́̈́̽̃̈͂̅̋̌N̵̢͉̰̣̺̲͌͂̀́̏͊͌͊̅̕͝T̷̢͚͖̗̳̹͔̖̠̪̰͛̀̎̓͊̒̀̚ ̸̝̦̈̎D̶̘̪̐̀̀͒̌͒̑̽͊̏̏̕̕͝O̶̺̙̯͔̼͓̪̭͉̜̫̥̎͒̾̾̀͛̍̏̌̅͆͆̊̊͝͝ ̶̰̲̈̏̑̌̌̌ͅI̸̺͎̊̀̍͘T̷̙̙̫͕͎̘̳̬͎̫͖̈̒͗̑̀̿͐͑̄̌̌̐̐̏͝ͅ</div>
-        <div style="height: 350px"></div>
+        <div style="height: 750px"></div>
         <div class="footerps">
           <img src="../images/eyered.gif" id="secretTrigger" style="cursor: pointer;" onclick="document.getElementById('clickSound').play();">
         </div>

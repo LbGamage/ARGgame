@@ -17,7 +17,7 @@
       background: url("../images/ditherbg1.png") no-repeat center center fixed;
       background-size: cover;
       color: aliceblue;
-      cursor: url('../images/planchette.png') 16 16, auto;
+      cursor: url('../images/planchette.cur') 16 16, auto;
       font-family: "DotGothic16", sans-serif;
       font-size: 14px;
       overflow-x: hidden;
@@ -454,7 +454,7 @@
     }
 
         a, button, .factbutton {
-  cursor: url('../images/planchette1.png') 16 16, pointer;
+  cursor: url('../images/planchette1.cur') 16 16, pointer;
 } 
   </style>
 </head>
@@ -535,20 +535,22 @@
               </a>
             </li>
             <li>
-              <a href="spells.html">
+                <a href="#" onclick="document.getElementById('clickSound').play(); setTimeout(function(){ window.location.href='spells.html'; }, 1000); return false;">
                 <img style="width: 28px" src="../images/clover01.gif" />
-                <span>Book of Shadows</span></a>
-            </li>
-            <li>
-              <a href="#">
-                <img style="width: 25px" src="../images/candle.gif" />
-                <span>Web Shrine</span></a>
-            </li>
-            <li>
-              <a href="herbroute.html">
+                <span>Book of Shadows</span>
+                </a>
+              </li>
+              <li>
+              <a onclick="document.getElementById('clickSound').play(); setTimeout(function(){ window.location.href='herbroute.html'; }, 1000); return false;">
                 <img style="width: 27px" src="../images/dandy02.gif" />
                 <span>Herb Routes</span></a>
             </li>
+            <li>
+              <a onclick="document.getElementById('clickSound').play(); setTimeout(function(){ window.location.href='webshrine.html'; }, 1000); return false;">
+                <img style="width: 25px" src="../images/candle.gif" />
+                <span>Web Shrine</span></a>
+            </li>
+            
           </ul>
         </nav>
         <div class="content-area">
@@ -566,7 +568,8 @@
               journey as a witch under the guidance of some really cool people
               at Oakheaven!<br />Feel free to rifle through my little journal
               and see what I've been up to. Maybe you'll find something useful
-              or maybe even *wink* surprising.
+              or maybe even *wink* surprising.<br><br>
+              <b>Let the planchette be your guide~</b>
             </div>
             <div class="box status-flex">
               <div class="box blogposts">
@@ -629,9 +632,8 @@
             <div class="box status-flex">
               <div class="box radio">
                 Listen to Oakheave Radio or something
-                <a onclick="window.open('music.html', 'musicWindow', 'width=325,height=460,resizable=no'); return false;"
-                 >
-                  <img style="width: 270px; margin-top: 15px;" src="../images/cassette.png" />
+                <a href="#" onclick="document.getElementById('clickSound').play(); window.open('music.html', 'musicWindow', 'width=325,height=460,resizable=no'); return false;">
+                  <img style="width: 270px; margin-top: 15px;" src="../images/cassette.png" alt="Oakheaven Radio Cassette" />
                 </a>
               </div>
               <div class="collection box">
@@ -647,9 +649,9 @@
             <div class="box factbox">
               <span class="fact-header"><b>Tips & Facts</b></span>
               <img id="displayImage" src="../images/stuff.png" alt="Display Image" style="width: 100%" />
-              <button class="factbutton" onclick="randomChange()">
+                <button class="factbutton" onclick="randomChange(); document.getElementById('clickSound').play();">
                 Change
-              </button>
+                </button>
               <p id="displayText">
                 Remember to put your water jars out on full moons!
               </p>

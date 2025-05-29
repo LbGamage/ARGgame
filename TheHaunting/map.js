@@ -1,12 +1,12 @@
 let bottomImg, topImg, topResized;
 
 function preload() {
-    topImg = loadImage('../images/maptop.jpg');
-    bottomImg = loadImage('../images/mapbottom.jpg');
+    bottomImg  = loadImage('../images/maptop.jpg');
+    topImg = loadImage('../images/mapbottom.jpg');
 }
 
 function setup() {
-    createCanvas(900, 700);
+    createCanvas(560, 720);
     background(255, 255, 0);
 
     topImg.resize(width, height);

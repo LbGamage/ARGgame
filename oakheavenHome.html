@@ -281,10 +281,10 @@ body {
  <div id="navbar" style="position: sticky; top: 90px; z-index: 1002;">
   <div class="oakheavenBanner"> <img src="images/oakheavenlogo.png" style="width: 30%;"> </div>
 <div style="display: inline;">
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 200);" style="cursor: pointer;" >Home</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" style="cursor: pointer;">Forum</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" style="cursor: pointer;">User List</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200);" style="cursor: pointer;">Park Map</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 1000);" style="cursor: pointer;" >Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);" style="cursor: pointer;">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);" style="cursor: pointer;">User List</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);" style="cursor: pointer;">Park Map</a>
 </div>
 <div style="display: inline; float: right;">
         <a href="#" id="profileLink">Profile</a>
@@ -556,6 +556,9 @@ body {
 </div>
 <audio id="clickSound" src="images/audio/mouse-click-290204.mp3"></audio>
     <script>
+      window.onload = function() {
+        var audio = document.getElementById('clickSound');
+      };
   // Open login modal
   function showLogin() {
     document.getElementById("loginModal").style.display = "block";
