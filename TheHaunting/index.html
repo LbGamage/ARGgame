@@ -4,15 +4,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+    <script src="libraries/p5.speech.js"></script>
+
     <title>Sketch</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    
 
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
+    <style>
+       canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw !important;
+                height: 100vh !important;
+                z-index: -10;
+                pointer-events: none;
+                display: block;
+            }
+
+            body {
+                margin: 0;
+                font-family: Verdana, Arial, sans-serif;
+                font-size: 20px;
+                color: white;
+                font-weight: bolder;
+                font-family: "DotGothic16", sans-serif;
+                overflow-x: hidden;
+            }
+    </style>
   </head>
 
   <body>
-    <script src="sketch.js"></script>
+    <script src="iniation2bg.js"></script>
   </body>
 </html>
