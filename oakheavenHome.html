@@ -299,7 +299,7 @@ body {
     <div id="content">
          <h2> Trending! Forum Threads</h2>
         <div class="post forum-post">
-              <div class="thread mikethread" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 200)" style="cursor: pointer;">
+              <div class="thread mikethread" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000)" style="cursor: pointer;">
         <div class="thread-title">
           <a >[REPORT]Missing! Has anyone seen Mike Scott?<br></a>
         </div>
@@ -311,7 +311,7 @@ body {
 
       <div class="thread">
         <div class="thread-title">
-          <a href="#">Please stop throwing trash in the forest</a>
+          <span style="color:#003366">Please stop throwing trash in the forest</span>
         </div>
         <div class="thread-meta">
           Started by <strong>✔OakheavenParkOfficial</strong><br>
@@ -321,7 +321,7 @@ body {
       
       <div class="thread">
         <div class="thread-title">
-          <a href="#">Unusual campfire smells near Pine Hollow?</a>
+          <span style="color:#003366">Unusual campfire smells near Pine Hollow?</span>
         </div>
         <div class="thread-meta">
           Started by <strong>ForestyFreak</strong><br>
@@ -554,7 +554,7 @@ body {
     <button onclick="loginUser()">Sign In</button>
   </div>
 </div>
-<audio id="clickSound" src="images/audio/mouse-click-290204.mp3"></audio>
+<audio id="clickSound" src="images/audio/mouse-click-290204.mp3" preload="auto"></audio>
     <script>
       window.onload = function() {
         var audio = document.getElementById('clickSound');

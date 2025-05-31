@@ -191,8 +191,6 @@
       margin-right: 5px;
       background-color: rgb(215, 0, 0);
       border-radius: 50%;
-      /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
-      animation: pulse 1s infinite ease-in-out;
     }
 
     /* Optional: online glow pulse
@@ -224,7 +222,7 @@
       transition: all 0.2s ease-in-out;
     }
 
-  
+
 
     .thread-title {
       font-weight: bold;
@@ -295,21 +293,41 @@
       height: 150px;
       object-fit: cover;
       margin-right: 10px;
-      
+
     }
 
-     .user-link {
-          cursor: pointer;
-        }
-        .user-link:hover {
-          text-decoration: underline;
-          color: #004400;
-        }
+    .user-link {
+      cursor: pointer;
+    }
+
+    .user-link:hover {
+      text-decoration: underline;
+      color: #004400;
+    }
+
+    .onlinepp {
+      background-color: lime;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 10px 10px rgba(0, 255, 0, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+      }
+    }
   </style>
 </head>
 
 <body>
-  <audio id="clickSound" src="images/audio/mouse-click-290204.mp3"></audio>
+  <audio id="clickSound" src="images/audio/mouse-click-290204.mp3" preload="auto"></audio>
   <div id="container">
     <div id="banner" style="position: sticky; top: 0; z-index: 1001;"
       onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
@@ -317,19 +335,27 @@
     </div>
 
     <div id="navbar" style="position: sticky; top: 90px; z-index: 102;">
-  <div class="oakheavenBanner"> <img src="images/oakheavenlogo.png" style="width: 30%;"> </div>
-<div style="display: inline;">
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 1000);" style="cursor: pointer;" >Home</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);" style="cursor: pointer;">Forum</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);" style="cursor: pointer;">User List</a>
-        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);" style="cursor: pointer;">Park Map</a>
-</div>
-<div style="display: inline; float: right;">
+      <div class="oakheavenBanner"> <img src="images/oakheavenlogo.png" style="width: 30%;"> </div>
+      <div style="display: inline;">
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='oakheavenHome.html'; }, 1000);"
+          style="cursor: pointer;">Home</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);"
+          style="cursor: pointer;">Forum</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);"
+          style="cursor: pointer;">User List</a>
+        <a onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='forum-home.html'; }, 1000);"
+          style="cursor: pointer;">Park Map</a>
+      </div>
+      <div style="display: inline; float: right;">
         <a href="#" id="profileLink">Profile</a>
-        <a href="#" id="loginLink"onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { showLogin(); }, 200);">Sign In</a>
-        <a href="#" id="logoutLink" style="display:none;" onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { logoutUser(); }, 200);">Log Out</a>
-</div>
-</div>
+        <a href="#" id="loginLink"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { showLogin(); }, 200);">Sign
+          In</a>
+        <a href="#" id="logoutLink" style="display:none;"
+          onclick="event.preventDefault(); document.getElementById('clickSound').currentTime = 0; document.getElementById('clickSound').play(); setTimeout(() => { logoutUser(); }, 200);">Log
+          Out</a>
+      </div>
+    </div>
     <marquee>NO LONGER ACTIVE | The Oakheaven Community - Where Nature Enthusiasts Unite! | NO LONGER ACTIVE</marquee>
 
 
@@ -350,7 +376,7 @@
 
           <div class="thread">
             <div class="thread-title">
-              <a href="#">Please stop throwing trash in the forest</a>
+              <span style="color:#003366">Please stop throwing trash in the forest</span>
             </div>
             <div class="thread-meta">
               Started by <strong>✔OakheavenParkOfficial</strong><br>
@@ -382,7 +408,9 @@
             Mike’s mum
             <div class="thread-meta">
               <div style="display: flex; align-items: center; justify-content: flex-end; margin-bottom: 3px;">
-             <span>Started by  <a  onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);" style="cursor: pointer;"> <strong>mikehike128</strong></a></span>
+                <span>Started by <a
+                    onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);"
+                    style="cursor: pointer;"> <strong>mikehike128</strong></a></span>
                 <img src="images/mikepfp.png" alt="User Avatar" class="avatar"
                   style="width: 22px; height: 22px; margin-right: 6px;">
               </div>
@@ -392,7 +420,7 @@
 
             <div class="comment">
               <div class="profile">
-                 <img src="images/james.jpg" style="width: 70px; height: 70px;">
+                <img src="images/james.jpg" style="width: 70px; height: 70px;">
                 <div class="username">MtJames0180</div>
                 <div class="thread-meta">Posted 21 October 2005</div>
               </div>
@@ -426,7 +454,7 @@
             </div>
             <div class="comment">
               <div class="profile">
-                <img >
+                <img>
                 <div class="username">Shoutbox</div>
                 <div class="thread-meta">Posted 23 October 2005</div>
               </div>
@@ -445,107 +473,113 @@
             we have noticed an increase in littering, especially near the picnic areas and trails. Please remember to
             take your trash with you or use the bins provided.<br> This includes larger items. This is not a dumping
             ground.<br><br>
-          <div class="gallery">
-            <img src="images/shoes.webp" class="trashimg">
-            <img src="images/trash2.jpg" class="trashimg">
+            <div class="gallery">
+              <img src="images/shoes.webp" class="trashimg">
+              <img src="images/trash2.jpg" class="trashimg">
 
-            <img src="images/trash3.jpg" class="trashimg">
+              <img src="images/trash3.jpg" class="trashimg">
 
 
 
+
+            </div>
+            <div class="thread-meta">
+              <div style="display: flex; align-items: center; justify-content: flex-end; margin-bottom: 3px;">
+                <span>Started by <strong>✔OakheavenParkOfficial</strong></span></a>
+                <img src="images/5debdb68f423cf2343d5a93a6847669c.jpg" alt="User Avatar" class="avatar"
+                  style="width: 22px; height: 22px; margin-right: 6px;">
+              </div>
+              Replies: 3 | Last Post: 26 October 2005
+            </div>
+            <hr>
+
+            <div class="comment">
+              <div class="profile">
+                <img src="images/james.jpg" style="width: 70px; height: 70px;">
+                <div class="username">MtJames0180</div>
+                <div class="thread-meta">Posted 21 October 2005</div>
+              </div>
+              <div class="reply">
+                Wait, I think those blue sneakers belong to Mike? I swear they are, I rememeber him showing them to me
+                when we went camping last month.
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="profile">
+                <img src="images/treepfp.jpg" style="width: 70px; height: 70px;">
+                <div class="username">theGreenWitch08</div>
+                <div class="thread-meta">Posted 22 October 2005</div>
+              </div>
+              <div class="reply">
+                Throwing trash with no care is disgusting. These people will get what they deserve.
+              </div>
+            </div>
+            <div class="comment">
+              <div class="profile">
+                <img src="images/pentimg.jpg" style="width: 70px; height: 70px;">
+                <div class="username">MountainHiker99</div>
+                <div class="thread-meta">Posted 23 October 2005</div>
+              </div>
+              <div class="reply">
+                Maybe instead of just complaining, we could organize a cleanup day? I know some people who would be
+                willing to help.
+              </div>
+            </div>
 
           </div>
-          <div class="thread-meta">
-            <div style="display: flex; align-items: center; justify-content: flex-end; margin-bottom: 3px;">
-             <span>Started by <strong>✔OakheavenParkOfficial</strong></span></a>
-              <img src="images/5debdb68f423cf2343d5a93a6847669c.jpg" alt="User Avatar" class="avatar"
-                style="width: 22px; height: 22px; margin-right: 6px;">
-            </div>
-            Replies: 3 | Last Post: 26 October 2005
-          </div>
-          <hr>
+        </div>
+        <!-- more posts -->
+      </div>
 
-          <div class="comment">
-            <div class="profile">
-              <img src="images/james.jpg" style="width: 70px; height: 70px;">
-              <div class="username">MtJames0180</div>
-              <div class="thread-meta">Posted 21 October 2005</div>
+      <div id="sidebar">
+        <div id="online-users">
+          <h3>Users [View all]</h3>
+          <div class="user-status">
+            <div class="user"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);"
+              style="cursor:pointer;">
+              <span class="online-indicator onlinepp"></span>
+              <img src="images/mikepfp.png" alt="Avatar" class="avatar">
+              <span class="user-link">MikeHike128</span>
             </div>
-            <div class="reply">
-             Wait, I think those blue sneakers belong to Mike? I swear they are, I rememeber him showing them to me when we went camping last month.
+            <div class="user">
+              <span class="online-indicator"></span>
+              <img src="images/Oneiromancy.png" alt="Avatar" class="avatar">
+              mtJames0180
+            </div>
+            <div class="user"
+              onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='Ellie-profile.html'; }, 200);"
+              style="cursor:pointer;">
+              <span class="online-indicator"></span>
+              <img src="images/treepfp.jpg" alt="Avatar" class="avatar">
+              <span>theGreenWitch08</span>
+            </div>
+            <div class="user">
+              <span class="online-indicator"></span>
+              <img src="images/pentimg.jpg" alt="Avatar" class="avatar">
+              Moonstone83
+            </div>
+            <div class="user">
+              <span class="online-indicator"></span>
+              <img src="images/skullgrass.jpg" alt="Avatar" class="avatar">
+              Shoutbox
             </div>
           </div>
-         
-          <div class="comment">
-            <div class="profile">
-              <img src="images/treepfp.jpg" style="width: 70px; height: 70px;">
-              <div class="username">theGreenWitch08</div>
-              <div class="thread-meta">Posted 22 October 2005</div>
-            </div>
-            <div class="reply">
-              Throwing trash with no care is disgusting. These people will get what they deserve. 
-            </div>
-          </div>
-          <div class="comment">
-            <div class="profile">
-              <img src="images/pentimg.jpg" style="width: 70px; height: 70px;">
-              <div class="username">MountainHiker99</div>
-              <div class="thread-meta">Posted 23 October 2005</div>
-            </div>
-            <div class="reply">
-              Maybe instead of just complaining, we could organize a cleanup day? I know some people who would be willing to help.
-            </div>
-          </div>
+        </div>
 
+        <div id="ads">
+          <h3>Sponsored</h3>
+          <div id="ad-banner"><img src="images/misc-5.gif" style="width: 100%;"></div>
+          <div id="ad-banner"><img src="images/economist-6.gif" style="width: 100%;"></div>
+          <div id="ad-banner"><img src="images/ebay.jpg" style="width: 100%;"></div>
         </div>
       </div>
-      <!-- more posts -->
     </div>
 
-    <div id="sidebar">
-      <div id="online-users">
-  <h3>Users [View all]</h3>
-  <div class="user-status">
-    <div class="user" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='mike-profile.html'; }, 200);"  style="cursor:pointer;">
-      <span class="online-indicator" style="background-color: lime;"></span>
-      <img src="images/mikepfp.png" alt="Avatar" class="avatar">
-      <span class="user-link">MikeHike128</span>
+    <div id="footer">
+      National Park Watch Forum © 2005 | All rights reserved.
     </div>
-    <div class="user">
-      <span class="online-indicator"></span>
-      <img src="images/Oneiromancy.png" alt="Avatar" class="avatar">
-      mtJames0180
-    </div>
-    <div class="user" onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='Ellie-profile.html'; }, 200);" style="cursor:pointer;">
-      <span class="online-indicator" ></span>
-      <img src="images/treepfp.jpg" alt="Avatar" class="avatar">
-      <span>theGreenWitch08</span>
-    </div>
-    <div class="user">
-      <span class="online-indicator"></span>
-      <img src="images/pentimg.jpg" alt="Avatar" class="avatar">
-      Moonstone83
-    </div>
-    <div class="user">
-      <span class="online-indicator"></span>
-      <img src="images/skullgrass.jpg" alt="Avatar" class="avatar">
-      Shoutbox  
-    </div>
-  </div>
-</div>
-
-      <div id="ads">
-        <h3>Sponsored</h3>
-        <div id="ad-banner"><img src="images/misc-5.gif" style="width: 100%;"></div>
-        <div id="ad-banner"><img src="images/economist-6.gif" style="width: 100%;"></div>
-        <div id="ad-banner"><img src="images/ebay.jpg" style="width: 100%;"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="footer">
-    National Park Watch Forum © 2005 | All rights reserved.
-  </div>
   </div>
   <!-- Login Modal -->
   <div id="loginModal">
@@ -559,9 +593,9 @@
 
   <script>
 
-     window.onload = function() {
-        var audio = document.getElementById('clickSound');
-      };
+    window.onload = function () {
+      var audio = document.getElementById('clickSound');
+    };
 
     // Open login modal
     function showLogin() {

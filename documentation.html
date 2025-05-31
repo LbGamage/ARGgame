@@ -189,8 +189,7 @@
       margin-right: 5px;
       background-color: rgb(215, 0, 0);
       border-radius: 50%;
-      /* box-shadow: 0 0 4px lime, 0 0 6px lime; */
-      animation: pulse 1s infinite ease-in-out;
+  
     }
 
     /* Optional: online glow pulse
@@ -342,11 +341,21 @@
       text-decoration: underline;
       color: #004400;
     }
+
+     .onlinepp{
+          background-color: lime;
+          animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+          0% { box-shadow: 0 0 0 0 rgba(0,255,0,0.7); }
+          70% { box-shadow: 0 0 10px 10px rgba(0,255,0,0); }
+          100% { box-shadow: 0 0 0 0 rgba(0,255,0,0); }
+        }
   </style>
 </head>
 
 <body>
-  <audio id="clickSound" src="images/audio/mouse-click-290204.mp3"></audio>
+  <audio id="clickSound" src="images/audio/mouse-click-290204.mp3" preload="auto"></audio>
   <div id="container">
     <div id="banner" style="position: sticky; top: 0; z-index: 1001"
       onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor: pointer">
@@ -505,7 +514,7 @@
             <div class="user"
               onclick="event.preventDefault(); document.getElementById('clickSound').play(); setTimeout(() => { window.location.href='Ellie-profile.html'; }, 200);"
               style="cursor: pointer">
-              <span class="online-indicator" style="background-color: lime"></span>
+              <span class="online-indicator onlinepp"></span>
               <img src="images/treepfp.jpg" alt="Avatar" class="avatar" />
               <span class="user-link">theGreenWitch08</span>
             </div>
