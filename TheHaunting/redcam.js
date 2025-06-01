@@ -1,4 +1,6 @@
 // Copyright (c) 2020-2023 ml5
+// ml5-next-gen bodyPix mask background In Class 11/7 by lilyannenberg found in p5.org
+// https://editor.p5js.org/lilyannenberg/sketches/imn3HnIlW
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
@@ -38,7 +40,7 @@ function gotResults(result) {
   image(video, 0, 0, width, height);
   image(segmentation.backgroundMask, 0, 0, width, height);
   filter(GRAY); //greyscale filter
-  opacity = max(20, opacity - 1);
+  opacity = max(20, opacity - 3);
   tint(0, 255, 255, opacity); // changed opacity 
    console.log(opacity);
 }

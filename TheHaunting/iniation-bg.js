@@ -19,11 +19,10 @@ function draw() {
 
   let lineHeight = 9;
 
-  // Generate red static lines
   for (let y = 0; y < height; y += lineHeight) {
-    let r = random(160, 177); // Red shades
-    let g = random(90, 97);    // Very low green
-    let b = random(112, 116);    // Very low blue
+    let r = random(160, 177); 
+    let g = random(90, 97);    
+    let b = random(112, 116);    
     fill(r, g, b);
     rect(0, y, width, lineHeight);
   }
