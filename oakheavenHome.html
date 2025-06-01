@@ -270,9 +270,28 @@ body {
           color: #004400;
         }
 
+        #headphoneModal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          z-index: 10000;
+          background: rgba(0,0,0,0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
     </style>
 </head>
 <body>
+  <div id="headphoneModal">
+  <div id="loginBox">
+    <h2>!Please wear headphones throughout this for the best experience!</h2>
+    <button onclick="closeHeadphoneModal()">Got it!</button>
+  </div>
+</div>
     <div id="container">
     <div id="banner" style="position: sticky; top: 0; z-index: 1001;" onclick="window.open('https://www.scientology-melbourne.org/', '_blank')" style="cursor:pointer;">
         <img src="images/cultsoncampusbanneranimated.gif" alt="Banner Ad" style="width: 100%; height: 90px; cursor:pointer;">
@@ -602,6 +621,21 @@ body {
   updateNavbar();
 }
 
+
+// wear headphones
+
+ function showHeadphoneModal() {
+    document.getElementById("headphoneModal").style.display = "block";
+  }
+
+  function closeHeadphoneModal() {
+    document.getElementById("headphoneModal").style.display = "none";
+  }
+
+  // Show the modal when the page loads
+  window.onload = function() {
+    showHeadphoneModal();
+  };
 </script>
 
 </body>
